@@ -771,16 +771,16 @@ const RELEASE_DATA = [
   },
   {
     id: 'journey-analytics',
-    title: "Customer Journey Analytics July 2026: Sub-Event Analysis and B2B Datasets",
+    title: "Customer Journey Analytics July 2026: Sub-Event Analysis and Inline Classifications",
     version: null,
     date: "July 2026",
     rawDate: "2026-07-01",
-    summary: "July 2026 brings sub-event analysis for more precise segmentation, B2B relational dataset support in account-based connections, and paid media integration for Content Analytics. A new AI-powered migration validation skill compares CJA implementations against Adobe Analytics data to accelerate transitions.",
+    summary: "July 2026 brings sub-event analysis for more precise segmentation, a new inline classifications feature for renaming and combining table rows in freeform tables, and B2B relational dataset support in account-based connections. An AI-powered migration validation skill compares CJA implementations against Adobe Analytics data to accelerate transitions.",
     features: [
       { name: "Sub-Event Analysis", description: "Enables segmentation at the container level within events rather than entire events, allowing more precise data filtering and deeper behavioral insights.", status: "GA" },
+      { name: "Inline Classifications", description: "Allows renaming and combining table rows and creating derived fields from modified rows directly within freeform tables, speeding up ad hoc analysis.", status: "GA" },
       { name: "B2B Edition Relational Datasets", description: "Extends support for ad hoc and relational datasets within account-based connections for comprehensive B2B analytics.", status: "GA" },
       { name: "Content Analytics Paid Media Channel", description: "Introduces paid media as a new channel option in Content Analytics alongside existing analytics channels for unified performance visibility.", status: "GA" },
-      { name: "Connections Usage Module Breakdown", description: "Provides detailed usage visibility per individual module with monthly reporting options to help manage consumption and costs.", status: "GA" },
       { name: "CX Enterprise Coworker Validation Skill", description: "AI-generated comparison of CJA implementations against Adobe Analytics data, surfacing migration recommendations to accelerate transitions.", status: "GA" }
     ],
     category_tags: ["AI", "Data", "Performance"]
@@ -803,33 +803,33 @@ const RELEASE_DATA = [
   },
   {
     id: 'workfront',
-    title: "Adobe Workfront 26.7: MCP Server, Parallel Approvals, and Custom Forms",
+    title: "Adobe Workfront 26.7: MCP Connector Expansion, Rich Text Fields, and Parallel Approvals",
     version: "26.7",
     date: "July 2026",
     rawDate: "2026-07-01",
-    summary: "Q3 2026 delivers expanded AI integration via the Workfront MCP Server for natural-language object management, plus parallel document approval paths supporting up to 30 independent review tracks. Custom forms are modernized with the new Internal Lookup field type and native financial field support.",
+    summary: "Q3 2026 expands AI integration via the Workfront MCP Connector with new tools for natural-language object management, plus a new Rich Text custom field type and parallel document approval paths supporting up to 30 independent review tracks. Canvas Dashboards gain custom currency field support for advanced financial reporting.",
     features: [
-      { name: "Workfront MCP Server", description: "Connects Workfront to AI platforms like Claude and ChatGPT, enabling natural-language finding, creating, updating, and managing of Workfront items.", status: "GA" },
-      { name: "Parallel Approval Paths for Documents", description: "Supports up to 30 independent review tracks with up to 100 stages in a single approval, streamlining complex document workflows for simultaneous team reviews.", status: "GA" },
+      { name: "Workfront MCP Connector Expansion", description: "Expanded MCP tools enable AI platforms like Claude and ChatGPT to find, create, update, and manage Workfront items via natural language, with new tools added July 16, 2026.", status: "GA" },
+      { name: "Rich Text Field Type", description: "New custom form field offering formatting options like superscript, subscript, headings, and tables (15,000 character limit) for richer structured data capture.", status: "GA" },
+      { name: "Parallel Approval Paths for Documents", description: "Supports up to 30 independent review tracks with up to 100 stages in a single approval, with custom messages per stage for complex document workflows.", status: "GA" },
       { name: "Internal Lookup Field Type", description: "Replaces the Typeahead field with dynamic filtering and multi-select support, improving performance for large datasets in custom forms.", status: "GA" },
-      { name: "Native Financial Fields in Custom Forms", description: "Workfront's native financial fields are now supported directly in custom forms for consistent financial data capture within project management workflows.", status: "GA" },
-      { name: "Standalone Workfront Planning", description: "Available for new customers without requiring a Workflow license, enabling campaign planning capabilities independently.", status: "Limited Availability" }
+      { name: "Canvas Dashboard Custom Currency Fields", description: "Canvas Dashboard reports now support custom currency data fields as columns, filters, groupings, and aggregations for financial reporting.", status: "GA" }
     ],
     category_tags: ["AI", "UI", "Integration", "Data"]
   },
   {
     id: 'ajo-b2b',
-    title: "Journey Optimizer B2B July 2026: Split Path Variants for A/B Testing",
+    title: "Journey Optimizer B2B July 2026: Split Path Variants and Event Listener Enhancements",
     version: "2026.6",
     date: "July 2026",
     rawDate: "2026-07-01",
-    summary: "The July 2026 release introduces split path journey node variants in beta, enabling marketers to A/B test different journey routes by assigning accounts or people to defined percentage splits. This builds on the GA landing pages, forms, and email performance dashboard capabilities released earlier in 2026.",
+    summary: "The July 2026 (2026.6) release introduces split path journey node variants in beta for A/B testing different routes by assigning accounts or people to defined percentage splits. Event listener nodes now support multiple simultaneous events, and new person journey actions expand orchestration options within account journeys.",
     features: [
       { name: "Split Path Journey Nodes — Variants", description: "Assigns accounts or people to different journey paths using defined percentages for A/B testing, enabling optimization of customer engagement and conversion rates.", status: "Beta" },
-      { name: "Landing Pages", description: "Administrators configure subdomains and presets; marketers create and publish personalized web content to support journeys and programs.", status: "GA" },
-      { name: "Reusable Form Components", description: "Captures visitor information through configurable form presets linked to datasets and streaming connections for data submission.", status: "GA" },
-      { name: "Email Performance Dashboard", description: "Provides unified view of email activity metrics across all journeys in a single analytics interface.", status: "GA" },
-      { name: "Next Best Path Journey Nodes", description: "Optimizes split path decisioning for person journeys with pre-activation or runtime refinement of audience routing.", status: "GA" }
+      { name: "Listen for an Event — Multiple Events", description: "Event listener nodes now support multiple activity configurations using Experience Events; the first qualifying event advances the record to the next journey step.", status: "GA" },
+      { name: "Take an Action — Person Journey Actions", description: "New people context actions 'Add to Person journey' and 'Remove from Person journey' expand orchestration possibilities within account journeys.", status: "GA" },
+      { name: "Event Listener Rule Builder Interface", description: "The Filters tab in event listener nodes has been converted to a rule builder interface for more intuitive and powerful filter configuration.", status: "GA" },
+      { name: "Email Performance Dashboard", description: "Provides a unified view of email activity metrics across all journeys in a single analytics interface for centralized performance monitoring.", status: "GA" }
     ],
     category_tags: ["AI", "UI", "Data", "Integration"]
   },
