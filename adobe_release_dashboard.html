@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adobe Experience Cloud — Release Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg-page: #f8f8f8;
+    --bg-card: #ffffff;
+    --bg-panel: #ffffff;
+    --border: #e4e4e4;
+    --text-primary: #111111;
+    --text-secondary: #666666;
+    --accent-active: #e11d48;
+    --tag-bg: #f4f4f4;
+    --kpi-bg: #ffffff;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    gap: 12px;
+  }
+
+  .header-left { display: flex; flex-direction: column; gap: 2px; }
+  .header-title { font-size: 15px; font-weight: 600; }
+  .header-subtitle { font-size: 11px; color: var(--text-secondary); }
+
+  .header-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+  .header-badge {
+    padding: 5px 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .btn-header {
+    padding: 6px 12px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.1s, color 0.1s;
+    white-space: nowrap;
+  }
+  .btn-header:hover { border-color: #aaa; color: var(--text-primary); }
+
+  /* ── Staleness banner ── */
+  #stale-banner {
+    display: none;
+    background: #fff8ec;
+    border-bottom: 1px solid #f5d57a;
+    padding: 10px 24px;
+    font-size: 12px;
+    color: #92600a;
+    text-align: center;
+  }
+
+  /* ── Deprecation banner ── */
+  #deprecation-banner {
+    display: none;
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+  }
+
+  .dep-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .dep-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #be123c;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .dep-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+
+  .dep-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    color: #9f1239;
+  }
+
+  .dep-product {
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .dep-desc { color: #6b2535; line-height: 1.5; }
+
+  /* ── Main ── */
+  main {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+    width: 100%;
+  }
+
+  /* ── KPI ── */
+  #kpi-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .kpi-card {
+    background: var(--kpi-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+
+  .kpi-value {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .kpi-label {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── Timeline ── */
+  #timeline-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+  }
+
+  .timeline-heading {
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .timeline-track {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .timeline-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .timeline-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    width: 148px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .timeline-bar-wrap {
+    flex: 1;
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .timeline-bar {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.4s ease;
+  }
+
+  .timeline-date {
+    font-size: 11px;
+    color: var(--text-secondary);
+    width: 70px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* ── Filters (sticky) ── */
+  #filters-wrap {
+    position: sticky;
+    top: 53px;
+    z-index: 15;
+    background: var(--bg-page);
+    padding-bottom: 8px;
+  }
+
+  #filters {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .filter-label {
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    margin-right: 4px;
+    white-space: nowrap;
+  }
+
+  .filter-sep {
+    width: 1px;
+    height: 16px;
+    background: var(--border);
+    margin: 0 4px;
+    flex-shrink: 0;
+  }
+
+  .filter-btn {
+    padding: 4px 10px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.1s, color 0.1s, border-color 0.1s;
+    white-space: nowrap;
+  }
+
+  .filter-btn:hover { border-color: #aaa; color: var(--text-primary); }
+
+  .filter-btn.active {
+    background: var(--accent-active);
+    border-color: var(--accent-active);
+    color: #fff;
+  }
+
+  /* status filter active states */
+  .filter-btn.active-ga  { background: #10b981; border-color: #10b981; color: #fff; }
+  .filter-btn.active-beta { background: #8b5cf6; border-color: #8b5cf6; color: #fff; }
+  .filter-btn.active-la  { background: #f59e0b; border-color: #f59e0b; color: #fff; }
+
+  /* search */
+  .search-wrap { position: relative; flex: 1; min-width: 160px; max-width: 260px; }
+
+  .search-wrap input {
+    width: 100%;
+    padding: 5px 10px 5px 30px;
+    background: var(--bg-page);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 12px;
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.1s;
+  }
+
+  .search-wrap input:focus { border-color: #aaa; }
+  .search-wrap input::placeholder { color: #aaa; }
+
+  .search-icon {
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 12px;
+    pointer-events: none;
+  }
+
+  /* ── Cards ── */
+  #cards-container { display: flex; flex-direction: column; gap: 12px; }
+
+  .release-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    transition: border-color 0.15s;
+  }
+
+  .release-card:hover { border-color: #bbb; }
+
+  .release-card.is-new { border-left: 3px solid #10b981; }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .product-badge {
+    flex-shrink: 0;
+    padding: 3px 0 3px 10px;
+    border-left: 4px solid currentColor;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    line-height: 1.4;
+  }
+
+  .new-chip {
+    display: inline-block;
+    padding: 1px 6px;
+    background: #d1fae5;
+    color: #065f46;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .card-meta { flex: 1; min-width: 0; }
+  .card-title { font-size: 15px; font-weight: 500; margin-bottom: 3px; line-height: 1.4; }
+  .card-version-date { font-size: 12px; color: var(--text-secondary); }
+
+  .card-summary {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  /* status tally */
+  .card-tally {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .tally-chip {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  .tally-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .tally-dot.ga   { background: #10b981; }
+  .tally-dot.beta { background: #8b5cf6; }
+  .tally-dot.la   { background: #f59e0b; }
+
+  /* feature list */
+  .features-list {
+    display: none;
+    margin-bottom: 12px;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .features-list.open { display: flex; }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .feature-item:last-child { border-bottom: none; }
+  .feature-item:nth-child(even) { background: #fafafa; }
+
+  .feature-status {
+    flex-shrink: 0;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 1px;
+  }
+
+  .status-ga   { background: #16a34a; color: #fff; }
+  .status-beta { background: #d97706; color: #fff; }
+  .status-la   { background: #2563eb; color: #fff; }
+
+  .feature-text { flex: 1; min-width: 0; }
+
+  .feature-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+    line-height: 1.4;
+  }
+
+  .feature-name mark {
+    background: #fef08a;
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 1px;
+  }
+
+  .feature-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+
+  .feature-desc mark {
+    background: #fef08a;
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 1px;
+  }
+
+  /* card footer */
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag-pills { display: flex; flex-wrap: wrap; gap: 5px; }
+
+  .tag-pill {
+    padding: 2px 8px;
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  .card-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+  .btn-toggle-features {
+    background: #f0f4ff;
+    border: 1px solid #c7d4f5;
+    color: #3b5bdb;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 5px 12px;
+    border-radius: 6px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .btn-toggle-features:hover { background: #e0e9ff; border-color: #9db0ef; }
+
+  .card-link {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.1s;
+  }
+  .card-link:hover { color: var(--text-primary); }
+
+  /* product icon badge */
+  .product-icon {
+    width: 20px; height: 20px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; font-weight: 700; color: #fff; flex-shrink: 0; margin-top: 2px;
+  }
+
+  /* star/favorite button */
+  .btn-star {
+    background: none; border: none; cursor: pointer; font-size: 15px;
+    color: #ccc; padding: 0 0 0 4px; line-height: 1; transition: color 0.1s; flex-shrink: 0;
+    align-self: flex-start; margin-top: 1px;
+  }
+  .btn-star.fav { color: #f59e0b; }
+  .btn-star:hover { color: #f59e0b; }
+
+  /* copy button */
+  .btn-copy {
+    background: none; border: none; cursor: pointer; color: var(--text-secondary);
+    font-family: inherit; font-size: 12px; font-weight: 500; padding: 0;
+    transition: color 0.1s; position: relative;
+  }
+  .btn-copy:hover { color: var(--text-primary); }
+  .copy-tooltip {
+    position: absolute; bottom: calc(100% + 6px); left: 50%;
+    transform: translateX(-50%); background: #111; color: #fff;
+    padding: 3px 8px; border-radius: 4px; font-size: 11px;
+    white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity 0.15s;
+    z-index: 10;
+  }
+  .copy-tooltip.show { opacity: 1; }
+
+  #no-results {
+    display: none;
+    text-align: center;
+    padding: 48px 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+  }
+
+  @media (max-width: 640px) {
+    #kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .kpi-value { font-size: 18px; }
+    .timeline-label { width: 90px; }
+  }
+
+  /* ── Refresh status bar ── */
+  #refresh-bar {
+    display: none;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 24px;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .rbar-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--text-secondary); }
+  .rbar-item.done  { color: #059669; }
+  .rbar-item.error { color: #dc2626; }
+  .rbar-spin {
+    width: 10px; height: 10px;
+    border: 1.5px solid var(--border); border-top-color: var(--text-secondary);
+    border-radius: 50%; animation: rspin .7s linear infinite; flex-shrink: 0;
+  }
+  @keyframes rspin { to { transform: rotate(360deg); } }
+
+  /* ── API key modal ── */
+  #key-modal {
+    display: none; position: fixed; inset: 0; z-index: 100;
+    background: rgba(0,0,0,.5); align-items: center; justify-content: center;
+  }
+  .key-modal-box {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 28px 28px 24px; width: 420px; max-width: calc(100vw - 40px);
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .key-modal-title { font-size: 14px; font-weight: 600; }
+  .key-modal-desc  { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+  .key-modal-input {
+    padding: 9px 12px; background: var(--bg-page); border: 1px solid var(--border);
+    border-radius: 6px; font-family: inherit; font-size: 13px; color: var(--text-primary);
+    outline: none; width: 100%;
+  }
+  .key-modal-input:focus { border-color: #aaa; }
+  .key-modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
+  .btn-modal-cancel {
+    padding: 7px 14px; background: transparent; border: 1px solid var(--border);
+    border-radius: 6px; font-family: inherit; font-size: 12px; font-weight: 500;
+    color: var(--text-secondary); cursor: pointer;
+  }
+  .btn-modal-cancel:hover { border-color: #aaa; color: var(--text-primary); }
+  .btn-modal-go {
+    padding: 7px 16px; background: var(--accent-active); border: none; border-radius: 6px;
+    font-family: inherit; font-size: 12px; font-weight: 500; color: #fff; cursor: pointer;
+  }
+  .btn-modal-go:hover { opacity: .88; }
+  .btn-modal-go:disabled { opacity: .45; cursor: not-allowed; }
+
+  /* ── Print styles ── */
+  @media print {
+    header, #filters-wrap, #stale-banner { display: none !important; }
+    body { background: #fff; }
+    main { padding: 0; max-width: 100%; }
+    .release-card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; margin-bottom: 12px; }
+    .features-list { display: flex !important; }
+    .card-actions { display: none; }
+    #deprecation-banner { break-inside: avoid; }
+    #timeline-section { break-inside: avoid; }
+    .btn-header, .header-badge { display: none; }
+    header { display: flex !important; position: static; border-bottom: 2px solid #111; margin-bottom: 16px; }
+    .header-title { font-size: 14pt; }
+    .header-subtitle { font-size: 9pt; }
+  }
+</style>
+</head>
+<body>
+
+<div id="stale-banner">
+  ⚠️ This digest was last updated more than 14 days ago and may be outdated. Ask Claude to refresh it.
+</div>
+
+<header>
+  <div class="header-left">
+    <div class="header-title">Adobe Experience Cloud — Release Tracker</div>
+    <div class="header-subtitle" id="header-subtitle">AI-summarized from Adobe Experience League · Last updated: <span id="last-updated-ts"></span> · Auto-refreshes once daily</div>
+  </div>
+  <div class="header-right">
+    <button class="btn-header" id="btn-expand-all">Expand all</button>
+    <button class="btn-header" onclick="window.print()">⎙ Print / PDF</button>
+  </div>
+</header>
+
+
+<main>
+
+  <!-- KPI row -->
+  <div id="kpi-row">
+    <div class="kpi-card"><div class="kpi-value" id="kpi-products">12</div><div class="kpi-label">Products tracked</div></div>
+    <div class="kpi-card"><div class="kpi-value" id="kpi-features">—</div><div class="kpi-label">Features surfaced</div></div>
+    <div class="kpi-card"><div class="kpi-value" id="kpi-recent">—</div><div class="kpi-label">Most recently updated</div></div>
+    <div class="kpi-card"><div class="kpi-value" id="kpi-tag">—</div><div class="kpi-label">Top category tag</div></div>
+  </div>
+
+  <!-- Timeline -->
+  <div id="timeline-section">
+    <div class="timeline-heading">Release timeline — last ship date per product</div>
+    <div class="timeline-track" id="timeline-track"></div>
+  </div>
+
+  <!-- Deprecation callout -->
+  <div id="deprecation-banner">
+    <div class="dep-header">
+      <span class="dep-title">⚠ Deprecations &amp; removals requiring action</span>
+    </div>
+    <ul class="dep-list" id="dep-list"></ul>
+  </div>
+
+  <!-- Sticky filters -->
+  <div id="filters-wrap">
+    <div id="filters">
+      <div class="filter-row">
+        <span class="filter-label">Search</span>
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" placeholder="Search features, products…" autocomplete="off">
+        </div>
+        <div class="filter-sep"></div>
+        <span class="filter-label">Status</span>
+        <button class="filter-btn" id="btn-status-ga"   data-status="GA">GA</button>
+        <button class="filter-btn" id="btn-status-beta" data-status="Beta">Beta</button>
+        <button class="filter-btn" id="btn-status-la"   data-status="Limited">Limited</button>
+      </div>
+      <div class="filter-row" id="product-filter-row"><span class="filter-label">Products</span></div>
+      <div class="filter-row" id="category-filter-row"><span class="filter-label">Categories</span></div>
+    </div>
+  </div>
+
+  <div id="cards-container"></div>
+  <div id="no-results">No cards match the active filters.</div>
+</main>
+
+<script>
+// ── Data ──────────────────────────────────────────────────────────────────────
+
+const DASHBOARD_DATE = '2026-07-22'; // ISO date this was last generated
+
+const PRODUCTS = [
+  { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
+  { id: 'experience-platform', name: 'Experience Platform',       color: '#8b5cf6', url: 'https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest' },
+  { id: 'target',              name: 'Adobe Target',              color: '#f59e0b', url: 'https://experienceleague.adobe.com/en/docs/target/using/release-notes/release-notes' },
+  { id: 'journey-analytics',   name: 'Customer Journey Analytics',color: '#06b6d4', url: 'https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/latest' },
+  { id: 'marketo',             name: 'Marketo Engage',            color: '#ef4444', url: 'https://experienceleague.adobe.com/en/docs/marketo/using/release-notes/current' },
+  { id: 'campaign',            name: 'Adobe Campaign',            color: '#ec4899', url: 'https://experienceleague.adobe.com/en/docs/campaign/campaign-v8/releases/release-notes' },
+  { id: 'journey-optimizer',   name: 'Journey Optimizer',         color: '#f97316', url: 'https://experienceleague.adobe.com/en/docs/journey-optimizer/using/whats-new/release-notes' },
+  { id: 'aem',                 name: 'Adobe Experience Manager',  color: '#10b981', url: 'https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/release-notes/release-notes-current' },
+  { id: 'workfront',           name: 'Adobe Workfront',           color: '#a78bfa', url: 'https://experienceleague.adobe.com/en/docs/workfront/using/product-announcements/product-releases/product-releases' },
+  { id: 'ajo-b2b',             name: 'Journey Optimizer B2B',     color: '#e879f9', url: 'https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/release-notes' },
+  { id: 'rtcdp',               name: 'Real-Time CDP',             color: '#0ea5e9', url: 'https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest' },
+  { id: 'data-distiller',      name: 'Data Distiller',            color: '#f472b6', url: 'https://experienceleague.adobe.com/en/docs/experience-platform/query/home' },
+];
+
+const ALL_TAGS = ['AI', 'Performance', 'UI', 'Data', 'Integration', 'Security', 'Deprecation'];
+
+const RELEASE_DATA = [
+  {
+    id: 'analytics',
+    title: "Adobe Analytics July 2026: Sub-Hit Analysis and API Enhancements",
+    version: null,
+    date: "July 2026",
+    rawDate: "2026-07-01",
+    summary: "Adobe Analytics July 2026 introduces sub-hit analysis for granular product-level segmentation and new API capabilities for automated recurring reports. The release also delivers an Activity Map UI refresh and enhanced Dimension API expansion parameters for more detailed eVar reporting.",
+    features: [
+      { name: "Sub-Hit Analysis", description: "Enables segmentation at the individual product level rather than entire hits, allowing more granular product category analysis for deeper insights.", status: "GA" },
+      { name: "Activity Map Extension UI Refresh", description: "Updated Activity Map interface with underlying improvements that lay groundwork for future capability enhancements.", status: "GA" },
+      { name: "AA 2.0 API Search Features", description: "Allows users to return a subset of dimension items in reports through enhanced search functionality, streamlining data retrieval.", status: "GA" },
+      { name: "Automating Recurring Reports with AA APIs", description: "Enables scheduled, automatic report generation with fresh metrics through the Report API, reducing manual reporting overhead.", status: "GA" },
+      { name: "New Dimension API Expansion Parameters", description: "Retrieves eVar configuration details including allocation types, expirations, and data types for more comprehensive API-driven reporting.", status: "GA" }
+    ],
+    category_tags: ["Data", "Performance", "UI"]
+  },
+  {
+    id: 'target',
+    title: "Adobe Target 26.7.2: Activity Goals and UI Stability Fixes",
+    version: "26.7.2",
+    date: "July 2026",
+    rawDate: "2026-07-01",
+    summary: "Adobe Target 26.7.2 resolves critical usability issues affecting Automated Personalization activities and interface stability. The release fixes goal display inconsistencies, browse mode responsiveness, source display consistency, and improves localization support for profile script dialogs.",
+    features: [
+      { name: "Activity Goal Display Correction", description: "Resolves incorrect goal information appearing on the Activity Overview page for Automated Personalization activities, ensuring only the optimization goal displays.", status: "GA" },
+      { name: "Browse Mode Responsiveness Fix", description: "Eliminates unresponsive screen behavior when users navigate between pages in Browse mode, improving overall interface stability.", status: "GA" },
+      { name: "Source Display Consistency Fix", description: "Corrects inconsistent source information displayed across Activities, Audiences, and Offers pages for accurate cross-page data alignment.", status: "GA" },
+      { name: "Homepage UI Enhancement", description: "Updates the visual design for the top performers and saves experience section, providing a refreshed user interface.", status: "GA" },
+      { name: "Profile Script Localization Fix", description: "Addresses previously unlocalized strings in the Create Profile Script dialog, ensuring proper language support across all regions.", status: "GA" }
+    ],
+    category_tags: ["UI"]
+  },
+  {
+    id: 'journey-analytics',
+    title: "Customer Journey Analytics July 2026: Sub-Event Analysis and B2B Datasets",
+    version: null,
+    date: "July 2026",
+    rawDate: "2026-07-01",
+    summary: "July 2026 brings sub-event analysis for more precise segmentation, B2B relational dataset support in account-based connections, and paid media integration for Content Analytics. A new AI-powered migration validation skill compares CJA implementations against Adobe Analytics data to accelerate transitions.",
+    features: [
+      { name: "Sub-Event Analysis", description: "Enables segmentation at the container level within events rather than entire events, allowing more precise data filtering and deeper behavioral insights.", status: "GA" },
+      { name: "B2B Edition Relational Datasets", description: "Extends support for ad hoc and relational datasets within account-based connections for comprehensive B2B analytics.", status: "GA" },
+      { name: "Content Analytics Paid Media Channel", description: "Introduces paid media as a new channel option in Content Analytics alongside existing analytics channels for unified performance visibility.", status: "GA" },
+      { name: "Connections Usage Module Breakdown", description: "Provides detailed usage visibility per individual module with monthly reporting options to help manage consumption and costs.", status: "GA" },
+      { name: "CX Enterprise Coworker Validation Skill", description: "AI-generated comparison of CJA implementations against Adobe Analytics data, surfacing migration recommendations to accelerate transitions.", status: "GA" }
+    ],
+    category_tags: ["AI", "Data", "Performance"]
+  },
+  {
+    id: 'marketo',
+    title: "Marketo Engage July 2026: AI Skills for Product Knowledge and Lead Investigation",
+    version: null,
+    date: "July 2026",
+    rawDate: "2026-07-01",
+    summary: "July 2026 introduces two new Marketo AI Skills — product knowledge Q&A and lead investigation — allowing users to get instant answers and diagnose lead journey failures without leaving the platform. API deprecation announcements signal the retirement of SOAP and legacy REST authentication by end of July 2026.",
+    features: [
+      { name: "AI Skill — Product Knowledge", description: "Provides on-demand access to Marketo expertise through natural-language questions answered from official documentation, directly within the platform.", status: "Beta" },
+      { name: "AI Skill — Investigate Leads", description: "Enables users to understand why specific leads failed to reach milestones with plain-language explanations of what happened in their journey.", status: "Beta" },
+      { name: "Email Designer AI Assistant Contextual Menu", description: "Integrates AI Assistant into the contextual menu for quick text-based actions directly from the editing bar without additional navigation.", status: "Beta" },
+      { name: "SOAP API Deprecation", description: "SOAP API support ends July 31, 2026; existing integrations must migrate to the REST API to avoid service interruption.", status: "GA" },
+      { name: "REST API Authentication Modernization", description: "The access_token query parameter is retired after July 31, 2026; all integrations must switch to the Authorization header for continued access.", status: "GA" }
+    ],
+    category_tags: ["AI", "Integration", "Deprecation"]
+  },
+  {
+    id: 'workfront',
+    title: "Adobe Workfront 26.7: MCP Server, Parallel Approvals, and Custom Forms",
+    version: "26.7",
+    date: "July 2026",
+    rawDate: "2026-07-01",
+    summary: "Q3 2026 delivers expanded AI integration via the Workfront MCP Server for natural-language object management, plus parallel document approval paths supporting up to 30 independent review tracks. Custom forms are modernized with the new Internal Lookup field type and native financial field support.",
+    features: [
+      { name: "Workfront MCP Server", description: "Connects Workfront to AI platforms like Claude and ChatGPT, enabling natural-language finding, creating, updating, and managing of Workfront items.", status: "GA" },
+      { name: "Parallel Approval Paths for Documents", description: "Supports up to 30 independent review tracks with up to 100 stages in a single approval, streamlining complex document workflows for simultaneous team reviews.", status: "GA" },
+      { name: "Internal Lookup Field Type", description: "Replaces the Typeahead field with dynamic filtering and multi-select support, improving performance for large datasets in custom forms.", status: "GA" },
+      { name: "Native Financial Fields in Custom Forms", description: "Workfront's native financial fields are now supported directly in custom forms for consistent financial data capture within project management workflows.", status: "GA" },
+      { name: "Standalone Workfront Planning", description: "Available for new customers without requiring a Workflow license, enabling campaign planning capabilities independently.", status: "Limited Availability" }
+    ],
+    category_tags: ["AI", "UI", "Integration", "Data"]
+  },
+  {
+    id: 'ajo-b2b',
+    title: "Journey Optimizer B2B July 2026: Split Path Variants for A/B Testing",
+    version: "2026.6",
+    date: "July 2026",
+    rawDate: "2026-07-01",
+    summary: "The July 2026 release introduces split path journey node variants in beta, enabling marketers to A/B test different journey routes by assigning accounts or people to defined percentage splits. This builds on the GA landing pages, forms, and email performance dashboard capabilities released earlier in 2026.",
+    features: [
+      { name: "Split Path Journey Nodes — Variants", description: "Assigns accounts or people to different journey paths using defined percentages for A/B testing, enabling optimization of customer engagement and conversion rates.", status: "Beta" },
+      { name: "Landing Pages", description: "Administrators configure subdomains and presets; marketers create and publish personalized web content to support journeys and programs.", status: "GA" },
+      { name: "Reusable Form Components", description: "Captures visitor information through configurable form presets linked to datasets and streaming connections for data submission.", status: "GA" },
+      { name: "Email Performance Dashboard", description: "Provides unified view of email activity metrics across all journeys in a single analytics interface.", status: "GA" },
+      { name: "Next Best Path Journey Nodes", description: "Optimizes split path decisioning for person journeys with pre-activation or runtime refinement of audience routing.", status: "GA" }
+    ],
+    category_tags: ["AI", "UI", "Data", "Integration"]
+  },
+  {
+    id: 'journey-optimizer',
+    title: "Journey Optimizer July 2026: Content Check, File-Based Targeting, and New Canvas UI",
+    version: null,
+    date: "July 2026",
+    rawDate: "2026-07-01",
+    summary: "July 2026 brings automated content validation to the Email Designer, file-based audience targeting for orchestrated campaigns without requiring prior Experience Platform ingestion, and a redesigned Journey Canvas with improved performance for large journeys. A new AJO MCP Server enables AI assistants to query channel configurations directly.",
+    features: [
+      { name: "Content Check in Email Designer", description: "Automatically identifies HTML and CSS issues like unsupported tags, empty divs, and size thresholds, with contextual fixes available directly in the editor.", status: "GA" },
+      { name: "File-Based Targeting in Orchestrated Campaigns", description: "Campaigns now accept CSV or TXT files as targeting audiences without requiring prior Experience Platform ingestion, with configurable column mappings and error policies.", status: "GA" },
+      { name: "New Journey Canvas User Interface", description: "Improved performance for large journeys, automatic layout optimization, and guided authoring with the option to toggle between new and legacy views.", status: "GA" },
+      { name: "AJO MCP Server Channel Configuration Tools", description: "Five new read-only tools enable querying channel configurations, resources, and marketing actions directly from AI assistants.", status: "GA" },
+      { name: "Quick Launch Shortcuts in Inventory", description: "Fragments and Templates lists feature 'More actions' buttons for rapid access to common operations like editing and simulation without additional navigation.", status: "GA" }
+    ],
+    category_tags: ["AI", "UI", "Performance", "Data"]
+  },
+  {
+    id: 'experience-platform',
+    title: "Experience Platform June 2026: AI Data Validation and Persistent Split Audiences",
+    version: null,
+    date: "June 2026",
+    rawDate: "2026-06-01",
+    summary: "June 2026 introduces AI-powered data validation in the AI Assistant, persistent split support in Audience Composition, and granular 'When to Activate' trigger controls for destinations. Schema inventory enhancements and Azure Private Link for Azure destinations round out operational governance improvements.",
+    features: [
+      { name: "Data Validation in AI Assistant", description: "AI-powered analysis identifies dataset quality issues and provides actionable diagnostics for faster resolution, powered by Agent Orchestrator.", status: "GA" },
+      { name: "Persistent Split in Audience Composition", description: "Keeps the same profile in the same bucket across audience evaluations when using percentage splits, ensuring consistent targeting over time.", status: "GA" },
+      { name: "When to Activate Controls for Destinations", description: "Controls which profile change types trigger exports to a destination, with three configurable types: attribute changes, audience qualification, and identity changes.", status: "Beta" },
+      { name: "Azure Private Link for Azure Destinations", description: "Routes data exports over private IP addresses on the Microsoft Azure backbone instead of public internet for enhanced data security.", status: "GA" },
+      { name: "Schema Inventory Enhancements", description: "Adds metadata visibility, advanced filtering, user-defined tags and folders, and inline actions for more efficient schema discovery and management.", status: "GA" }
+    ],
+    category_tags: ["AI", "Data", "Integration", "Security"]
+  },
+  {
+    id: 'aem',
+    title: "AEM as a Cloud Service 2026.6.0: Edge Functions, Interactive Comms, and AI Captions",
+    version: "2026.6.0",
+    date: "June 2026",
+    rawDate: "2026-06-01",
+    summary: "June 2026 delivers a browser-based Interactive Communication Editor for data-driven document creation and AI-generated video captions for accessibility. New Edge Functions execute JavaScript at the CDN layer for low-latency personalization, while RDE Snapshots enable safer iterative feature development.",
+    features: [
+      { name: "Interactive Communication Editor", description: "Browser-based creation of personalized business documents with drag-and-drop components, data binding, and rule-based logic without coding requirements.", status: "GA" },
+      { name: "Visual Content Fragments", description: "Renders structured content as formatted HTML experiences using templates, enabling authors to preview final layouts before publication across web, email, and Edge Delivery channels.", status: "GA" },
+      { name: "AI-Generated Video Captions", description: "Automatically generates captions for video content by analyzing audio tracks to transcribe speech, improving accessibility and content engagement.", status: "Limited Availability" },
+      { name: "AEM Edge Functions", description: "Executes JavaScript at the CDN layer for reduced latency and dynamic experiences, supporting personalization and server-rendered HTML composition.", status: "Beta" },
+      { name: "RDE Snapshots", description: "Take snapshots of code and content state in Rapid Development Environments that can be restored later for safer, iterative feature development.", status: "Beta" }
+    ],
+    category_tags: ["AI", "UI", "Performance", "Security"]
+  },
+  {
+    id: 'rtcdp',
+    title: "Real-Time CDP June 2026: Destination Controls and Audience-Level Reporting",
+    version: null,
+    date: "June 2026",
+    rawDate: "2026-06-01",
+    summary: "June 2026 updates Real-Time CDP with granular 'When to Activate' trigger controls for destination exports and expanded audience-level reporting across 12+ major platforms. Batch profile ingestion now enforces format validation on Experience Event ID values, improving data quality at ingestion time.",
+    features: [
+      { name: "When to Activate Controls", description: "Configurable trigger controls determine which profile change types initiate destination exports, enabling more precise and efficient audience activation.", status: "Beta" },
+      { name: "Audience-Level Reporting Expansion", description: "Extends detailed audience-level reporting to 12+ destinations including Facebook, TikTok, Braze, LinkedIn, and Salesforce, replacing coarser dataflow run-level metrics.", status: "GA" },
+      { name: "Azure Private Link for Azure Destinations", description: "Routes batch destination data exports over private IP addresses on Microsoft Azure's backbone instead of the public internet for healthcare and privacy-sensitive use cases.", status: "GA" },
+      { name: "Batch Profile Ingestion Format Validation", description: "Enforces format validation on Experience Event ID values at ingestion, rejecting non-compliant records while allowing the rest of the batch to continue processing.", status: "GA" },
+      { name: "Schema Inventory Enhancements", description: "Adds metadata visibility, advanced filtering, user-defined tags and folders, and inline actions to improve schema management for data governance.", status: "GA" }
+    ],
+    category_tags: ["Data", "Integration", "Security", "Performance"]
+  },
+  {
+    id: 'campaign',
+    title: "Campaign v8.9.2: Security Upgrades and Stability Fixes",
+    version: "8.9.2",
+    date: "May 2026",
+    rawDate: "2026-05-01",
+    summary: "This release prioritizes security with infrastructure upgrades to Debian 13 and PostgreSQL 17 across all instances. A comprehensive set of fixes addresses transactional messaging, push notifications, workflow execution, and database performance problems.",
+    features: [
+      { name: "Infrastructure Upgrade: Debian 13 + PostgreSQL 17", description: "All instances upgraded to Debian 13 and PostgreSQL 17 for optimal security and compliance posture.", status: "GA" },
+      { name: "Transactional Event Date Correction", description: "Resolved data type conversion issues causing incorrect event dates in transactional messaging and dynamic reporting.", status: "GA" },
+      { name: "Push Notification Delivery Fix", description: "Fixed silent push notification failures for Android and iOS when title and body fields were empty during preparation.", status: "GA" },
+      { name: "Server Stability Enhancement", description: "Addressed a critical crash issue causing repeated server failures and instance outages to improve overall reliability.", status: "GA" },
+      { name: "Workflow Enrichment SQL Improvement", description: "Fixed SQL errors in enrichment activities using consecutive 1-N link joins, particularly relevant for PostgreSQL 17 compatibility.", status: "GA" }
+    ],
+    category_tags: ["Security", "Performance", "Data"]
+  },
+  {
+    id: 'data-distiller',
+    title: "Data Distiller: Session Management and Credential Security Updates",
+    version: null,
+    date: "April 2026",
+    rawDate: "2026-04-01",
+    summary: "Data Distiller's most recent updates focus on operational control and security. Administrators can now monitor and terminate active Query Service sessions to reclaim idle capacity, while a credential migration from JWT to OAuth Server-to-Server improves long-term API security. A legacy results table option was also added for spreadsheet-friendly data exports.",
+    features: [
+      { name: "Query Service Session Management", description: "Administrators can view and terminate active Query Service sessions from the Admin tab to monitor capacity usage and free idle resources for Data Distiller workflows.", status: "GA" },
+      { name: "JWT to OAuth Server-to-Server Credential Migration", description: "Non-expiring JWT credentials have been migrated to OAuth Server-to-Server to prevent service interruptions and meet modern security standards.", status: "GA" },
+      { name: "Legacy Results Table", description: "Enables drag-to-select workflows with browser-native selection and tab-delimited output for direct compatibility with spreadsheet tools.", status: "Limited Availability" }
+    ],
+    category_tags: ["Performance", "UI", "Security"]
+  }
+];
+
+// ── Sort newest first ──────────────────────────────────────────────────────────
+RELEASE_DATA.sort((a, b) => b.rawDate.localeCompare(a.rawDate));
+
+// ── State ──────────────────────────────────────────────────────────────────────
+let activeProduct  = 'all';
+let activeCategory = 'all';
+let activeStatus   = 'all'; // 'all' | 'GA' | 'Beta' | 'Limited'
+let searchQuery    = '';
+let allExpanded    = false;
+let activeSort     = 'newest'; // 'newest' | 'az' | 'features'
+let showFavoritesOnly = false;
+
+const FAVORITES_KEY = 'aec_favorites';
+let favorites = new Set(JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]'));
+
+const ROADMAP_URLS = {
+  'analytics':           'https://experienceleague.adobe.com/en/docs/analytics/release-notes/doc-changes',
+  'experience-platform': 'https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest',
+  'target':              'https://experienceleague.adobe.com/en/docs/target/using/release-notes/target-release-notes',
+  'journey-analytics':   'https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/releases',
+  'marketo':             'https://nation.marketo.com/t5/product-blogs/bg-p/product_blog',
+  'campaign':            'https://experienceleague.adobe.com/en/docs/campaign/campaign-v8/releases/upgrades',
+  'journey-optimizer':   'https://experienceleague.adobe.com/en/docs/journey-optimizer/using/whats-new/documentation-updates',
+  'aem':                 'https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/prerelease',
+  'workfront':           'https://experienceleague.adobe.com/en/docs/workfront/using/product-announcements/product-releases/product-releases',
+  'ajo-b2b':             'https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/release-notes',
+  'rtcdp':               'https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/release-notes/latest',
+  'data-distiller':      'https://experienceleague.adobe.com/en/docs/experience-platform/query/home',
+};
+
+function relativeDate(rawDate) {
+  const today = new Date('2026-07-16');
+  const d = new Date(rawDate);
+  const diffMs = today - d;
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  if (diffDays <= 0) return 'today';
+  if (diffDays === 1) return '1 day ago';
+  if (diffDays < 30) return `${diffDays} days ago`;
+  const diffMonths = Math.round(diffDays / 30.44);
+  if (diffMonths < 12) return diffMonths === 1 ? '1 month ago' : `${diffMonths} months ago`;
+  const diffYears = Math.round(diffMonths / 12);
+  return diffYears === 1 ? '1 year ago' : `${diffYears} years ago`;
+}
+
+function productInitials(name) {
+  const words = name.split(/\s+/).filter(Boolean);
+  if (words.length >= 2) return (words[0][0] + words[1][0]).toUpperCase();
+  return name.slice(0, 2).toUpperCase();
+}
+
+function saveFavorites() {
+  localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites]));
+}
+
+function copyDigest(d) {
+  const p = PRODUCTS.find(x => x.id === d.id);
+  const lines = [
+    `${p ? p.name : d.id} — ${d.title}`,
+    `Date: ${d.date}`,
+    '',
+    d.summary,
+    '',
+    'Features:',
+    ...d.features.map(f => `• [${f.status}] ${f.name}: ${f.description}`),
+  ];
+  return lines.join('\n');
+}
+
+// ── Staleness check ────────────────────────────────────────────────────────────
+(function checkStale() {
+  const updated = new Date(DASHBOARD_DATE);
+  const now = new Date();
+  const diffDays = (now - updated) / (1000 * 60 * 60 * 24);
+  if (diffDays > 14) document.getElementById('stale-banner').style.display = 'block';
+})();
+
+// ── "New since last visit" ─────────────────────────────────────────────────────
+const STORAGE_KEY = 'aec_tracker_last_visit';
+const lastVisit = localStorage.getItem(STORAGE_KEY); // ISO string or null
+const isNew = (rawDate) => lastVisit ? rawDate > lastVisit : false;
+// Record this visit after computing newness
+setTimeout(() => localStorage.setItem(STORAGE_KEY, new Date().toISOString().slice(0,10)), 2000);
+
+// ── KPIs ───────────────────────────────────────────────────────────────────────
+const totalFeatures = RELEASE_DATA.reduce((s, c) => s + c.features.length, 0);
+document.getElementById('kpi-features').textContent = totalFeatures;
+
+const mostRecent = RELEASE_DATA[0];
+const SHORT = { target:'Target','journey-optimizer':'AJO','ajo-b2b':'AJO B2B',workfront:'Workfront',aem:'AEM',analytics:'Analytics','experience-platform':'AEP',marketo:'Marketo',campaign:'Campaign','journey-analytics':'CJA',rtcdp:'RTCDP','data-distiller':'Distiller' };
+(function setKpiRecent(entry) {
+  const prod = PRODUCTS.find(x => x.id === entry.id);
+  const el = document.getElementById('kpi-recent');
+  const label = SHORT[entry.id] || entry.id;
+  el.innerHTML = prod
+    ? `<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${prod.color};margin-right:6px;vertical-align:middle;flex-shrink:0"></span>${esc(label)}`
+    : esc(label);
+})(mostRecent);
+
+const tagCount = {};
+for (const c of RELEASE_DATA) for (const t of c.category_tags) tagCount[t] = (tagCount[t]||0)+1;
+const topTag = Object.entries(tagCount).sort((a,b)=>b[1]-a[1])[0]?.[0]||'—';
+document.getElementById('kpi-tag').textContent = topTag;
+
+// ── Timeline ───────────────────────────────────────────────────────────────────
+(function buildTimeline() {
+  const track = document.getElementById('timeline-track');
+  const dates = RELEASE_DATA.map(d => d.rawDate);
+  const minDate = new Date(Math.min(...dates.map(d=>new Date(d))));
+  const maxDate = new Date(Math.max(...dates.map(d=>new Date(d))));
+  const range = maxDate - minDate || 1;
+
+  const sorted = [...RELEASE_DATA].sort((a,b) => b.rawDate.localeCompare(a.rawDate));
+  for (const d of sorted) {
+    const p = PRODUCTS.find(x=>x.id===d.id);
+    const pct = Math.max(8, ((new Date(d.rawDate)-minDate)/range)*100);
+    const row = document.createElement('div');
+    row.className = 'timeline-row';
+    row.innerHTML = `
+      <div class="timeline-label" style="color:${p.color}">${p.name}</div>
+      <div class="timeline-bar-wrap">
+        <div class="timeline-bar" style="width:${pct}%;background:${p.color}22;border-right:3px solid ${p.color}"></div>
+      </div>
+      <div class="timeline-date">${d.date}</div>`;
+    track.appendChild(row);
+  }
+})();
+
+// ── Deprecation banner ─────────────────────────────────────────────────────────
+(function buildDepBanner() {
+  const items = [];
+  for (const d of RELEASE_DATA) {
+    if (!d.category_tags.includes('Deprecation')) continue;
+    const p = PRODUCTS.find(x=>x.id===d.id);
+    const depFeatures = d.features.filter(f =>
+      f.name.toLowerCase().includes('deprecat') ||
+      f.description.toLowerCase().includes('deprecat') ||
+      f.name.toLowerCase().includes('remov') ||
+      f.description.toLowerCase().includes('end-of-life') ||
+      f.description.toLowerCase().includes('sunset')
+    );
+    if (depFeatures.length) {
+      for (const f of depFeatures) {
+        items.push({ product: p, feature: f });
+      }
+    } else {
+      // tag is set but no specific feature; call out the whole product
+      items.push({ product: p, feature: { name: `See ${p.name} release notes`, description: 'This release includes deprecations — review the full release notes for details.' } });
+    }
+  }
+  if (!items.length) return;
+  const banner = document.getElementById('deprecation-banner');
+  const list = document.getElementById('dep-list');
+  banner.style.display = 'block';
+  for (const item of items) {
+    const li = document.createElement('li');
+    li.className = 'dep-item';
+    li.innerHTML = `<span class="dep-product" style="color:${item.product.color}">${esc(item.product.name)}</span><span class="dep-desc">${esc(item.feature.name)} — ${esc(item.feature.description)}</span>`;
+    list.appendChild(li);
+  }
+})();
+
+// ── Filters ────────────────────────────────────────────────────────────────────
+function buildFilters() {
+  const pr = document.getElementById('product-filter-row');
+  pr.innerHTML = `<span class="filter-label">Products</span>`;
+  pr.appendChild(makeBtn('All','product','all',true));
+  for (const p of PRODUCTS) pr.appendChild(makeBtn(p.name,'product',p.id,false));
+
+  // Favorites filter button
+  const div = document.createElement('div');
+  div.className = 'filter-sep';
+  pr.appendChild(div);
+  const favBtn = document.createElement('button');
+  favBtn.id = 'btn-favorites';
+  favBtn.className = 'filter-btn' + (showFavoritesOnly ? ' active' : '');
+  favBtn.textContent = '★ Favorites';
+  favBtn.addEventListener('click', () => {
+    showFavoritesOnly = !showFavoritesOnly;
+    favBtn.classList.toggle('active', showFavoritesOnly);
+    renderCards();
+  });
+  pr.appendChild(favBtn);
+
+  const cr = document.getElementById('category-filter-row');
+  cr.innerHTML = `<span class="filter-label">Categories</span>`;
+  cr.appendChild(makeBtn('All','cat','all',true));
+  for (const t of ALL_TAGS) cr.appendChild(makeBtn(t,'cat',t,false));
+
+  // Sort controls
+  const sep2 = document.createElement('div');
+  sep2.className = 'filter-sep';
+  cr.appendChild(sep2);
+  const sortLabel = document.createElement('span');
+  sortLabel.className = 'filter-label';
+  sortLabel.textContent = 'Sort';
+  cr.appendChild(sortLabel);
+  const sorts = [['newest','Newest first'],['az','A–Z'],['features','Most features']];
+  for (const [val, label] of sorts) {
+    const sb = document.createElement('button');
+    sb.className = 'filter-btn' + (activeSort === val ? ' active' : '');
+    sb.dataset.sort = val;
+    sb.textContent = label;
+    sb.addEventListener('click', () => {
+      activeSort = val;
+      document.querySelectorAll('[data-sort]').forEach(b => b.classList.toggle('active', b.dataset.sort === val));
+      renderCards();
+    });
+    cr.appendChild(sb);
+  }
+}
+
+function makeBtn(label, type, value, active) {
+  const btn = document.createElement('button');
+  btn.className = 'filter-btn' + (active ? ' active' : '');
+  btn.textContent = label;
+  if (type==='product') btn.dataset.ptype = value;
+  else btn.dataset.ctype = value;
+  btn.addEventListener('click', () => {
+    if (type==='product') {
+      activeProduct = value;
+      document.querySelectorAll('[data-ptype]').forEach(b=>b.classList.toggle('active',b.dataset.ptype===value));
+    } else {
+      activeCategory = value;
+      document.querySelectorAll('[data-ctype]').forEach(b=>b.classList.toggle('active',b.dataset.ctype===value));
+    }
+    renderCards();
+  });
+  return btn;
+}
+
+// Status filter buttons
+['ga','beta','la'].forEach(key => {
+  const statusMap = { ga:'GA', beta:'Beta', la:'Limited' };
+  const activeClass = { ga:'active-ga', beta:'active-beta', la:'active-la' };
+  document.getElementById(`btn-status-${key}`).addEventListener('click', function() {
+    const val = statusMap[key];
+    if (activeStatus === val) {
+      activeStatus = 'all';
+      this.className = 'filter-btn';
+    } else {
+      activeStatus = val;
+      ['ga','beta','la'].forEach(k => {
+        const b = document.getElementById(`btn-status-${k}`);
+        b.className = 'filter-btn' + (statusMap[k]===val ? ` ${activeClass[k]}` : '');
+      });
+    }
+    renderCards();
+  });
+});
+
+// Search
+document.getElementById('search-input').addEventListener('input', function() {
+  searchQuery = this.value.trim().toLowerCase();
+  renderCards();
+});
+
+// Expand all / Collapse all
+document.getElementById('btn-expand-all').addEventListener('click', function() {
+  allExpanded = !allExpanded;
+  this.textContent = allExpanded ? 'Collapse all' : 'Expand all';
+  document.querySelectorAll('.features-list').forEach(l => l.classList.toggle('open', allExpanded));
+  document.querySelectorAll('.btn-toggle-features').forEach(b => {
+    const count = b.dataset.count;
+    b.textContent = allExpanded ? 'Hide features ▴' : `Show ${count} features ▾`;
+  });
+});
+
+// ── Render ─────────────────────────────────────────────────────────────────────
+function renderCards() {
+  const container = document.getElementById('cards-container');
+  container.innerHTML = '';
+  let visible = 0;
+  const q = searchQuery;
+
+  // Filter
+  let filtered = RELEASE_DATA.filter(d => {
+    if (activeProduct !== 'all' && d.id !== activeProduct) return false;
+    if (activeCategory !== 'all' && !d.category_tags.includes(activeCategory)) return false;
+    if (showFavoritesOnly && !favorites.has(d.id)) return false;
+    if (activeStatus !== 'all') {
+      const statusNorm = activeStatus === 'Limited' ? 'Limited Availability' : activeStatus;
+      if (!d.features.some(f => f.status === statusNorm || (activeStatus==='Limited' && f.status==='Limited Availability'))) return false;
+    }
+    if (q) {
+      const haystack = (d.title + ' ' + d.summary + ' ' + d.features.map(f=>f.name+' '+f.description).join(' ')).toLowerCase();
+      if (!haystack.includes(q)) return false;
+    }
+    return true;
+  });
+
+  // Sort
+  if (activeSort === 'az') {
+    filtered.sort((a, b) => {
+      const pa = PRODUCTS.find(x=>x.id===a.id)?.name || a.id;
+      const pb = PRODUCTS.find(x=>x.id===b.id)?.name || b.id;
+      return pa.localeCompare(pb);
+    });
+  } else if (activeSort === 'features') {
+    filtered.sort((a, b) => b.features.length - a.features.length);
+  } else {
+    filtered.sort((a, b) => b.rawDate.localeCompare(a.rawDate));
+  }
+
+  // Favorites always bubble to top within current sort
+  filtered.sort((a, b) => {
+    const af = favorites.has(a.id) ? 0 : 1;
+    const bf = favorites.has(b.id) ? 0 : 1;
+    return af - bf;
+  });
+
+  for (const d of filtered) {
+    container.appendChild(buildCard(d, q));
+    visible++;
+  }
+  document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+}
+
+function highlight(text, q) {
+  if (!q) return esc(text);
+  const escaped = esc(text);
+  const escapedQ = q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  return escaped.replace(new RegExp(`(${escapedQ})`, 'gi'), '<mark>$1</mark>');
+}
+
+function buildCard(d, q) {
+  const p = PRODUCTS.find(x=>x.id===d.id);
+  const card = document.createElement('div');
+  card.className = 'release-card';
+  const vStr = d.version ? `v${d.version} · ` : '';
+  const featId = `feat-${d.id}`;
+  const featureCount = d.features.length;
+  const cardIsNew = isNew(d.rawDate);
+  if (cardIsNew) card.classList.add('is-new');
+
+  // Tally
+  const tally = { GA:0, Beta:0, Limited:0 };
+  for (const f of d.features) {
+    if (f.status==='GA') tally.GA++;
+    else if (f.status==='Beta') tally.Beta++;
+    else tally.Limited++;
+  }
+
+  const tallyHtml = [
+    tally.GA     ? `<span class="tally-chip"><span class="tally-dot ga"></span>${tally.GA} GA</span>` : '',
+    tally.Beta   ? `<span class="tally-chip"><span class="tally-dot beta"></span>${tally.Beta} Beta</span>` : '',
+    tally.Limited? `<span class="tally-chip"><span class="tally-dot la"></span>${tally.Limited} Limited</span>` : '',
+  ].join('');
+
+  // Status filter — dim features not matching current status filter
+  const statusNorm = activeStatus === 'Limited' ? 'Limited Availability' : activeStatus;
+
+  const featuresHtml = d.features.map(f => {
+    const dimmed = activeStatus !== 'all' && f.status !== statusNorm && !(activeStatus==='Limited' && f.status==='Limited Availability');
+    return `
+      <li class="feature-item" ${dimmed ? 'style="opacity:0.35"' : ''}>
+        <span class="feature-status ${statusClass(f.status)}">${esc(statusLabel(f.status))}</span>
+        <div class="feature-text">
+          <div class="feature-name">${highlight(f.name, q)}</div>
+          <div class="feature-desc">${highlight(f.description, q)}</div>
+        </div>
+      </li>`;
+  }).join('');
+
+  const initials = productInitials(p.name);
+  const isFav = favorites.has(d.id);
+  const roadmapUrl = ROADMAP_URLS[d.id];
+
+  card.innerHTML = `
+    <div class="card-header">
+      <div class="product-icon" style="background:${p.color}">${esc(initials)}</div>
+      <div class="product-badge" style="color:${p.color}">${p.name}</div>
+      <div class="card-meta">
+        <div class="card-title">${highlight(d.title,q)}${cardIsNew ? '<span class="new-chip">New</span>' : ''}</div>
+        <div class="card-version-date">${esc(vStr)}${esc(d.date)} · ${relativeDate(d.rawDate)}</div>
+      </div>
+      <button class="btn-star${isFav ? ' fav' : ''}" data-id="${esc(d.id)}" aria-label="Favorite">${isFav ? '★' : '☆'}</button>
+    </div>
+    <div class="card-summary">${esc(d.summary)}</div>
+    <div class="card-tally">${tallyHtml}</div>
+    <ul class="features-list${allExpanded?' open':''}" id="${featId}">${featuresHtml}</ul>
+    <div class="card-footer">
+      <div class="tag-pills">${d.category_tags.map(t=>`<span class="tag-pill">${esc(t)}</span>`).join('')}</div>
+      <div class="card-actions">
+        <button class="btn-toggle-features" data-target="${featId}" data-count="${featureCount}">
+          ${allExpanded ? 'Hide features ▴' : `Show ${featureCount} features ▾`}
+        </button>
+        <button class="btn-copy" data-id="${esc(d.id)}">⎘ Copy<span class="copy-tooltip">Copied!</span></button>
+        ${roadmapUrl ? `<a class="card-link" href="${esc(roadmapUrl)}" target="_blank" rel="noopener">View roadmap ↗</a>` : ''}
+        <a class="card-link" href="${p.url}" target="_blank" rel="noopener">View full release notes ↗</a>
+      </div>
+    </div>`;
+
+  card.querySelector('.btn-toggle-features').addEventListener('click', function() {
+    const list = document.getElementById(this.dataset.target);
+    const open = list.classList.toggle('open');
+    this.textContent = open ? 'Hide features ▴' : `Show ${featureCount} features ▾`;
+  });
+
+  card.querySelector('.btn-star').addEventListener('click', function() {
+    const id = this.dataset.id;
+    if (favorites.has(id)) {
+      favorites.delete(id);
+      this.classList.remove('fav');
+      this.textContent = '☆';
+    } else {
+      favorites.add(id);
+      this.classList.add('fav');
+      this.textContent = '★';
+    }
+    saveFavorites();
+    // Update favorites filter button label state
+    const fb = document.getElementById('btn-favorites');
+    if (fb && showFavoritesOnly) renderCards();
+  });
+
+  card.querySelector('.btn-copy').addEventListener('click', function() {
+    const text = copyDigest(d);
+    navigator.clipboard.writeText(text).then(() => {
+      const tip = this.querySelector('.copy-tooltip');
+      tip.classList.add('show');
+      setTimeout(() => tip.classList.remove('show'), 2000);
+    });
+  });
+
+  return card;
+}
+
+function statusClass(s) {
+  if (s==='GA') return 'status-ga';
+  if (s==='Beta') return 'status-beta';
+  return 'status-la';
+}
+
+function statusLabel(s) {
+  return s==='Limited Availability' ? 'Limited' : s;
+}
+
+function esc(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+buildFilters();
+renderCards();
+
+// Set header timestamp from DASHBOARD_DATE
+(function() {
+  const d = new Date(DASHBOARD_DATE + 'T00:00:00');
+  document.getElementById('last-updated-ts').textContent = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+})();
+
+</script>
+</body>
+</html>
