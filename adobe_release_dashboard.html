@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-07-22'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-07-24'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -755,19 +755,19 @@ const RELEASE_DATA = [
   },
   {
     id: 'target',
-    title: "Adobe Target 26.7.2: Activity Goals and UI Stability Fixes",
-    version: "26.7.2",
+    title: "Adobe Target 26.7.4: Recommendations Grouping and VEC Compatibility Fixes",
+    version: "26.7.4",
     date: "July 2026",
     rawDate: "2026-07-01",
-    summary: "Adobe Target 26.7.2 resolves critical usability issues affecting Automated Personalization activities and interface stability. The release fixes goal display inconsistencies, browse mode responsiveness, source display consistency, and improves localization support for profile script dialogs.",
+    summary: "Adobe Target 26.7.4 (July 23, 2026) introduces dynamic grouping for popularity-based recommendations by profile attributes like country and language, and renames 'AI Assistant' to 'Generate content' across the UI. The release also fixes VEC mobile view issues, adds Shadow DOM compatibility for Salesforce Lightning Web Components, and corrects conversion rate graph rendering for mobile audiences.",
     features: [
-      { name: "Activity Goal Display Correction", description: "Resolves incorrect goal information appearing on the Activity Overview page for Automated Personalization activities, ensuring only the optimization goal displays.", status: "GA" },
-      { name: "Browse Mode Responsiveness Fix", description: "Eliminates unresponsive screen behavior when users navigate between pages in Browse mode, improving overall interface stability.", status: "GA" },
-      { name: "Source Display Consistency Fix", description: "Corrects inconsistent source information displayed across Activities, Audiences, and Offers pages for accurate cross-page data alignment.", status: "GA" },
-      { name: "Homepage UI Enhancement", description: "Updates the visual design for the top performers and saves experience section, providing a refreshed user interface.", status: "GA" },
-      { name: "Profile Script Localization Fix", description: "Addresses previously unlocalized strings in the Create Profile Script dialog, ensuring proper language support across all regions.", status: "GA" }
+      { name: "Recommendations Profile Attribute Grouping", description: "Groups popularity-based recommendation criteria dynamically by profile attributes such as country and language for more personalized product recommendations.", status: "GA" },
+      { name: "AI Assistant Renamed to Generate Content", description: "The 'AI Assistant' label across Target UI has been updated to 'Generate content' for clearer intent communication to users.", status: "GA" },
+      { name: "VEC Shadow DOM Support", description: "Visual Experience Composer now supports Salesforce Lightning Web Components using Shadow DOM, broadening compatibility for web-based A/B experiments.", status: "GA" },
+      { name: "Mobile View VEC Refresh Fix", description: "Resolves mobile view loading issues in the VEC by adding a refresh capability for correct mobile experience rendering.", status: "GA" },
+      { name: "Conversion Rate Graph Fix for Mobile Audiences", description: "Addresses a rendering issue where conversion rate graphs failed to display correctly for certain mobile audiences in activity reporting.", status: "GA" }
     ],
-    category_tags: ["UI"]
+    category_tags: ["UI", "Performance"]
   },
   {
     id: 'journey-analytics',
@@ -791,13 +791,13 @@ const RELEASE_DATA = [
     version: null,
     date: "July 2026",
     rawDate: "2026-07-01",
-    summary: "July 2026 introduces two new Marketo AI Skills — product knowledge Q&A and lead investigation — allowing users to get instant answers and diagnose lead journey failures without leaving the platform. API deprecation announcements signal the retirement of SOAP and legacy REST authentication by end of July 2026.",
+    summary: "July 2026 introduces two new Marketo AI Skills — product knowledge Q&A and lead investigation — allowing users to get instant answers and diagnose lead journey failures without leaving the platform. Key API deprecations include SOAP API retirement on July 31, 2026, access_token query parameter removal by August 31, 2026, and a new Merge Leads API limit of 25 IDs per call.",
     features: [
       { name: "AI Skill — Product Knowledge", description: "Provides on-demand access to Marketo expertise through natural-language questions answered from official documentation, directly within the platform.", status: "Beta" },
       { name: "AI Skill — Investigate Leads", description: "Enables users to understand why specific leads failed to reach milestones with plain-language explanations of what happened in their journey.", status: "Beta" },
       { name: "Email Designer AI Assistant Contextual Menu", description: "Integrates AI Assistant into the contextual menu for quick text-based actions directly from the editing bar without additional navigation.", status: "Beta" },
       { name: "SOAP API Deprecation", description: "SOAP API support ends July 31, 2026; existing integrations must migrate to the REST API to avoid service interruption.", status: "GA" },
-      { name: "REST API Authentication Modernization", description: "The access_token query parameter is retired after July 31, 2026; all integrations must switch to the Authorization header for continued access.", status: "GA" }
+      { name: "REST API Authentication Modernization", description: "The access_token query parameter is retired after August 31, 2026; all integrations must switch to the Authorization header for continued access.", status: "GA" }
     ],
     category_tags: ["AI", "Integration", "Deprecation"]
   },
@@ -871,13 +871,13 @@ const RELEASE_DATA = [
     version: "2026.6.0",
     date: "June 2026",
     rawDate: "2026-06-01",
-    summary: "June 2026 delivers a browser-based Interactive Communication Editor for data-driven document creation and AI-generated video captions for accessibility. New Edge Functions execute JavaScript at the CDN layer for low-latency personalization, while RDE Snapshots enable safer iterative feature development.",
+    summary: "June 2026 delivers a browser-based Interactive Communication Editor for data-driven document creation and AI-generated video captions for accessibility. New Edge Functions execute JavaScript at the CDN layer for low-latency personalization, while Brand Aware Metadata automates asset metadata generation on upload.",
     features: [
       { name: "Interactive Communication Editor", description: "Browser-based creation of personalized business documents with drag-and-drop components, data binding, and rule-based logic without coding requirements.", status: "GA" },
       { name: "Visual Content Fragments", description: "Renders structured content as formatted HTML experiences using templates, enabling authors to preview final layouts before publication across web, email, and Edge Delivery channels.", status: "GA" },
       { name: "AI-Generated Video Captions", description: "Automatically generates captions for video content by analyzing audio tracks to transcribe speech, improving accessibility and content engagement.", status: "Limited Availability" },
       { name: "AEM Edge Functions", description: "Executes JavaScript at the CDN layer for reduced latency and dynamic experiences, supporting personalization and server-rendered HTML composition.", status: "Beta" },
-      { name: "RDE Snapshots", description: "Take snapshots of code and content state in Rapid Development Environments that can be restored later for safer, iterative feature development.", status: "Beta" }
+      { name: "Brand Aware Metadata (BAM)", description: "AI-powered capability that automatically generates custom metadata when assets are uploaded or reprocessed, improving discoverability and governance.", status: "GA" }
     ],
     category_tags: ["AI", "UI", "Performance", "Security"]
   },
@@ -887,13 +887,13 @@ const RELEASE_DATA = [
     version: null,
     date: "June 2026",
     rawDate: "2026-06-01",
-    summary: "June 2026 updates Real-Time CDP with granular 'When to Activate' trigger controls for destination exports and expanded audience-level reporting across 12+ major platforms. Batch profile ingestion now enforces format validation on Experience Event ID values, improving data quality at ingestion time.",
+    summary: "June 2026 updates Real-Time CDP with granular 'When to Activate' trigger controls for destination exports and expanded audience-level reporting across 12+ major platforms. Batch profile ingestion now enforces format validation on Experience Event ID values, and array fields can be exported as enrichment attributes to cloud storage destinations.",
     features: [
       { name: "When to Activate Controls", description: "Configurable trigger controls determine which profile change types initiate destination exports, enabling more precise and efficient audience activation.", status: "Beta" },
       { name: "Audience-Level Reporting Expansion", description: "Extends detailed audience-level reporting to 12+ destinations including Facebook, TikTok, Braze, LinkedIn, and Salesforce, replacing coarser dataflow run-level metrics.", status: "GA" },
       { name: "Azure Private Link for Azure Destinations", description: "Routes batch destination data exports over private IP addresses on Microsoft Azure's backbone instead of the public internet for healthcare and privacy-sensitive use cases.", status: "GA" },
       { name: "Batch Profile Ingestion Format Validation", description: "Enforces format validation on Experience Event ID values at ingestion, rejecting non-compliant records while allowing the rest of the batch to continue processing.", status: "GA" },
-      { name: "Schema Inventory Enhancements", description: "Adds metadata visibility, advanced filtering, user-defined tags and folders, and inline actions to improve schema management for data governance.", status: "GA" }
+      { name: "Array Export for Cloud Storage Destinations", description: "Export array fields as enrichment attributes when activating audiences to cloud storage destinations for richer, more flexible data exports.", status: "Beta" }
     ],
     category_tags: ["Data", "Integration", "Security", "Performance"]
   },
