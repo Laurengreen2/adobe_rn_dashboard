@@ -739,81 +739,94 @@ const ALL_TAGS = ['AI', 'Performance', 'UI', 'Data', 'Integration', 'Security', 
 const RELEASE_DATA = [
   {
     id: 'analytics',
-    title: "Adobe Analytics August 2026: Journey Canvas, LLM Optimizer Integration, and Migration Tools",
+    title: "Adobe Analytics August 2026: Journey Canvas, Migration Planner, and API 1.4 Sunset",
     version: null,
     date: "August 2026",
     rawDate: "2026-08-01",
-    summary: "August 2026 brings Journey Canvas enhancements to Adobe Analytics including time-period comparisons and customizable node styling, plus a new LLM Optimizer integration that measures AI-driven discovery impact using CJA data. New Marketing Channels API endpoints expand programmatic reporting, and a Migration Planner tool automates complex tasks when upgrading from Analytics to Customer Journey Analytics.",
+    summary: "August 2026 brings Journey Canvas enhancements with time-period comparisons and customizable node styling, a Migration Planner tool that automates schema creation and SDK migration to CJA, and new Marketing Channels API endpoints for programmatic reporting. Adobe Analytics API 1.4 reached end-of-life on August 12, 2026 — all remaining integrations must migrate to the 2.0 API.",
     features: [
-      { name: "Journey Canvas Enhancements", description: "Compare journeys against prior time periods, display top dimension items after selected nodes, and customize arrow styling between journey steps for richer visualization.", status: "GA" },
-      { name: "LLM Optimizer Integration", description: "Connect LLM Optimizer with Customer Journey Analytics data to measure the impact of AI-driven content discovery on engagement and conversion metrics.", status: "GA" },
-      { name: "Analytics API Marketing Channels Reference", description: "New endpoints and documentation enable retrieval of marketing channel information programmatically via the Adobe Analytics 2.0 API.", status: "GA" },
-      { name: "Activity Map Extension UI Refresh", description: "Updated Activity Map interface with underlying technical improvements laying groundwork for future overlay extension capability enhancements.", status: "GA" },
-      { name: "Migration Planner Tool", description: "Automated migration wizard streamlines schema creation, SDK migration, and other complex steps when upgrading from Adobe Analytics to Customer Journey Analytics.", status: "GA" }
+      { name: "Journey Canvas Enhancements", description: "Compare journeys against prior time periods, surface top dimension items after selected nodes, and customize arrow shapes and styles between journey steps.", status: "GA" },
+      { name: "Activity Map Extension UI Refresh", description: "Updated overlay extension with a refreshed look and underlying improvements that lay groundwork for upcoming capability enhancements.", status: "GA" },
+      { name: "Migration Planner: Analytics to CJA", description: "Automated migration wizard handles complex tasks including XDM schema creation and conversion from AppMeasurement to Experience Platform Web SDK.", status: "GA" },
+      { name: "Analytics 2.0 API Marketing Channels Reference", description: "New endpoint reference and implementation guide enable retrieval of marketing channel information programmatically via the Analytics 2.0 API.", status: "GA" },
+      { name: "Analytics 1.4 API EOL Migration Guide", description: "Customer FAQ and guidance documentation help teams migrate from deprecated 1.4 API services and WSSE authentication to 2.0 API or OAuth protocols.", status: "GA" },
+      { name: "Analytics API 1.4 Sunset", description: "Legacy Analytics 1.4 API services and WSSE authentication ceased functioning on August 12, 2026; all integrations must use the 2.0 API.", status: "GA" }
     ],
-    category_tags: ["AI", "Data", "Integration", "UI"]
+    category_tags: ["AI", "Data", "Integration", "Deprecation"]
   },
   {
     id: 'journey-analytics',
-    title: "Customer Journey Analytics August 2026: Journey Canvas, Consent Filtering, and Paid Media Analytics",
+    title: "Customer Journey Analytics August 2026: Journey Canvas, B2B Stitching, and Consent Filtering",
     version: null,
     date: "August 2026",
     rawDate: "2026-08-01",
-    summary: "August 2026 delivers Journey Canvas enhancements enabling time-period comparisons and expanded node analysis, alongside new consent policy filtering to exclude non-consenting visitors from reporting pre-ingestion. Content Analytics gains a Paid Media channel, and a Migration Planner tool automates schema creation for teams transitioning from Adobe Analytics.",
+    summary: "August 2026 delivers Journey Canvas enhancements for time-period comparisons and node analysis, B2B Person-to-Account Stitching to automatically derive missing account IDs, and Consent Policy Filtering to exclude non-consenting visitors pre-ingestion. Content Analytics gains a Paid Media channel and new data governance labels C2 and C3 strengthen export controls.",
     features: [
-      { name: "Journey Canvas Enhancements", description: "Compare current journey performance against prior time periods, surface top dimension items following selected nodes, and customize arrow styling for clearer journey visualization.", status: "GA" },
-      { name: "Consent Policy Filtering", description: "Report exclusively on visitors who match Adobe Experience Platform consent policies, excluding non-consenting visitors before data ingestion to simplify compliance workflows.", status: "GA" },
-      { name: "Content Analytics: Paid Media Channel", description: "Paid media is now available as a third reporting channel within Content Analytics, enabling unified cross-channel content performance measurement.", status: "GA" },
-      { name: "Additional Data Usage Labels (C2 & C3)", description: "CJA now supports C2 and C3 labels to restrict third-party data export and directly identifiable data combination, strengthening governance controls.", status: "GA" },
-      { name: "Migration Planner Tool", description: "Automates schema creation, AppMeasurement and Web SDK migration steps, reducing manual effort when moving from Adobe Analytics to Customer Journey Analytics.", status: "GA" }
+      { name: "Journey Canvas Enhancements", description: "Compare current journey performance against prior time periods, surface top dimension items after selected nodes, and customize arrow styling for clearer visualization.", status: "GA" },
+      { name: "B2B Person-to-Account Stitching", description: "Account stitching enriches event datasets by automatically deriving missing account IDs from person-level data, improving B2B analytics accuracy.", status: "GA" },
+      { name: "Consent Policy Filtering", description: "Report exclusively on visitors matching Adobe Experience Platform consent policies and exclude non-consenting visitors before data ingestion.", status: "GA" },
+      { name: "Content Analytics: Paid Media Channel", description: "Paid media is now available as a third reporting channel within Content Analytics alongside owned and earned channels.", status: "GA" },
+      { name: "Additional Data Usage Labels — C2 & C3", description: "New C2 (restrict third-party export) and C3 (restrict identifiable data combination) labels strengthen governance controls; C9 (data science) follows in September.", status: "GA" },
+      { name: "Migration Planner Tool", description: "Automates schema creation, AppMeasurement and Web SDK migration steps when moving from Adobe Analytics to Customer Journey Analytics.", status: "GA" },
+      { name: "CJA Report API Guides", description: "New developer guides cover configuring basic report requests and date-trended reports via the CJA Report API for programmatic data access.", status: "GA" }
     ],
     category_tags: ["Data", "AI", "Security", "Integration"]
   },
   {
     id: 'journey-optimizer',
-    title: "Journey Optimizer August 2026: AI Image Sourcing, Content Check, and Personalization Helpers",
+    title: "Journey Optimizer August 2026: AI Image Sourcing, WhatsApp Flows, and Decisioning AI",
     version: null,
     date: "August 2026",
     rawDate: "2026-08-01",
-    summary: "August 2026 extends AI content generation with flexible image sourcing from AEM Assets Essentials using Balanced, Assets, and Creative modes, and adds an automated Content Check in the Email Designer that catches HTML, CSS, and rendering issues before sending. Nine new helper functions expand personalization capabilities with URL parameter management, date range validation, JSON parsing, and Base64 decoding.",
+    summary: "August 2026 adds flexible image sourcing for AI content generation from AEM Assets Essentials with three operational modes, WhatsApp Flow templates for interactive multi-screen experiences, and AI-powered natural-language Decisioning rule creation. July's wave introduced Loyalty Challenges, Custom Outbound Channels, Channel Optimization, the Email Designer Module Library, automated Content Check validation, and the redesigned Journey Canvas.",
     features: [
-      { name: "Flexible Image Sourcing for AI Generation", description: "AI content generation now sources brand-approved images from AEM Assets Essentials with three modes — Balanced, Assets, and Creative — to control the DAM vs. AI-generated imagery ratio.", status: "GA" },
-      { name: "Content Check in Email Designer", description: "Automated technical validation catches HTML, CSS, and rendering issues before sending with one-click fixes available, reducing delivery errors in email campaigns.", status: "GA" },
-      { name: "New Helper Functions for Personalization", description: "Nine new helper functions added including URL parameter management, date range validation, JSON parsing, and Base64 decoding to expand expression editor capabilities.", status: "GA" },
-      { name: "Email Designer Module Library", description: "Pre-configured, draggable layout components — headers, product cards, footers — enable faster email creation without building structures from scratch.", status: "GA" },
-      { name: "Journey Canvas UI Redesign", description: "Redesigned journey designer delivers improved performance for large journeys with automatic layout optimization and guided authoring capabilities.", status: "GA" }
+      { name: "Flexible Image Sourcing for AI Generation", description: "AI content generation sources brand-approved images from AEM Assets Essentials using Balanced, Assets-only, or Creative modes to control the DAM vs. AI imagery ratio.", status: "GA" },
+      { name: "WhatsApp Flow Templates", description: "Send WhatsApp Flow templates to deliver interactive multi-screen experiences such as surveys and lead capture forms, with JSON response storage.", status: "GA" },
+      { name: "Email Designer Module Library", description: "Ready-to-use layout modules — headers, product cards, information blocks, footers — drag directly onto the email canvas for faster campaign production.", status: "GA" },
+      { name: "Email Content Check", description: "Automated technical validation catches unsupported HTML tags, layout-breaking divs, and rendering threshold issues before sending, with one-click fixes.", status: "GA" },
+      { name: "Journey Canvas New User Interface", description: "Redesigned journey designer with improved performance for large journeys, automatic layout for better readability, and guided authoring with a switchable classic mode.", status: "GA" },
+      { name: "Decision Items Dynamic Custom Attributes", description: "Offer custom attributes now personalized at delivery time using profile and contextual data, eliminating the need to maintain duplicate offer variants.", status: "GA" },
+      { name: "Decisioning Rules from Natural Language", description: "Describe a Decisioning rule in plain language and AI generates the corresponding expression automatically, accelerating offer eligibility setup.", status: "Limited Availability" },
+      { name: "Loyalty Challenges", description: "Gamified loyalty programs let marketers design standard, streak, or sequential challenges with task definitions, reward management, and AI-powered reporting dashboards.", status: "Limited Availability" },
+      { name: "Custom Outbound Channel", description: "No-code Channel Builder integrates any HTTP-based messaging platform — WeChat, Kakao Talk, Messenger, or a proprietary provider — with full personalization and reporting.", status: "Limited Availability" },
+      { name: "Channel Optimization", description: "Automatically selects the optimal delivery channel per customer via manual ranking, customer preferences, or AI propensity scoring with automatic fallback.", status: "Limited Availability" }
     ],
     category_tags: ["AI", "UI", "Data", "Integration"]
   },
   {
     id: 'target',
-    title: "Adobe Target 26.7.5: Bayesian A/B Testing and CJA Reporting for Auto-Allocate",
+    title: "Adobe Target 26.7.5: Bayesian A/B Testing, CJA Reporting, and VEC Stability",
     version: "26.7.5",
     date: "July 2026",
     rawDate: "2026-07-01",
-    summary: "Target 26.7.5 (July 30, 2026) introduces Bayesian statistics as an alternative to Welch's t-test for manual A/B activities, displaying probability-based metrics and credible intervals for more intuitive decision-making. Auto-Allocate activities can now use Customer Journey Analytics as their reporting source, and popularity-based recommendations support dynamic grouping by visitor profile attributes.",
+    summary: "Target 26.7.5 (July 30, 2026) introduces Bayesian statistics as an alternative to Welch's t-test for manual A/B activities and adds Customer Journey Analytics as a reporting source for Auto-Allocate. Popularity-based recommendations support dynamic grouping by visitor profile attributes, and multiple Visual Experience Composer stability issues are resolved.",
     features: [
-      { name: "Bayesian Statistics for A/B Testing", description: "Manual A/B activities now offer Bayesian statistics as an alternative to Welch's t-test, providing probability-based metrics and credible intervals for easier interpretation.", status: "GA" },
-      { name: "CJA Reporting for Auto-Allocate", description: "Auto-Allocate activities can now leverage Customer Journey Analytics as their reporting source alongside Target and Adobe Analytics.", status: "GA" },
-      { name: "Profile-Based Popularity Grouping", description: "Most Viewed and Top Sellers recommendations now support dynamic grouping by visitor profile attributes such as country, language, and membership tier.", status: "GA" },
-      { name: "VEC Stability Fix", description: "Resolved crashes when adding HTML or Experience Fragment offers to activities in the Visual Experience Composer, improving authoring reliability.", status: "GA" },
+      { name: "Bayesian Statistics for A/B Testing", description: "Manual A/B activities now support Bayesian statistics with probability-based metrics like Chance to Beat Control and credible intervals as an alternative to frequentist t-tests.", status: "GA" },
+      { name: "CJA Reporting for Auto-Allocate", description: "Auto-Allocate activities can now use Customer Journey Analytics as their reporting source alongside Target and Adobe Analytics.", status: "GA" },
+      { name: "Profile-Based Popularity Grouping", description: "Most Viewed and Top Sellers recommendations support dynamic grouping by visitor profile attributes such as country, language, and membership level.", status: "GA" },
+      { name: "Salesforce Lightning Web Components Support", description: "Visual Experience Composer now successfully selects elements nested inside Salesforce LWCs using Shadow DOM for broader compatibility.", status: "GA" },
+      { name: "VEC HTML Offers Crash Fix", description: "Resolved crash preventing selection or modification of HTML and Experience Fragment offers in the Visual Experience Composer.", status: "GA" },
+      { name: "Mobile Conversion Rate Graph Fix", description: "Fixed rendering issue where the Conversion Rate graph failed to display correctly for specific mobile audience segments.", status: "GA" },
+      { name: "mbox Conversion Goal Dropdown Fix", description: "Corrected an issue where selecting an mbox from the dropdown in Goals & Settings saved the name incorrectly, blocking conversion recording.", status: "GA" },
       { name: "AI Assistant Renamed to Generate Content", description: "The content-generation capability has been renamed to 'Generate content' across all Target UI surfaces for clearer intent communication.", status: "GA" }
     ],
     category_tags: ["AI", "Data", "Performance", "UI"]
   },
   {
     id: 'marketo',
-    title: "Marketo Engage July 2026: AI Skills for Product Knowledge and Lead Investigation",
+    title: "Marketo Engage July 2026: AI Skills, API Deprecations, and Lead Endpoint Limits",
     version: null,
     date: "July 2026",
     rawDate: "2026-07-01",
-    summary: "July 2026 introduces two new Marketo AI Skills in open beta — product knowledge Q&A and lead investigation — allowing users to get instant answers and diagnose lead journey failures without leaving the platform. Key API deprecations include SOAP API retirement on July 31, 2026 and access_token query parameter removal by August 31, 2026.",
+    summary: "July 2026 introduces two AI Skills in open beta — product knowledge Q&A and lead investigation — for instant answers and milestone diagnosis without leaving the platform. Concurrent API enforcement changes include SOAP API retirement on July 31, access_token removal on August 31, Merge Leads capped at 25 IDs, and Static List lead activity endpoints limited starting September 30.",
     features: [
-      { name: "AI Skill — Product Knowledge", description: "Provides on-demand access to Marketo expertise by answering plain-language questions drawn from official Adobe documentation, directly within the platform.", status: "Beta" },
-      { name: "AI Skill — Investigate Leads", description: "Enables users to understand why specific leads failed to reach milestones with plain-language explanations of lead journey behavior.", status: "Beta" },
+      { name: "AI Skill — Product Knowledge", description: "Provides on-demand Marketo expertise by answering plain-language questions drawn from official Adobe documentation, directly within the platform.", status: "Beta" },
+      { name: "AI Skill — Investigate Leads", description: "Explains why specific leads failed to reach milestones like MQL or program qualification with plain-language analysis of lead journey behavior.", status: "Beta" },
       { name: "Email Designer AI Assistant Contextual Menu", description: "Integrates AI Assistant into the contextual menu for quick text-based actions directly from the editing bar without additional navigation.", status: "Beta" },
-      { name: "SOAP API Deprecation", description: "SOAP API support ended July 31, 2026; existing integrations must migrate to the REST API to avoid service interruption.", status: "GA" },
-      { name: "REST API Authentication Modernization", description: "The access_token query parameter is retired after August 31, 2026; all integrations must switch to the Authorization header for continued access.", status: "GA" }
+      { name: "SOAP API End of Support", description: "SOAP API support ended July 31, 2026; all services must migrate to the REST API to avoid integration failures.", status: "GA" },
+      { name: "REST API access_token Deprecation", description: "The access_token query parameter is retired after August 31, 2026; all integrations must switch to the Authorization header for continued access.", status: "GA" },
+      { name: "Merge Leads API ID Limit", description: "Merge Leads API calls with more than 25 IDs in the leadIds parameter return error code 1080 starting July 31, 2026.", status: "GA" },
+      { name: "Static List Lead Activity Endpoint Limits", description: "Get Lead Activities and Get Lead Changes endpoints return error 1003 for static lists with 10,000+ leads beginning September 30, 2026.", status: "GA" }
     ],
     category_tags: ["AI", "Integration", "Deprecation"]
   },
@@ -826,92 +839,114 @@ const RELEASE_DATA = [
     summary: "Q3 2026 (released July 16) expands AI integration via the Workfront MCP Server connecting to Claude and ChatGPT for natural-language work management, parallel document approval paths supporting up to 30 independent review tracks, and a new Internal Lookup Field replacing Typeahead fields with dynamic filtering. Adobe Cloud Drive reaches Limited Availability for direct cloud file editing from any desktop application.",
     features: [
       { name: "Workfront MCP Server", description: "Connects Workfront to AI agentic platforms including Claude and ChatGPT, enabling natural-language creation, updating, and management of Workfront items.", status: "GA" },
-      { name: "Parallel Approval Paths for Documents", description: "Supports up to 30 independent review tracks with up to 100 stages in a single approval workflow, with custom messages per stage for complex document reviews.", status: "GA" },
+      { name: "Parallel Approval Paths for Documents", description: "Supports up to 30 independent review tracks with up to 100 stages in a single approval workflow, with custom messages per stage.", status: "GA" },
       { name: "Internal Lookup Field Type", description: "Replaces Typeahead fields in custom forms with dynamic filtering and multi-select capabilities for improved search performance and flexibility.", status: "GA" },
-      { name: "Adobe Cloud Drive", description: "Desktop application mounts Adobe cloud storage as a local drive for direct file editing in any application, eliminating download-upload cycles.", status: "Limited Availability" },
-      { name: "Native Financial Fields in Custom Forms", description: "Workfront financial fields such as budgets and costs are now supported directly in custom form creation for richer project financial tracking.", status: "GA" }
+      { name: "Native Financial Fields in Custom Forms", description: "Workfront financial fields such as budgets and costs are now supported directly in custom form creation for richer project financial tracking.", status: "GA" },
+      { name: "Adobe Cloud Drive", description: "Desktop application mounts Adobe cloud storage as a local drive for direct file editing in any application, eliminating download-upload cycles.", status: "Limited Availability" }
     ],
     category_tags: ["AI", "UI", "Integration", "Data"]
   },
   {
     id: 'ajo-b2b',
-    title: "Journey Optimizer B2B August 2026: Person Lists, Variant Split Paths, and Journey Re-entry",
+    title: "Journey Optimizer B2B August 2026: Person Lists, Re-entry, and External Journey Nodes",
     version: "2026.8",
     date: "August 2026",
     rawDate: "2026-08-01",
-    summary: "The August 2026 (2026.8) release introduces Person Lists for static and dynamic audience segmentation by demographic attributes and engagement history, plus Variant Split Paths for person journeys enabling A/B testing with defined percentage splits. Journey Re-entry support allows the same person to traverse the same journey multiple times, and account journeys gain multiple simultaneous event trigger support.",
+    summary: "The August 2026 (2026.8) release introduces Person Lists for static and dynamic audience segmentation, Journey Re-entry for repeated person journey traversal, and External Split Path and Action nodes bringing person journeys to parity with account journeys. Variant Split Paths graduate from beta to GA, account journeys gain multiple simultaneous event triggers, and AEP relational datasets become available.",
     features: [
       { name: "Person Lists", description: "Static and dynamic person lists segment audiences by demographic attributes and engagement history for targeted enrollment in person journeys.", status: "GA" },
-      { name: "Variant Split Paths for Person Journeys", description: "Assigns people to different journey paths using defined percentage splits for A/B testing engagement flows, now generally available after beta.", status: "GA" },
-      { name: "Journey Re-entry for Person Journeys", description: "People can now progress through the same journey multiple times, enabling re-evaluation and repeated engagement scenarios within a single journey definition.", status: "GA" },
-      { name: "Multiple Event Triggers in Account Journeys", description: "Listen for event nodes now support multiple triggers and filters simultaneously, providing more flexible account-level journey orchestration.", status: "GA" },
-      { name: "External Split Path and Action Nodes for Person Journeys", description: "Person journeys now support external integration split paths and action nodes, matching the full orchestration capabilities previously available only in account journeys.", status: "GA" }
+      { name: "Variant Split Paths for Person Journeys", description: "Assigns people to different journey paths using defined percentage splits for A/B testing — graduated from beta to generally available.", status: "GA" },
+      { name: "Journey Re-entry for Person Journeys", description: "Allows people to progress through the same journey multiple times, enabling re-evaluation and repeated engagement scenarios within a single journey definition.", status: "GA" },
+      { name: "Multiple Triggers in Listen for Event Nodes", description: "Account journey event listener nodes now support multiple triggers and filters simultaneously for more flexible account-level orchestration.", status: "GA" },
+      { name: "External Split Path Nodes for Person Journeys", description: "Person journeys now support external integration split paths for routing decisions through external services, matching account journey capabilities.", status: "GA" },
+      { name: "External Action Nodes for Person Journeys", description: "Person journeys can now execute external action nodes making outbound requests to third-party systems, expanding orchestration reach.", status: "GA" },
+      { name: "AEP Relational Datasets", description: "New relational datasets from Adobe Experience Platform are now available in the AEP sandbox alongside existing datasets for enhanced B2B data modeling.", status: "GA" }
     ],
     category_tags: ["Data", "UI", "Integration"]
   },
   {
     id: 'experience-platform',
-    title: "Experience Platform July 2026: Destination Search, Hourly Exports, and Sandbox Agentic Migration",
+    title: "Experience Platform July 2026: Destinations, Meta Ads Source, and Sandbox Agentic Migration",
     version: null,
     date: "July 2026",
     rawDate: "2026-07-01",
-    summary: "July 28, 2026 release introduces faster profile processing via write-time attribute consolidation, enhanced destination search and filtering, and hourly incremental dataset exports for fresher data delivery. A conversational Sandbox Tooling Agentic Skill enables environment replication and migration, and a comprehensive Spectrum 2 visual refresh modernizes core platform interfaces.",
+    summary: "July 28, 2026 delivers a broad destinations update — hourly exports, mapped-audience controls, flow name search, Microsoft Ads and Meta Ads integrations — alongside faster profile processing via write-time consolidation. A Sandbox Tooling Agentic Skill enables conversational environment replication, Segment Match announces November 27 retirement, and external audiences gain JSON and Parquet file support.",
     features: [
-      { name: "Faster Profile Exports and Activation", description: "Profile attribute consolidation now occurs at write time rather than repeatedly at read time, accelerating exports to destinations and Journey Optimizer activations.", status: "GA" },
-      { name: "Destinations Search and Filter Enhancement", description: "Find destinations by flow name and filter audiences by evaluation type, namespace, and tags for more efficient destination management at scale.", status: "GA" },
-      { name: "Hourly Incremental Dataset Exports", description: "Incremental dataset exports can now be scheduled hourly, delivering fresher data to downstream destinations without waiting for daily export cycles.", status: "GA" },
-      { name: "Mapped Audiences Export Toggle", description: "Control which audiences export to enterprise streaming destinations — such as HTTP API, Amazon Kinesis, and Azure Event Hubs — by selecting only audiences mapped in a given dataflow.", status: "GA" },
-      { name: "Sandbox Tooling Agentic Skill", description: "Conversational AI agent enables sandbox replication and migration with dependency analysis and validation, simplifying environment setup and promotion workflows.", status: "Limited Availability" }
+      { name: "Hourly Incremental Dataset Exports", description: "Dataset exports to destinations can now be scheduled hourly, delivering fresher data more frequently than the previous daily cadence.", status: "GA" },
+      { name: "Mapped Audiences Export Toggle", description: "Control whether the segmentMembership object sent to HTTP API, Amazon Kinesis, and Azure Event Hubs contains only mapped audiences or all qualifying audiences.", status: "GA" },
+      { name: "Destination Search by Flow Name", description: "Search destinations by dataflow name to quickly locate existing activations in large destination inventories.", status: "GA" },
+      { name: "Audience Filtering Enhancements", description: "Filter audiences during activation by evaluation type, namespace origin, audience tags, and identity namespaces for more precise destination mapping.", status: "GA" },
+      { name: "Microsoft Ads Customer Match Destination", description: "Reconnect customers via email across Microsoft's advertising network for re-engagement campaigns using the new Customer Match destination.", status: "GA" },
+      { name: "Meta Ads Source", description: "Ingest paid media data directly from Meta Ads accounts into Experience Platform for unified cross-channel analytics.", status: "GA" },
+      { name: "Faster Profile Exports and Activation", description: "Profile attribute consolidation at write time — instead of repeated read-time processing — significantly accelerates exports and downstream activations.", status: "GA" },
+      { name: "External Audience File Format Support", description: "Upload external audiences as JSON or Parquet files with an optional dataFilterStartTime field for incremental ingestion control.", status: "GA" },
+      { name: "Sandbox Tooling Agentic Skill", description: "Conversational AI agent replicates sandbox objects across environments with dependency analysis and validation, simplifying environment promotion.", status: "Limited Availability" },
+      { name: "Segment Match Deprecation", description: "Segment Match retires November 27, 2026; customers must migrate to Real-Time CDP Collaboration to maintain data sharing capabilities.", status: "GA" },
+      { name: "LiveRamp Onboarding Updates", description: "ONCE export frequency added and file splits reduced for large audience populations, improving LiveRamp onboarding efficiency.", status: "GA" }
     ],
-    category_tags: ["AI", "Data", "Integration", "Performance", "UI"]
+    category_tags: ["AI", "Data", "Integration", "Performance", "UI", "Deprecation"]
   },
   {
     id: 'aem',
-    title: "AEM as a Cloud Service 2026.7.0: Security Health, Content Fragment Metadata, and AEM MCP Server",
+    title: "AEM as a Cloud Service 2026.7.0: Security Health, Document Conversion APIs, and Edge Functions",
     version: "2026.7.0",
     date: "July 2026",
     rawDate: "2026-07-01",
-    summary: "July 2026 release adds a daily Security Health Dashboard with OWASP Top 10 scanning and CVE detection, metadata management for Content Fragments directly in the Admin UI, and a unified AEM MCP Server for AI-driven content operations from any tool. AEM Edge Functions enter Public Beta for CDN-layer JavaScript execution, and Adaptive Forms gain a Table component with repeatable rows and sortable columns.",
+    summary: "July 2026 adds a daily Security Health Dashboard with OWASP Top 10 and CVE scanning, four new Document Conversion APIs (HTML-to-PDF, PostScript-to-PDF, PDF-to-Image, PDF-to-PostScript), and the AEM MCP Server for unified AI agent access. AEM Edge Functions enter Public Beta for CDN-layer JavaScript, Content Fragments gain folder management parity, and Brand Aware Metadata enters Beta for AI-generated asset metadata.",
     features: [
-      { name: "Security Health Dashboard", description: "Daily security posture scanning aligned with OWASP Top 10, detecting CVEs in third-party Java libraries and surfacing actionable recommendations for administrators.", status: "GA" },
-      { name: "Metadata Support for Content Fragments", description: "Authors can view, edit, and manage fragment metadata — including schema management — directly in the Content Fragments Admin UI without leaving the interface.", status: "GA" },
-      { name: "AEM MCP Server", description: "Unified Model Context Protocol server at a single URL provides content operations and governance checks across pages, fragments, and assets from any AI tool.", status: "GA" },
-      { name: "AEM Edge Functions", description: "Execute JavaScript at the CDN layer for personalization, API response reformatting, and middleware operations, reducing latency before content reaches the browser.", status: "Beta" },
-      { name: "Table Component for Adaptive Forms", description: "Structured tabular layouts with repeatable rows, sortable columns, cell merging, and calculation capabilities now available for complex data presentation in web and PDF forms.", status: "Limited Availability" }
+      { name: "Security Health Dashboard", description: "Daily OWASP Top 10 and CVE scans of production environments surface actionable security findings with automated fix options for administrators.", status: "GA" },
+      { name: "Document Conversion APIs", description: "Four new conversion methods — HTML-to-PDF, PostScript-to-PDF, PDF-to-Image, and PDF-to-PostScript with transparency flattening — expand Forms document processing.", status: "GA" },
+      { name: "AEM MCP Server", description: "Unified Model Context Protocol server at a single endpoint enables ChatGPT, Claude, and IDE integrations to access content, asset, and governance operations.", status: "GA" },
+      { name: "Metadata Support for Content Fragments", description: "Authors view, edit, and manage fragment metadata including schema management directly in the Admin UI and new fragment editors.", status: "GA" },
+      { name: "Content Fragments Folder Actions", description: "Rename, Copy, Move, and Delete operations now available in the Content Fragments Admin UI, achieving parity with Touch UI and Assets interfaces.", status: "GA" },
+      { name: "Countdown Timer in Dynamic Media Templates", description: "Add customizable countdown displays to Dynamic Media templates with adjustable time units, fallback text, and optional clickable URL destinations.", status: "GA" },
+      { name: "Adobe Asset Link UXP 2.0 for Photoshop", description: "Updated plugin supports Managed Services and On-Premise deployments with native Apple Silicon performance for Creative Cloud users.", status: "GA" },
+      { name: "AEM Edge Functions", description: "Execute JavaScript at the CDN layer for content personalization, API response reformatting, and edge-rendered HTML composition before reaching the browser.", status: "Beta" },
+      { name: "Brand Aware Metadata (BAM)", description: "AI-powered capability automatically generates custom metadata for assets during upload or reprocessing using configurable prompt libraries, reducing manual entry.", status: "Beta" },
+      { name: "Assets Onboarding Agent", description: "AI-assisted setup agent guides new AEM Assets customers through DAM configuration, folder hierarchies, tag taxonomies, and bulk imports conversationally.", status: "Beta" },
+      { name: "Table Component for Adaptive Forms", description: "Core Components-based forms now support tabular layouts with repeatable rows, column sorting, cell merging, and PDF rendering.", status: "Limited Availability" },
+      { name: "File Attachment Virus Scanning", description: "Custom validation for malware detection before form submission using configurable rules and third-party integration options.", status: "Limited Availability" },
+      { name: "RDE Snapshots", description: "Capture and restore Rapid Development Environment states for code and content testing, enabling faster feature switching and rollback in development.", status: "Limited Availability" },
+      { name: "Assets Sourcing Portal", description: "Self-service portal allowing external contributors to upload and submit assets for DAM review without requiring direct AEM access.", status: "Limited Availability" }
     ],
-    category_tags: ["AI", "Security", "UI", "Performance"]
+    category_tags: ["AI", "Security", "UI", "Performance", "Data"]
   },
   {
     id: 'rtcdp',
-    title: "Real-Time CDP July 2026: Spectrum 2 Refresh and Segment Match Deprecation",
+    title: "Real-Time CDP July 2026: Spectrum 2 Refresh, Audience Controls, and Segment Match Deprecation",
     version: null,
     date: "July 2026",
     rawDate: "2026-07-01",
-    summary: "July 28, 2026 brings a Spectrum 2 visual refresh across the RT-CDP interface, modernizing typography, buttons, tables, and page backgrounds across Audiences, Datasets, Schemas, Profiles, Sources, and Destinations. Segment Match is deprecated with a November 27, 2026 retirement date — customers should begin migrating to Real-Time CDP Collaboration. Profile processing speed also improves via write-time attribute consolidation.",
+    summary: "July 28, 2026 brings a Spectrum 2 visual refresh across the RT-CDP interface, faster profile exports via write-time consolidation, and enhanced audience discovery and filtering during activation. Segment Match retires November 27, 2026 — customers must migrate to Real-Time CDP Collaboration — and hourly incremental dataset exports are now available.",
     features: [
-      { name: "Spectrum 2 Visual Refresh", description: "Modernized interface across all major RT-CDP surfaces with updated typography, buttons, tags, search fields, inventory tables, and page backgrounds.", status: "GA" },
-      { name: "Faster Profile Processing", description: "Write-time attribute consolidation accelerates profile exports and downstream activations, reducing end-to-end latency for audience activation workflows.", status: "GA" },
-      { name: "Audience Export Control", description: "Toggle to include only mapped audiences in streaming destination exports, giving more precise control over segmentMembership data sent downstream.", status: "GA" },
-      { name: "Segment Match Deprecation", description: "Segment Match service retires November 27, 2026; customers must migrate to Real-Time CDP Collaboration to maintain data sharing capabilities.", status: "GA" },
-      { name: "Pseudonymous Profile Data Expiration Fix", description: "CJA Audience Profile Dataset now correctly flagged as system-generated, preventing inflated pseudonymous profile counts in license usage reporting.", status: "GA" }
+      { name: "Spectrum 2 Visual Refresh", description: "Modern design updates applied across Audiences, Datasets, Schemas, Profiles, Sources, and Destinations with refined typography, buttons, tags, and inventory tables.", status: "GA" },
+      { name: "Faster Profile Exports and Activation", description: "Write-time attribute consolidation replaces repeated read-time processing, significantly accelerating profile exports and downstream activations to destinations.", status: "GA" },
+      { name: "Destination Audience Control Toggle", description: "New toggle specifies whether segmentMembership exports to HTTP API, Amazon Kinesis, and Azure Event Hubs contain only mapped audiences or all qualifying audiences.", status: "GA" },
+      { name: "Enhanced Audience Discovery and Filtering", description: "Search destinations by flow name and filter audiences by evaluation type, namespace origin, audience tags, and identity namespaces during activation workflows.", status: "GA" },
+      { name: "Incremental Dataset Export Frequency", description: "Incremental dataset exports can now be scheduled hourly, enabling destinations to receive fresher data more regularly.", status: "GA" },
+      { name: "Pseudonymous Profile Data Expiration Fix", description: "CJA Audience Service datasets are now correctly flagged as system-generated, preventing inflated profile counts in Real-Time CDP license usage reporting.", status: "GA" },
+      { name: "Segment Match Deprecation", description: "Segment Match retires November 27, 2026; customers must migrate to Real-Time CDP Collaboration to maintain partner data sharing capabilities.", status: "GA" }
     ],
     category_tags: ["UI", "Data", "Performance", "Deprecation"]
   },
   {
     id: 'campaign',
-    title: "Campaign v8.9.2: Security Upgrades, SMS Connector, and OAuth2 Authentication",
+    title: "Campaign v8.9.2: Debian 13, PostgreSQL 17, and Critical Stability Fixes",
     version: "8.9.2",
     date: "May 2026",
     rawDate: "2026-05-01",
-    summary: "This release prioritizes security with infrastructure upgrades to Debian 13 and PostgreSQL 17 across all instances, and adds a modern SMS Sending Connector and multilingual delivery support via the Campaign Web interface. Snowflake and Databricks external accounts now support OAuth2 authentication, and critical stability fixes address server crashes, transactional messaging, and workflow execution.",
+    summary: "May 3, 2026 release upgrades all instances to Debian 13 and PostgreSQL 17 for security and compliance, resolves critical server crash and workflow stability issues, and fixes push notification delivery failures for Android and iOS. Email pipeline memory management, tracking link stability, and language field capture for mobile apps are also addressed.",
     features: [
-      { name: "Infrastructure Upgrade: Debian 13 + PostgreSQL 17", description: "All instances upgraded to Debian 13 and PostgreSQL 17 for optimal security and compliance posture.", status: "GA" },
-      { name: "SMS Sending Connector", description: "Modern SMS messaging connector now universally available, expanding channel delivery capabilities across the platform.", status: "GA" },
-      { name: "Multilingual Delivery Support", description: "Enhanced campaign localization through the Campaign Web interface enables delivery of content in multiple languages within a single campaign.", status: "GA" },
-      { name: "OAuth2 Authentication for External Accounts", description: "Snowflake and Databricks external accounts now support OAuth2 authentication for secure, modern API-based connectivity.", status: "GA" },
-      { name: "Critical Server Stability Fix", description: "Resolved a crash issue causing repeated server failures and instance outages, significantly improving platform reliability.", status: "GA" }
+      { name: "Infrastructure Upgrade: Debian 13 + PostgreSQL 17", description: "All instances upgraded to Debian 13 and PostgreSQL 17 for optimal security posture and long-term compliance.", status: "GA" },
+      { name: "Critical Server Crash Fix", description: "Resolved a crash issue causing repeated server failures and instance outages, restoring platform reliability (NEO-95304).", status: "GA" },
+      { name: "Android and iOS Push Notification Fix", description: "Fixed silent push notification failures during delivery preparation when title and body fields were empty (NEO-93739).", status: "GA" },
+      { name: "Workflow Child Process Stability", description: "Resolved child workflows becoming stuck in 'Being Edited' state, which reduced transactional workflow capacity (NEO-95131).", status: "GA" },
+      { name: "Email Pipeline Memory Optimization", description: "Addressed excessive memory consumption in the email pipeline that accumulated over time and degraded long-term performance (NEO-95088).", status: "GA" },
+      { name: "Tracking and Mirror Page Link Stability", description: "Fixed an issue where tracking and mirror page links could fail to load deliveries (NEO-95239).", status: "GA" },
+      { name: "Transactional Event Date Correction", description: "Resolved data type conversion causing incorrect event dates in transactional messaging and dynamic reporting (NEO-93923).", status: "GA" },
+      { name: "Language Field Capture for Mobile Apps", description: "Fixed incorrect reconciliation keys preventing language data capture for Android app registration tokens (NEO-93100).", status: "GA" }
     ],
-    category_tags: ["Security", "Performance", "Data", "Integration"]
+    category_tags: ["Security", "Performance", "Data"]
   },
   {
     id: 'data-distiller',
@@ -922,7 +957,7 @@ const RELEASE_DATA = [
     summary: "Data Distiller's most recent updates focus on operational control and security. Administrators can now monitor and terminate active Query Service sessions to reclaim idle capacity, while a credential migration from JWT to OAuth Server-to-Server improves long-term API security. A legacy results table option was also added for spreadsheet-friendly data exports.",
     features: [
       { name: "Query Service Session Management", description: "Administrators can view and terminate active Query Service sessions from the Admin tab to monitor capacity usage and free idle resources for Data Distiller workflows.", status: "GA" },
-      { name: "JWT to OAuth Server-to-Server Credential Migration", description: "Non-expiring JWT credentials have been migrated to OAuth Server-to-Server to prevent service interruptions and meet modern security standards.", status: "GA" },
+      { name: "JWT to OAuth Server-to-Server Credential Migration", description: "Non-expiring JWT credentials migrated to OAuth Server-to-Server to prevent service interruptions and meet modern security standards.", status: "GA" },
       { name: "Legacy Results Table", description: "Enables drag-to-select workflows with browser-native selection and tab-delimited output for direct compatibility with spreadsheet tools.", status: "Limited Availability" }
     ],
     category_tags: ["Performance", "UI", "Security"]
