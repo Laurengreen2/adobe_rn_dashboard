@@ -771,17 +771,17 @@ const RELEASE_DATA = [
   },
   {
     id: 'journey-optimizer',
-    title: "Journey Optimizer August 2026: AEM Assets Image Sourcing for AI Content Generation",
+    title: "Journey Optimizer August 2026: AI Image Sourcing, Content Check, and Personalization Helpers",
     version: null,
     date: "August 2026",
     rawDate: "2026-08-01",
-    summary: "August 5, 2026 delivers flexible image sourcing for AI-generated content, enabling brand-approved imagery from AEM Assets Essentials with Balanced, Assets, and Creative operational modes to control the DAM vs. AI imagery ratio. This builds on July's high-impact wave: Loyalty Challenges, Custom Outbound Channel, AI-based Channel Optimization, Email Designer Modules, and the Journey Canvas UI redesign.",
+    summary: "August 2026 extends AI content generation with flexible image sourcing from AEM Assets Essentials using Balanced, Assets, and Creative modes, and adds an automated Content Check in the Email Designer that catches HTML, CSS, and rendering issues before sending. Nine new helper functions expand personalization capabilities with URL parameter management, date range validation, JSON parsing, and Base64 decoding.",
     features: [
       { name: "Flexible Image Sourcing for AI Generation", description: "AI content generation now sources brand-approved images from AEM Assets Essentials with three modes — Balanced, Assets, and Creative — to control the DAM vs. AI-generated imagery ratio.", status: "GA" },
-      { name: "Loyalty Challenges", description: "Gamified loyalty programs enabling customers to earn rewards through purchases, reviews, and other actions, with AI-powered reporting dashboards for challenge orchestration.", status: "Limited Availability" },
-      { name: "Custom Outbound Channel", description: "No-code Channel Builder integrates any HTTP-based messaging platform — WeChat, Kakao Talk, Messenger — into Journey Optimizer with full native channel capabilities.", status: "Limited Availability" },
-      { name: "Channel Optimization", description: "Automatically selects the optimal delivery channel using manual ranking, customer preferences, or AI-based propensity scores with automatic fallback options.", status: "Limited Availability" },
-      { name: "Email Designer Modules", description: "Ready-made layout components — headers, product cards, footers — enable faster email creation without building structures from scratch, accelerating campaign production.", status: "GA" }
+      { name: "Content Check in Email Designer", description: "Automated technical validation catches HTML, CSS, and rendering issues before sending with one-click fixes available, reducing delivery errors in email campaigns.", status: "GA" },
+      { name: "New Helper Functions for Personalization", description: "Nine new helper functions added including URL parameter management, date range validation, JSON parsing, and Base64 decoding to expand expression editor capabilities.", status: "GA" },
+      { name: "Email Designer Module Library", description: "Pre-configured, draggable layout components — headers, product cards, footers — enable faster email creation without building structures from scratch.", status: "GA" },
+      { name: "Journey Canvas UI Redesign", description: "Redesigned journey designer delivers improved performance for large journeys with automatic layout optimization and guided authoring capabilities.", status: "GA" }
     ],
     category_tags: ["AI", "UI", "Data", "Integration"]
   },
@@ -835,49 +835,49 @@ const RELEASE_DATA = [
   },
   {
     id: 'ajo-b2b',
-    title: "Journey Optimizer B2B July 2026: Split Path Variants and Event Listener Enhancements",
-    version: "2026.6",
-    date: "July 2026",
-    rawDate: "2026-07-01",
-    summary: "The July 2026 (2026.6) release introduces split path journey node variants in beta for A/B testing different routes by assigning accounts or people to defined percentage splits. Event listener nodes now support multiple simultaneous events using a rule builder interface, and new person journey actions expand orchestration options within account journeys.",
+    title: "Journey Optimizer B2B August 2026: Person Lists, Variant Split Paths, and Journey Re-entry",
+    version: "2026.8",
+    date: "August 2026",
+    rawDate: "2026-08-01",
+    summary: "The August 2026 (2026.8) release introduces Person Lists for static and dynamic audience segmentation by demographic attributes and engagement history, plus Variant Split Paths for person journeys enabling A/B testing with defined percentage splits. Journey Re-entry support allows the same person to traverse the same journey multiple times, and account journeys gain multiple simultaneous event trigger support.",
     features: [
-      { name: "Split Path Journey Nodes — Variants", description: "Assigns accounts or people to different journey paths using defined percentages for A/B testing, enabling optimization of customer engagement and conversion rates.", status: "Beta" },
-      { name: "Listen for an Event — Multiple Events", description: "Event listener nodes now support multiple activity configurations using Experience Events; the first qualifying event advances the record to the next journey step.", status: "GA" },
-      { name: "Event Listener Rule Builder Interface", description: "The Filters tab in event listener nodes has been converted to a rule builder interface supporting multiple activity configurations for more intuitive filter setup.", status: "GA" },
-      { name: "Take an Action — Person Journey Actions", description: "New people context actions 'Add to Person journey' and 'Remove from Person journey' expand orchestration possibilities within account journeys.", status: "GA" },
-      { name: "Email Performance Dashboard", description: "Provides a unified view of email activity metrics across all journeys in a single analytics interface for centralized performance monitoring.", status: "GA" }
+      { name: "Person Lists", description: "Static and dynamic person lists segment audiences by demographic attributes and engagement history for targeted enrollment in person journeys.", status: "GA" },
+      { name: "Variant Split Paths for Person Journeys", description: "Assigns people to different journey paths using defined percentage splits for A/B testing engagement flows, now generally available after beta.", status: "GA" },
+      { name: "Journey Re-entry for Person Journeys", description: "People can now progress through the same journey multiple times, enabling re-evaluation and repeated engagement scenarios within a single journey definition.", status: "GA" },
+      { name: "Multiple Event Triggers in Account Journeys", description: "Listen for event nodes now support multiple triggers and filters simultaneously, providing more flexible account-level journey orchestration.", status: "GA" },
+      { name: "External Split Path and Action Nodes for Person Journeys", description: "Person journeys now support external integration split paths and action nodes, matching the full orchestration capabilities previously available only in account journeys.", status: "GA" }
     ],
-    category_tags: ["AI", "UI", "Data", "Integration"]
+    category_tags: ["Data", "UI", "Integration"]
   },
   {
     id: 'experience-platform',
-    title: "Experience Platform July 2026: Destination Search, Hourly Exports, and External Audience Formats",
+    title: "Experience Platform July 2026: Destination Search, Hourly Exports, and Sandbox Agentic Migration",
     version: null,
     date: "July 2026",
     rawDate: "2026-07-01",
-    summary: "July 28, 2026 release introduces faster profile processing via write-time attribute consolidation, enhanced destination search and filtering, and hourly incremental dataset exports for fresher data delivery. External audiences now support JSON and Parquet file uploads, and a comprehensive Spectrum 2 visual refresh modernizes core platform interfaces.",
+    summary: "July 28, 2026 release introduces faster profile processing via write-time attribute consolidation, enhanced destination search and filtering, and hourly incremental dataset exports for fresher data delivery. A conversational Sandbox Tooling Agentic Skill enables environment replication and migration, and a comprehensive Spectrum 2 visual refresh modernizes core platform interfaces.",
     features: [
       { name: "Faster Profile Exports and Activation", description: "Profile attribute consolidation now occurs at write time rather than repeatedly at read time, accelerating exports to destinations and Journey Optimizer activations.", status: "GA" },
       { name: "Destinations Search and Filter Enhancement", description: "Find destinations by flow name and filter audiences by evaluation type, namespace, and tags for more efficient destination management at scale.", status: "GA" },
       { name: "Hourly Incremental Dataset Exports", description: "Incremental dataset exports can now be scheduled hourly, delivering fresher data to downstream destinations without waiting for daily export cycles.", status: "GA" },
-      { name: "External Audience File Format Expansion", description: "JSON and Parquet file formats are now supported for external audience uploads, with an optional dataFilterStartTime field for incremental ingestion control.", status: "GA" },
-      { name: "Spectrum 2 Visual Refresh", description: "Modern design system updates applied to Audiences, Datasets, Schemas, Profiles, Sources, and Destinations interfaces with refined typography, buttons, and layouts.", status: "GA" }
+      { name: "Mapped Audiences Export Toggle", description: "Control which audiences export to enterprise streaming destinations — such as HTTP API, Amazon Kinesis, and Azure Event Hubs — by selecting only audiences mapped in a given dataflow.", status: "GA" },
+      { name: "Sandbox Tooling Agentic Skill", description: "Conversational AI agent enables sandbox replication and migration with dependency analysis and validation, simplifying environment setup and promotion workflows.", status: "Limited Availability" }
     ],
     category_tags: ["AI", "Data", "Integration", "Performance", "UI"]
   },
   {
     id: 'aem',
-    title: "AEM as a Cloud Service 2026.7.0: Security Health, Brand-Aware Metadata, and AEM MCP Server",
+    title: "AEM as a Cloud Service 2026.7.0: Security Health, Content Fragment Metadata, and AEM MCP Server",
     version: "2026.7.0",
     date: "July 2026",
     rawDate: "2026-07-01",
-    summary: "July 2026 release adds a daily Security Health Dashboard with OWASP Top 10 scanning and CVE detection, Brand Aware Metadata for AI-powered automatic asset metadata generation, and a unified AEM MCP Server for AI-driven content operations from any tool. Agentic capabilities across production, governance, and development workflows enter Beta alongside an Assets Onboarding Agent for guided DAM setup.",
+    summary: "July 2026 release adds a daily Security Health Dashboard with OWASP Top 10 scanning and CVE detection, metadata management for Content Fragments directly in the Admin UI, and a unified AEM MCP Server for AI-driven content operations from any tool. AEM Edge Functions enter Public Beta for CDN-layer JavaScript execution, and Adaptive Forms gain a Table component with repeatable rows and sortable columns.",
     features: [
-      { name: "Security Health Dashboard", description: "Daily security posture scanning aligned with OWASP Top 10, detecting CVEs and permission issues with actionable recommendations and CSV export functionality.", status: "GA" },
-      { name: "Brand Aware Metadata (BAM)", description: "AI-powered system automatically generates custom asset metadata during upload or reprocessing based on brand guidelines, significantly reducing manual metadata entry.", status: "Limited Availability" },
+      { name: "Security Health Dashboard", description: "Daily security posture scanning aligned with OWASP Top 10, detecting CVEs in third-party Java libraries and surfacing actionable recommendations for administrators.", status: "GA" },
+      { name: "Metadata Support for Content Fragments", description: "Authors can view, edit, and manage fragment metadata — including schema management — directly in the Content Fragments Admin UI without leaving the interface.", status: "GA" },
       { name: "AEM MCP Server", description: "Unified Model Context Protocol server at a single URL provides content operations and governance checks across pages, fragments, and assets from any AI tool.", status: "GA" },
-      { name: "Agents in AEM", description: "New agentic capabilities spanning production, governance, optimization, discovery, and development workflows enable autonomous content operations at scale.", status: "Beta" },
-      { name: "Assets Onboarding Agent", description: "Conversational agent guides DAM setup and migration planning while automating core configuration artifact creation to accelerate AEM Assets onboarding.", status: "Beta" }
+      { name: "AEM Edge Functions", description: "Execute JavaScript at the CDN layer for personalization, API response reformatting, and middleware operations, reducing latency before content reaches the browser.", status: "Beta" },
+      { name: "Table Component for Adaptive Forms", description: "Structured tabular layouts with repeatable rows, sortable columns, cell merging, and calculation capabilities now available for complex data presentation in web and PDF forms.", status: "Limited Availability" }
     ],
     category_tags: ["AI", "Security", "UI", "Performance"]
   },
@@ -899,19 +899,19 @@ const RELEASE_DATA = [
   },
   {
     id: 'campaign',
-    title: "Campaign v8.9.2: Security Upgrades and Stability Fixes",
+    title: "Campaign v8.9.2: Security Upgrades, SMS Connector, and OAuth2 Authentication",
     version: "8.9.2",
     date: "May 2026",
     rawDate: "2026-05-01",
-    summary: "This release prioritizes security with infrastructure upgrades to Debian 13 and PostgreSQL 17 across all instances. A comprehensive set of fixes addresses transactional messaging, push notifications, workflow execution, and database performance problems.",
+    summary: "This release prioritizes security with infrastructure upgrades to Debian 13 and PostgreSQL 17 across all instances, and adds a modern SMS Sending Connector and multilingual delivery support via the Campaign Web interface. Snowflake and Databricks external accounts now support OAuth2 authentication, and critical stability fixes address server crashes, transactional messaging, and workflow execution.",
     features: [
       { name: "Infrastructure Upgrade: Debian 13 + PostgreSQL 17", description: "All instances upgraded to Debian 13 and PostgreSQL 17 for optimal security and compliance posture.", status: "GA" },
-      { name: "Transactional Event Date Correction", description: "Resolved data type conversion issues causing incorrect event dates in transactional messaging and dynamic reporting.", status: "GA" },
-      { name: "Push Notification Delivery Fix", description: "Fixed silent push notification failures for Android and iOS when title and body fields were empty during preparation.", status: "GA" },
-      { name: "Email Pipeline Memory Management", description: "Addressed excessive memory consumption in the email pipeline that was causing long-term performance degradation.", status: "GA" },
-      { name: "Workflow Stability Improvements", description: "Fixed multiple critical workflow issues including enrichment activity failures with consecutive 1-N link joins on PostgreSQL 17.", status: "GA" }
+      { name: "SMS Sending Connector", description: "Modern SMS messaging connector now universally available, expanding channel delivery capabilities across the platform.", status: "GA" },
+      { name: "Multilingual Delivery Support", description: "Enhanced campaign localization through the Campaign Web interface enables delivery of content in multiple languages within a single campaign.", status: "GA" },
+      { name: "OAuth2 Authentication for External Accounts", description: "Snowflake and Databricks external accounts now support OAuth2 authentication for secure, modern API-based connectivity.", status: "GA" },
+      { name: "Critical Server Stability Fix", description: "Resolved a crash issue causing repeated server failures and instance outages, significantly improving platform reliability.", status: "GA" }
     ],
-    category_tags: ["Security", "Performance", "Data"]
+    category_tags: ["Security", "Performance", "Data", "Integration"]
   },
   {
     id: 'data-distiller',
