@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-08-10'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-08-11'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -756,10 +756,11 @@ const RELEASE_DATA = [
       { name: "Analytics API 1.4 Sunset", description: "Legacy Analytics 1.4 API services and WSSE authentication ceased functioning on August 12, 2026; all integrations must use the 2.0 API.", status: "GA" },
       { name: "Legacy Report Builder End of Life", description: "Legacy Report Builder reached end-of-life in June 2026; users must migrate workbooks to the new Report Builder available via Microsoft Store.", status: "GA" },
       { name: "Bug Fixes: Analysis Workspace", description: "23 bug fixes resolving visualization, segmentation, and workspace behavior issues in the August 2026 release.", status: "GA" },
-      { name: "Bug Fixes: Classifications", description: "56 bug fixes addressing data classification accuracy, import failures, and export issues.", status: "GA" },
+      { name: "Bug Fixes: Classifications", description: "54 bug fixes addressing data classification accuracy, import failures, and export issues.", status: "GA" },
       { name: "Bug Fixes: Report Builder", description: "14 bug fixes improving Report Builder stability, scheduled delivery, and workbook rendering.", status: "GA" },
       { name: "Bug Fixes: Data Feeds and Data Warehouse", description: "7 bug fixes resolving data feed delivery and warehouse export reliability issues.", status: "GA" },
-      { name: "Bug Fixes: Reporting and Segmentation", description: "8 combined fixes resolving report generation and segmentation logic errors.", status: "GA" }
+      { name: "Bug Fixes: Reporting, Segmentation, and Report Suites", description: "14 combined fixes resolving report generation, segmentation logic, report suite configuration, and scheduled report delivery errors.", status: "GA" },
+      { name: "Bug Fixes: Migration", description: "3 fixes addressing migration workflow issues for customers transitioning from Analytics 1.4 to Analytics 2.0.", status: "GA" }
     ],
     category_tags: ["AI", "Data", "Integration", "Deprecation"]
   },
@@ -798,6 +799,7 @@ const RELEASE_DATA = [
     summary: "August adds flexible AI image sourcing from AEM Assets Essentials with three operational modes. July's major wave introduced WhatsApp Flow templates, Loyalty Challenges, Custom Outbound Channels, Channel Optimization, a redesigned Journey Canvas, AI-powered Decisioning rule creation, Email Designer modules, automated Content Check validation, and 19 new personalization helper functions.",
     features: [
       { name: "Flexible Image Sourcing for AI Content Generation", description: "AI content generation sources brand-approved images from AEM Assets Essentials using Balanced (DAM-first), Assets-only, or Creative (AI-generated) modes.", status: "GA" },
+      { name: "New Content Simulation Experience", description: "Renders all journey variants simultaneously in a scrollable grid with multiple layout options; a single bottom action bar consolidates navigation, zoom, viewport switching, and locale management with enhanced preview space and a classic-experience toggle.", status: "GA" },
       { name: "WhatsApp Flow Templates", description: "Send WhatsApp Flow templates to deliver interactive multi-screen experiences such as surveys and lead capture forms; responses stored as raw JSON payloads.", status: "GA" },
       { name: "Enhanced Custom Provider Integrations for Mobile", description: "Edit default Content-Type header, add up to 10 custom header parameters, and use Journey Optimizer helper functions including encode64 within SMS payloads.", status: "GA" },
       { name: "Web Application Firewall IP Allowlisting", description: "Landing pages now support WAF IP allowlisting, enforcing that all incoming requests route exclusively through configured WAF infrastructure.", status: "GA" },
@@ -850,17 +852,21 @@ const RELEASE_DATA = [
   },
   {
     id: 'target',
-    title: "Adobe Target 26.7.5: Bayesian A/B Testing, CJA Reporting, and VEC Stability",
-    version: "26.7.5",
-    date: "July 2026",
-    rawDate: "2026-07-01",
-    summary: "July 2026 culminates with Target 26.7.5 (July 30) adding Bayesian statistics as an alternative to Welch's t-test for manual A/B activities and Customer Journey Analytics as a reporting source for Auto-Allocate. Profile-based popularity grouping ships for recommendations, and across four July releases multiple Visual Experience Composer, reporting, and audience management bugs are resolved.",
+    title: "Adobe Target 26.8.2: Bug Fixes; Bayesian A/B Testing and CJA Reporting for Auto-Allocate",
+    version: "26.8.2",
+    date: "August 2026",
+    rawDate: "2026-08-01",
+    summary: "August 2026 brings two maintenance releases — 26.8.2 (August 11) and 26.8.1 (August 4) — fixing audience copy failures with activity-only audiences, multi-byte character corruption in activity URLs, unlocalized error messages, and truncated VEC icons. The underlying July 26.7.5 release introduced Bayesian statistics for manual A/B activities, CJA as a reporting source for Auto-Allocate, and profile-based popularity grouping for recommendations.",
     features: [
       { name: "Bayesian Statistics for Manual A/B Activities", description: "Manual A/B activities now support Bayesian statistics reporting probability-based metrics including Chance to Beat Control and credible intervals as an alternative to frequentist t-tests.", status: "GA" },
       { name: "CJA Reporting for Auto-Allocate", description: "Auto-Allocate activities can now use Customer Journey Analytics as their reporting source alongside Target and Adobe Analytics.", status: "GA" },
       { name: "Profile-Based Popularity Grouping for Recommendations", description: "Most Viewed and Top Sellers recommendations support dynamic grouping by visitor profile attributes such as country, language, and membership level.", status: "GA" },
       { name: "AI Assistant Renamed to Generate Content", description: "Content-generation capability renamed from AI Assistant to Generate Content across all Target UI surfaces for clearer communication of intent.", status: "GA" },
       { name: "Top Performers and Saves UI Update", description: "Updated user interface for the top performers and saves experience on the Target homepage.", status: "GA" },
+      { name: "Audience Copy with Activity-Only Audiences Fix (26.8.2)", description: "Fixed error where copying activities with activity-only audiences failed with an 'Invalid audience ids' message after adding custom code modifications (TGT-55785).", status: "GA" },
+      { name: "Multi-byte Character Corruption in Activity URLs Fix (26.8.2)", description: "Multi-byte characters in activity URLs and the VEC Collisions tab no longer display as corrupted characters (TGT-55708).", status: "GA" },
+      { name: "Deleted Design Error Message Localization Fix (26.8.2)", description: "The 'Requested resource was not found' error is now properly localized when opening a deleted design (TGT-50902).", status: "GA" },
+      { name: "VEC Experience Audiences Panel Truncated Icons Fix (26.8.1)", description: "Fixed truncated Add button and expand/collapse icons in the Experience Audiences panel during activity creation (TGT-55372).", status: "GA" },
       { name: "VEC HTML Offers Crash Fix", description: "Fixed crash preventing selection or modification of HTML and Experience Fragment offers in the Visual Experience Composer.", status: "GA" },
       { name: "Mobile Conversion Rate Graph Fix", description: "Fixed rendering issue where the Conversion Rate graph failed to display correctly for certain mobile audience segments.", status: "GA" },
       { name: "mbox Conversion Goal Dropdown Fix", description: "Corrected issue where selecting an mbox from the dropdown in Goals and Settings saved the name incorrectly, blocking conversion recording.", status: "GA" },
@@ -875,7 +881,6 @@ const RELEASE_DATA = [
       { name: "Inconsistent Activity Source Display Fix", description: "Fixed issue where activity source displayed inconsistently across the Activities, Audiences, and Offers pages.", status: "GA" },
       { name: "Activity Source Change on UI Edit Fix", description: "Fixed issue where editing an activity through the UI unexpectedly changed the original activity source.", status: "GA" },
       { name: "Default Workspace Audience Fix", description: "Fixed issue where the default workspace was incorrect after editing an audience.", status: "GA" },
-      { name: "CSV Report Download Failure Fix", description: "Fixed issue where downloading a CSV report for May reports failed.", status: "GA" },
       { name: "Profile Script Dialog Localization Fix", description: "Fixed issue where strings in the Create Profile Script dialog were not localized.", status: "GA" },
       { name: "Recommendation Collection Mismatch Fix", description: "Fixed issue where a Recommendations collection returned additional non-qualifying entities.", status: "GA" }
     ],
@@ -1034,43 +1039,24 @@ const RELEASE_DATA = [
   },
   {
     id: 'campaign',
-    title: "Campaign v8.9.2: Debian 13, PostgreSQL 17, and 28 Stability Fixes",
-    version: "8.9.2",
-    date: "May 2026",
-    rawDate: "2026-05-01",
-    summary: "May 3, 2026 upgrades all instances to Debian 13 and PostgreSQL 17 for security and compliance, resolves a critical server crash, fixes push notification delivery failures for Android and iOS, and addresses email pipeline memory issues. 28 targeted fixes cover workflow stability, tracking link reliability, IMS login loops, and Snowflake integration.",
+    title: "Campaign v8.9.3: Analytics 2.0 API Connector Upgrade",
+    version: "8.9.3",
+    date: "August 2026",
+    rawDate: "2026-08-01",
+    summary: "Campaign v8.9.3 (August 11, 2026) upgrades the Web Analytics connector from the deprecated Analytics 1.4 API to the Analytics 2.0 API as Adobe's 1.4 APIs reach end-of-life. Customers must revalidate their metrics export, classification export, and remarketing workflows after the upgrade to ensure continued data flow.",
     features: [
-      { name: "Infrastructure Upgrade: Debian 13 and PostgreSQL 17", description: "All instances upgraded to Debian 13 and PostgreSQL 17 for optimal security posture and long-term compliance.", status: "GA" },
-      { name: "Critical Server Crash Fix", description: "Resolved critical crash issue causing repeated server failures and instance outages, restoring platform reliability.", status: "GA" },
-      { name: "Android and iOS Push Notification Fix", description: "Fixed silent push notification failures during delivery preparation when title and body fields were empty.", status: "GA" },
-      { name: "Language Field Capture for Android Apps", description: "Fixed incorrect reconciliation keys preventing language data capture for Android app registration tokens.", status: "GA" },
-      { name: "Typology Rules Delivery Preparation Fix", description: "Enabled delivery preparation with custom typology rules including pressure rules that were previously blocking preparation.", status: "GA" },
-      { name: "HTTP Processing Fix", description: "Resolved client console HTTP request failures that blocked normal operations.", status: "GA" },
-      { name: "FDA Monitoring Default Disabled", description: "FDA monitoring disabled by default to prevent connection log errors from accumulating in the system.", status: "GA" },
-      { name: "Interaction SOAP Namespace Fix", description: "Fixed namespace resolution errors in offer redemption SOAP calls for the Interaction module.", status: "GA" },
-      { name: "PostgreSQL 17 Single-Character Field Compatibility", description: "Corrected SQL errors arising from single-character string fields in workflow tables after the PostgreSQL 17 upgrade.", status: "GA" },
-      { name: "Mirror Page Display Fix", description: "Fixed Bad Mirror Page errors appearing in both the Client Console and Web UI when viewing delivery mirror pages.", status: "GA" },
-      { name: "Weight Formula References Fix", description: "Corrected delivery preparation failures occurring when template weight formulas referenced certain fields.", status: "GA" },
-      { name: "Email Pipeline Memory Optimization", description: "Addressed excessive memory consumption in the email pipeline that accumulated over time and degraded long-term performance.", status: "GA" },
-      { name: "Typology Rule Exclusion Logic Fix", description: "Fixed conflicting typology rules incorrectly excluding non-duplicate recipients that contained seed and proof addresses.", status: "GA" },
-      { name: "Delivery Creation Date Fix", description: "Restored missing creation date in extraction files that disappeared after saving a delivery.", status: "GA" },
-      { name: "Tracking Technical Workflow Fix", description: "Fixed tracking technical workflow failures after multivariant package installation in FFDA deployments.", status: "GA" },
-      { name: "Workflow Enrichment SQL Fix", description: "Resolved SQL errors arising from 1-N consecutive link joins in enrichment activities following an upgrade.", status: "GA" },
-      { name: "Offer Notification Technical Workflow Fix", description: "Fixed technical workflow failures for offer notifications following Campaign upgrades.", status: "GA" },
-      { name: "Multivariant Installation Stability Fix", description: "Enhanced multivariant installation process to prevent tracking workflow failures during build operations.", status: "GA" },
-      { name: "Child Workflow State Fix", description: "Fixed workflows becoming stuck in Being Edited state, which reduced available transactional workflow capacity.", status: "GA" },
-      { name: "Read List Activity Template Protection", description: "Prevented Read List activity from overwriting predefined templates with workflow-generated structures.", status: "GA" },
-      { name: "Subworkflow Output Attribute Restoration", description: "Restored enrichment activity ability to retrieve output attributes from upstream subworkflow activities.", status: "GA" },
-      { name: "Push Notification Feedback Crash Fix", description: "Corrected high-volume push notification feedback handling to prevent server crashes under load.", status: "GA" },
-      { name: "Tracking and Mirror Page Links Stability", description: "Fixed issue where tracking and mirror page links could fail to load delivery content.", status: "GA" },
-      { name: "IMS Login Loop Fix", description: "Resolved redirect loops affecting Campaign web applications using IMS single sign-on authentication.", status: "GA" },
-      { name: "Tracking Data Ingestion Fix", description: "Fixed issue preventing delivery status updates and blocking downstream message processing.", status: "GA" },
-      { name: "Transactional Event Date Correction", description: "Resolved data type conversion causing incorrect event dates in transactional messaging and dynamic reporting.", status: "GA" },
-      { name: "Schema Explorer Data Tab Fix", description: "Fixed error occurring when opening the Data tab on the xtk:workflow schema in the Schema Explorer.", status: "GA" },
-      { name: "Snowflake Offer Query Performance Fix", description: "Resolved long-running Snowflake queries causing table locks and platform slowness during offer processing.", status: "GA" },
-      { name: "Snowflake Encrypted Key Configuration Fix", description: "Enabled custom option configuration for encrypted key storage in Snowflake external accounts.", status: "GA" }
+      { name: "Adobe Analytics Connector: Analytics 2.0 API Upgrade", description: "The Web Analytics connector is upgraded to the Analytics 2.0 API; customers must revalidate metrics export, classification export, and remarketing workflows post-upgrade as the Analytics 1.4 API has reached end-of-life.", status: "GA" },
+      { name: "Infrastructure Upgrade: Debian 13 and PostgreSQL 17 (v8.9.2)", description: "All instances upgraded in May 2026 to Debian 13 and PostgreSQL 17 for optimal security posture and long-term compliance.", status: "GA" },
+      { name: "Critical Server Crash Fix (v8.9.2)", description: "Resolved critical crash issue causing repeated server failures and instance outages, restoring platform reliability.", status: "GA" },
+      { name: "Android and iOS Push Notification Fix (v8.9.2)", description: "Fixed silent push notification failures during delivery preparation when title and body fields were empty.", status: "GA" },
+      { name: "Email Pipeline Memory Optimization (v8.9.2)", description: "Addressed excessive memory consumption in the email pipeline that accumulated over time and degraded long-term performance.", status: "GA" },
+      { name: "IMS Login Loop Fix (v8.9.2)", description: "Resolved redirect loops affecting Campaign web applications using IMS single sign-on authentication.", status: "GA" },
+      { name: "Snowflake Offer Query Performance Fix (v8.9.2)", description: "Resolved long-running Snowflake queries causing table locks and platform slowness during offer processing.", status: "GA" },
+      { name: "Tracking Technical Workflow Fix (v8.9.2)", description: "Fixed tracking technical workflow failures after multivariant package installation in FFDA deployments.", status: "GA" },
+      { name: "Child Workflow State Fix (v8.9.2)", description: "Fixed workflows becoming stuck in Being Edited state, which reduced available transactional workflow capacity.", status: "GA" },
+      { name: "Transactional Event Date Correction (v8.9.2)", description: "Resolved data type conversion causing incorrect event dates in transactional messaging and dynamic reporting.", status: "GA" }
     ],
-    category_tags: ["Security", "Performance", "Data"]
+    category_tags: ["Integration", "Deprecation", "Security", "Performance"]
   },
   {
     id: 'data-distiller',
