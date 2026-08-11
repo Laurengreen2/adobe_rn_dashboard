@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-08-07'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-08-10'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -883,21 +883,22 @@ const RELEASE_DATA = [
   },
   {
     id: 'marketo',
-    title: "Marketo Engage July 2026: AI Skills, API Deprecations, and Lead Endpoint Limits",
+    title: "Marketo Engage August 2026: UI Refresh, AI Script Builder, and API Enforcement",
     version: null,
-    date: "July 2026",
-    rawDate: "2026-07-01",
-    summary: "July 2026 introduces two AI Skills in open beta — product knowledge Q&A and lead investigation — for instant answers and milestone diagnosis without leaving the platform. Enforcement changes include SOAP API retirement on July 31, access_token removal on August 31, Merge Leads capped at 25 IDs, and Static List lead activity endpoints limited starting September 30.",
+    date: "August 2026",
+    rawDate: "2026-08-01",
+    summary: "August 2026 delivers a refreshed Marketo Engage interface with updated menus, icons, and layout rolling out in phases throughout the month. The Email Designer gains an AI-powered Script Builder for rapid personalization creation, and archiving a folder will automatically disable and deschedule all campaigns in that tree. API enforcement continues: SOAP API ended July 31, access_token parameter retires August 31, and Campaign Run IDs now return in correct numerical format.",
     features: [
-      { name: "AI Skill: Product Knowledge", description: "Provides on-demand Marketo expertise by answering plain-language questions drawn from official Adobe documentation, directly within the platform.", status: "Beta" },
-      { name: "AI Skill: Investigate Leads", description: "Explains why specific leads failed to reach milestones like MQL or program qualification with plain-language analysis of the lead journey.", status: "Beta" },
-      { name: "Email Designer AI Assistant Contextual Menu", description: "AI Assistant integrated into the contextual editing menu for quick text-based actions directly from the editing bar without additional navigation.", status: "Beta" },
-      { name: "SOAP API End of Support", description: "SOAP API support ended July 31, 2026; all services must migrate to the REST API to avoid integration failures.", status: "GA" },
+      { name: "Marketo Engage New UI", description: "Refreshed interface with updated menus, icons, and layout for a cleaner, more modern experience rolling out in phases throughout August 2026.", status: "GA" },
+      { name: "Email Designer AI Script Builder", description: "AI-powered assistant within Email Designer accelerates creation of personalization scripts for dynamic email content.", status: "Beta" },
+      { name: "Disable Campaigns on Archive", description: "Archiving a folder automatically disables and deschedules all campaigns in that folder tree to prevent unintended sends.", status: "Beta" },
+      { name: "Campaign Run ID Formatting Fix", description: "Campaign Run ID values now return in correct numerical format instead of incorrectly double-quoted string format.", status: "GA" },
       { name: "REST API access_token Deprecation", description: "The access_token query parameter is retired after August 31, 2026; all integrations must switch to the Authorization header for continued access.", status: "GA" },
+      { name: "SOAP API End of Support", description: "SOAP API support ended July 31, 2026; all services must migrate to the REST API to avoid integration failures.", status: "GA" },
       { name: "Merge Leads API ID Limit", description: "Merge Leads API calls with more than 25 IDs in the leadIds parameter return error code 1080 starting July 31, 2026.", status: "GA" },
       { name: "Static List Lead Activity Endpoint Limits", description: "Get Lead Activities and Get Lead Changes endpoints return error 1003 for static lists with 10,000 or more leads beginning September 30, 2026.", status: "GA" }
     ],
-    category_tags: ["AI", "Integration", "Deprecation"]
+    category_tags: ["AI", "UI", "Integration", "Deprecation"]
   },
   {
     id: 'experience-platform',
