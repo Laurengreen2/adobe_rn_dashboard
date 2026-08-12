@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-08-11'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-08-12'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -743,10 +743,10 @@ const RELEASE_DATA = [
     version: null,
     date: "August 2026",
     rawDate: "2026-08-01",
-    summary: "August 2026 adds Journey Canvas enhancements for time-period comparisons and node analysis, a Migration Planner automating complex schema creation and SDK migration to CJA, and new Analytics 2.0 API Marketing Channels endpoints. Adobe Analytics API 1.4 reached end-of-life on August 12, 2026 — all remaining WSSE and 1.4 API integrations must migrate immediately.",
+    summary: "August 2026 adds Journey Canvas enhancements for time-period comparisons, deeper node analysis, and customizable arrow styling, plus a Migration Planner automating schema creation and SDK migration to CJA, and new Analytics 2.0 API Marketing Channels endpoints. Adobe Analytics API 1.4 reached end-of-life on August 12, 2026 — all remaining WSSE and 1.4 API integrations must migrate immediately.",
     features: [
       { name: "Activity Map Extension UI Refresh", description: "Updated overlay extension with a refreshed look and underlying improvements that support upcoming capability enhancements.", status: "GA" },
-      { name: "Journey Canvas: Time-Period Comparisons", description: "Compare the current journey against prior timeframes such as 4 weeks, 2 quarters, 1 year, or a custom date range.", status: "GA" },
+      { name: "Journey Canvas: Time-Period Comparisons", description: "Compare the current journey against prior timeframes such as 4 weeks, 2 quarters, 1 year, or a custom date range directly within Journey Canvas.", status: "GA" },
       { name: "Journey Canvas: Top Dimension Items After Node", description: "Display top dimension items that appear after a selected node at any point in the journey for deeper path analysis.", status: "GA" },
       { name: "Journey Canvas: Arrow Customization", description: "Drag arrows to change shape and curvature, and right-click to modify style as solid, dashed, dotted, dashed-dot, or animated.", status: "GA" },
       { name: "Migration Planner: Adobe Analytics to CJA", description: "Migration wizard automates complex tasks including XDM schema creation and migration from AppMeasurement or Analytics extension to Web SDK.", status: "GA" },
@@ -770,7 +770,7 @@ const RELEASE_DATA = [
     version: null,
     date: "August 2026",
     rawDate: "2026-08-01",
-    summary: "August 2026 delivers Journey Canvas enhancements for time-period comparisons and node analysis, B2B Person-to-Account Stitching to automatically derive missing account IDs, and Consent Policy Filtering to report on and exclude non-consenting visitors. Content Analytics gains paid media as a third channel, and new data governance labels C2 and C3 strengthen export controls.",
+    summary: "August 2026 delivers Journey Canvas enhancements for time-period comparisons, node analysis, and arrow customization, B2B Person-to-Account Stitching to automatically derive missing account IDs, and Consent Policy Filtering to report on and exclude non-consenting visitors. Content Analytics gains paid media as a third channel, and new data governance labels C2 and C3 strengthen export controls.",
     features: [
       { name: "Journey Canvas: Time-Period Comparisons", description: "Compare the current journey against prior timeframes such as 4 weeks prior, 2 quarters prior, 1 year prior, or a custom date range.", status: "GA" },
       { name: "Journey Canvas: Top Dimension Items After Node", description: "Display top dimension items appearing after any selected node in the journey to reveal common onward paths.", status: "GA" },
@@ -792,14 +792,16 @@ const RELEASE_DATA = [
   },
   {
     id: 'journey-optimizer',
-    title: "Journey Optimizer August 2026: AI Image Sourcing, WhatsApp Flows, Decisioning AI",
+    title: "Journey Optimizer August 2026: PDF Attachments, Bulk Journey Ops, AI Image Sourcing",
     version: null,
     date: "August 2026",
     rawDate: "2026-08-01",
-    summary: "August adds flexible AI image sourcing from AEM Assets Essentials with three operational modes. July's major wave introduced WhatsApp Flow templates, Loyalty Challenges, Custom Outbound Channels, Channel Optimization, a redesigned Journey Canvas, AI-powered Decisioning rule creation, Email Designer modules, automated Content Check validation, and 19 new personalization helper functions.",
+    summary: "August 2026 adds personalized PDF attachments in API-triggered emails, bulk journey operations, flexible AI image sourcing from AEM Assets Essentials, and a redesigned content simulation experience. July's major wave introduced WhatsApp Flow templates, Loyalty Challenges, Custom Outbound Channels, Channel Optimization, a redesigned Journey Canvas, AI-powered Decisioning rule creation, Email Designer modules, and 9 new personalization helper functions.",
     features: [
+      { name: "Personalized PDF Attachments in API-Triggered Emails", description: "API-triggered transactional emails now support up to five PDF attachments per message, including static files and recipient-specific documents fetched from Data Landing Zone at send time.", status: "GA" },
+      { name: "Bulk Operations in Journey Inventory", description: "Perform batch actions across multiple journeys simultaneously including adding to packages, deletion, folder movement, tag editing, and access management from the journey list.", status: "GA" },
       { name: "Flexible Image Sourcing for AI Content Generation", description: "AI content generation sources brand-approved images from AEM Assets Essentials using Balanced (DAM-first), Assets-only, or Creative (AI-generated) modes.", status: "GA" },
-      { name: "New Content Simulation Experience", description: "Renders all journey variants simultaneously in a scrollable grid with multiple layout options; a single bottom action bar consolidates navigation, zoom, viewport switching, and locale management with enhanced preview space and a classic-experience toggle.", status: "GA" },
+      { name: "New Content Simulation Experience", description: "Renders all journey variants simultaneously in a scrollable grid with multiple layout options; a single bottom action bar consolidates navigation, zoom, viewport switching, and locale management.", status: "GA" },
       { name: "WhatsApp Flow Templates", description: "Send WhatsApp Flow templates to deliver interactive multi-screen experiences such as surveys and lead capture forms; responses stored as raw JSON payloads.", status: "GA" },
       { name: "Enhanced Custom Provider Integrations for Mobile", description: "Edit default Content-Type header, add up to 10 custom header parameters, and use Journey Optimizer helper functions including encode64 within SMS payloads.", status: "GA" },
       { name: "Web Application Firewall IP Allowlisting", description: "Landing pages now support WAF IP allowlisting, enforcing that all incoming requests route exclusively through configured WAF infrastructure.", status: "GA" },
@@ -834,12 +836,13 @@ const RELEASE_DATA = [
   },
   {
     id: 'ajo-b2b',
-    title: "Journey Optimizer B2B August 2026: Person Lists, Journey Re-entry, External Nodes",
+    title: "Journey Optimizer B2B August 2026: Person Journeys GA, Person Lists, External Nodes",
     version: "2026.8",
     date: "August 2026",
     rawDate: "2026-08-01",
-    summary: "The August 2026 (2026.8) release introduces Person Lists for static and dynamic audience segmentation, Journey Re-entry for repeated person journey traversal, and External Split Path and Action nodes bringing person journeys to parity with account journeys. Variant Split Paths graduate from beta to GA, account journeys gain multiple simultaneous event triggers, and AEP relational datasets become available.",
+    summary: "The August 2026 (2026.8) release graduates Person Journeys to GA and introduces Person Lists for static and dynamic audience segmentation, Journey Re-entry for repeated person journey traversal, and External Split Path and Action nodes bringing person journeys to parity with account journeys. Variant Split Paths also graduate from beta to GA, account journeys gain multiple simultaneous event triggers, and AEP relational datasets become available.",
     features: [
+      { name: "Person Journeys", description: "Lead-based marketing orchestration using Experience Platform Audiences graduates from beta to generally available, enabling full person journey creation and management.", status: "GA" },
       { name: "Person Lists", description: "Static and dynamic person lists segment audiences by demographic attributes and engagement history for targeted enrollment in person journeys.", status: "GA" },
       { name: "Variant Split Paths for Person Journeys", description: "Assigns people to different journey paths using defined percentage splits for A/B testing, graduated from beta to generally available.", status: "GA" },
       { name: "Journey Re-entry for Person Journeys", description: "Allows people to progress through the same journey multiple times, enabling re-evaluation and repeated engagement scenarios within a single journey definition.", status: "GA" },
@@ -906,6 +909,30 @@ const RELEASE_DATA = [
     category_tags: ["AI", "UI", "Integration", "Deprecation"]
   },
   {
+    id: 'campaign',
+    title: "Campaign v8.9.3: Analytics 2.0 Connector, OAuth2 Security, and 30+ Bug Fixes",
+    version: "8.9.3",
+    date: "August 2026",
+    rawDate: "2026-08-01",
+    summary: "Campaign v8.9.3 (August 11, 2026) upgrades the Web Analytics connector from the deprecated Analytics 1.4 API to the Analytics 2.0 API and adds OAuth2 authentication support for Snowflake and Databricks external accounts. Additional security hardening includes restricted workflow file access and FTP URL allowlisting, alongside 30+ bug fixes addressing workflow stability, push delivery, and PostgreSQL 17 compatibility.",
+    features: [
+      { name: "Adobe Analytics Connector: Analytics 2.0 API Upgrade", description: "The Web Analytics connector is upgraded to the Analytics 2.0 API; customers must revalidate metrics export, classification export, and remarketing workflows post-upgrade as the Analytics 1.4 API has reached end-of-life.", status: "GA" },
+      { name: "OAuth2 Authentication for Snowflake and Databricks", description: "Snowflake and Databricks external accounts now support OAuth2 authentication for federated data access, replacing legacy credential methods.", status: "GA" },
+      { name: "Workflow File Access Security Restriction", description: "Workflow file access is now restricted to authorized directories only, closing a potential path-traversal vulnerability in FFDA deployments.", status: "GA" },
+      { name: "FTP URL Allowlisting in JavaScript Code Activities", description: "JavaScript code activities now enforce FTP URL allowlisting to prevent unauthorized outbound connections from workflow automation.", status: "GA" },
+      { name: "Infrastructure Upgrade: Debian 13 and PostgreSQL 17 (v8.9.2)", description: "All instances upgraded in May 2026 to Debian 13 and PostgreSQL 17 for optimal security posture and long-term compliance.", status: "GA" },
+      { name: "Critical Server Crash Fix (v8.9.2)", description: "Resolved critical crash issue causing repeated server failures and instance outages, restoring platform reliability.", status: "GA" },
+      { name: "Android and iOS Push Notification Fix (v8.9.2)", description: "Fixed silent push notification failures during delivery preparation when title and body fields were empty.", status: "GA" },
+      { name: "Email Pipeline Memory Optimization (v8.9.2)", description: "Addressed excessive memory consumption in the email pipeline that accumulated over time and degraded long-term performance.", status: "GA" },
+      { name: "IMS Login Loop Fix (v8.9.2)", description: "Resolved redirect loops affecting Campaign web applications using IMS single sign-on authentication.", status: "GA" },
+      { name: "Snowflake Offer Query Performance Fix (v8.9.2)", description: "Resolved long-running Snowflake queries causing table locks and platform slowness during offer processing.", status: "GA" },
+      { name: "Tracking Technical Workflow Fix (v8.9.2)", description: "Fixed tracking technical workflow failures after multivariant package installation in FFDA deployments.", status: "GA" },
+      { name: "Child Workflow State Fix (v8.9.2)", description: "Fixed workflows becoming stuck in Being Edited state, which reduced available transactional workflow capacity.", status: "GA" },
+      { name: "Transactional Event Date Correction (v8.9.2)", description: "Resolved data type conversion causing incorrect event dates in transactional messaging and dynamic reporting.", status: "GA" }
+    ],
+    category_tags: ["Integration", "Deprecation", "Security", "Performance"]
+  },
+  {
     id: 'experience-platform',
     title: "Experience Platform July 2026: Meta Ads Source, Sandbox Agent, Profile Performance",
     version: null,
@@ -939,13 +966,14 @@ const RELEASE_DATA = [
     version: "26.7",
     date: "July 2026",
     rawDate: "2026-07-01",
-    summary: "Q3 2026 (released July 16) expands AI integration via the Workfront MCP Server connecting to Claude and ChatGPT, adds parallel document approval paths supporting up to 30 independent review tracks, and ships an Internal Lookup Field replacing Typeahead with dynamic filtering. Adobe Cloud Drive reaches GA, and 12 administrator-facing custom form improvements ship alongside reporting and financial management upgrades.",
+    summary: "Q3 2026 (released July 16) expands AI integration via the Workfront MCP Server connecting to Claude and ChatGPT, adds parallel document approval paths supporting up to 30 independent review tracks, and ships an Internal Lookup Field replacing Typeahead with dynamic filtering. Adobe Cloud Drive reaches GA, Workfront Planning launches as a standalone product, and 12 administrator-facing custom form improvements ship alongside reporting and financial management upgrades.",
     features: [
       { name: "Workfront MCP Server: Connect AI Agentic Platforms", description: "New server connects Workfront to Claude, ChatGPT, and other AI agentic platforms enabling natural-language creation, updating, and management of Workfront items.", status: "GA" },
       { name: "Workfront MCP Connector New Tools", description: "Added new tools to expand MCP Connector capabilities while deprecating the Search objects and Resolve field name tools.", status: "GA" },
       { name: "Workfront MCP Connector: Claude and EU Support", description: "Claude can now connect to the MCP connector, and EU instance access is enabled for international organizations.", status: "GA" },
       { name: "Parallel Approval Paths for Documents", description: "Approval workflows for documents now support up to 30 independent review tracks with up to 100 stages, with custom messages per stage.", status: "GA" },
       { name: "Adobe Cloud Drive", description: "Desktop application mounts Adobe cloud storage projects as a drive on Mac or Windows for direct file opening, editing, and saving in any application.", status: "GA" },
+      { name: "Workfront Planning as Standalone Product", description: "Workfront Planning is now available for new customers as an independent product starting July 16, 2026, without requiring a full Workflow license.", status: "GA" },
       { name: "Request Approval on Adobe Express Templates", description: "Integration automatically routes Adobe Express template remixes through Workfront approval workflows with Frame.io.", status: "GA" },
       { name: "Print Summary for Documents", description: "Open a printable summary of a document's approval directly from the new Documents area for Adobe cloud storage organizations.", status: "GA" },
       { name: "Custom Message in Document Approval Stage", description: "Custom messages can be added to document approval stages, appearing in notification emails and the Approvals tab.", status: "GA" },
@@ -963,10 +991,13 @@ const RELEASE_DATA = [
       { name: "New License Type Fields for Access Levels", description: "License Type field renamed to Workflow License Type; new Planning License Type field added for Workfront Planning customers.", status: "GA" },
       { name: "View Change History for Workfront Objects", description: "New Change History List displays object changes, operations performed, and sources in one central location.", status: "GA" },
       { name: "Convert Legacy Storage Portfolio to Cloud Storage", description: "Administrators can now convert legacy storage portfolios to Adobe cloud storage directly from System Preferences.", status: "GA" },
+      { name: "Convert Legacy Storage Task to Adobe Cloud Storage Project", description: "Organizations using both storage types can convert a legacy storage task directly to an Adobe cloud storage project.", status: "GA" },
       { name: "Add Rate Card to Template", description: "Rate cards can now be selected for project templates, automatically attaching to all projects created from those templates.", status: "GA" },
       { name: "Add Billing Rates Between Existing Rate Card Rates", description: "Select the More menu next to an existing rate to insert a new rate row above or below it on the rate card.", status: "GA" },
       { name: "Rate Attributes Locked When Applied to Rates", description: "Rate card attributes become locked once applied to rates, preventing accidental modifications to historical pricing data.", status: "GA" },
       { name: "Custom Data and Views in Priorities", description: "Priorities now supports custom data in columns; open the column manager from the worklist to add custom fields.", status: "GA" },
+      { name: "Matching Request Statuses Across Experiences", description: "Request statuses are now consistent between the legacy and new request experiences for clearer status visibility.", status: "GA" },
+      { name: "Changes to Actual Hours in Custom Formulas", description: "The legacy actualWorkRequired field is migrated to actualWorkRequiredDouble in custom report formulas for improved precision.", status: "GA" },
       { name: "Automated Access Control for Workfront Planning in Snowflake", description: "Introduces automated, entitlement-driven access management for Workfront Planning data in Snowflake as part of Workfront Data Connect.", status: "GA" },
       { name: "Canvas Dashboard Prompt Defaults and Persistence", description: "Dashboard managers can define default prompt values and user selections are automatically saved and restored on return.", status: "GA" },
       { name: "Add Multiple Power BI IP Ranges to Data Connect Allowlist", description: "Administrators can now add entire Azure IP address region sets to the Data Connect allowlist in a single step.", status: "GA" },
@@ -975,7 +1006,9 @@ const RELEASE_DATA = [
       { name: "Improved Data Accuracy in Canvas Dashboard Reports", description: "Dashboard report queries restructured to prevent duplicate rows when filters or fields cross related records.", status: "GA" },
       { name: "Streamlined Bulk Assignments in Workload Balancer", description: "Assign users and replace users actions combined into a single Replace resource action in the Workload Balancer for streamlined bulk assignments.", status: "GA" },
       { name: "Interface Update for Global Navigation Icons", description: "Updated look and feel of general navigation icons including Main Menu and navigation bar icons for modern design consistent with Adobe applications.", status: "GA" },
+      { name: "Updated Comment Notification Email Design", description: "Comment notification emails have a refreshed look and feel aligned with Adobe email standards.", status: "GA" },
       { name: "Enhanced List Keyboard Navigation", description: "Multiple field types on enhanced lists updated to include keyboard navigation and other accessibility improvements.", status: "GA" },
+      { name: "Comment Archiving Optimization", description: "Comments older than one year are being archived in a phased rollout with no change to user experience or access.", status: "GA" },
       { name: "MFA Requirement for Data Connect Reader Users", description: "Password-only authentication for Data Connect reader users is retired August 8, 2026; multi-factor authentication must be enabled.", status: "GA" }
     ],
     category_tags: ["AI", "UI", "Integration", "Data"]
@@ -986,7 +1019,7 @@ const RELEASE_DATA = [
     version: "2026.7.0",
     date: "July 2026",
     rawDate: "2026-07-01",
-    summary: "July 2026 adds a daily Security Health Dashboard with OWASP Top 10 and CVE scanning, four new Document Conversion APIs, and the AEM MCP Server for unified AI agent access. Content Fragments gain full folder management parity, Dynamic Media supports countdown timer templates, and seven beta capabilities launch including AEM Edge Functions, Brand Aware Metadata, and the Assets Onboarding Agent.",
+    summary: "July 2026 adds a daily Security Health Dashboard with OWASP Top 10 and CVE scanning, four new Document Conversion APIs, and the AEM MCP Server for unified AI agent access. Content Fragments gain full folder management parity, Dynamic Media supports countdown timer templates, and seven beta capabilities launch including AEM Edge Functions, Brand Aware Metadata, and the Assets Onboarding Agent. Next release (2026.8.0) is scheduled for August 27, 2026.",
     features: [
       { name: "Security Health Dashboard", description: "Daily OWASP Top 10 and CVE scans of production environments surface actionable security findings with automated fix options via Experience Hub.", status: "GA" },
       { name: "ChatGPT Plugin for AEM", description: "One-click installable plugin from the OpenAI marketplace exposes a growing set of tools to interact with AEM including editing content through prompting.", status: "GA" },
@@ -1036,27 +1069,6 @@ const RELEASE_DATA = [
       { name: "Segment Match Deprecation", description: "Segment Match retires November 27, 2026; customers must migrate to Real-Time CDP Collaboration to maintain partner data sharing capabilities.", status: "GA" }
     ],
     category_tags: ["UI", "Data", "Performance", "Deprecation", "AI"]
-  },
-  {
-    id: 'campaign',
-    title: "Campaign v8.9.3: Analytics 2.0 API Connector Upgrade",
-    version: "8.9.3",
-    date: "August 2026",
-    rawDate: "2026-08-01",
-    summary: "Campaign v8.9.3 (August 11, 2026) upgrades the Web Analytics connector from the deprecated Analytics 1.4 API to the Analytics 2.0 API as Adobe's 1.4 APIs reach end-of-life. Customers must revalidate their metrics export, classification export, and remarketing workflows after the upgrade to ensure continued data flow.",
-    features: [
-      { name: "Adobe Analytics Connector: Analytics 2.0 API Upgrade", description: "The Web Analytics connector is upgraded to the Analytics 2.0 API; customers must revalidate metrics export, classification export, and remarketing workflows post-upgrade as the Analytics 1.4 API has reached end-of-life.", status: "GA" },
-      { name: "Infrastructure Upgrade: Debian 13 and PostgreSQL 17 (v8.9.2)", description: "All instances upgraded in May 2026 to Debian 13 and PostgreSQL 17 for optimal security posture and long-term compliance.", status: "GA" },
-      { name: "Critical Server Crash Fix (v8.9.2)", description: "Resolved critical crash issue causing repeated server failures and instance outages, restoring platform reliability.", status: "GA" },
-      { name: "Android and iOS Push Notification Fix (v8.9.2)", description: "Fixed silent push notification failures during delivery preparation when title and body fields were empty.", status: "GA" },
-      { name: "Email Pipeline Memory Optimization (v8.9.2)", description: "Addressed excessive memory consumption in the email pipeline that accumulated over time and degraded long-term performance.", status: "GA" },
-      { name: "IMS Login Loop Fix (v8.9.2)", description: "Resolved redirect loops affecting Campaign web applications using IMS single sign-on authentication.", status: "GA" },
-      { name: "Snowflake Offer Query Performance Fix (v8.9.2)", description: "Resolved long-running Snowflake queries causing table locks and platform slowness during offer processing.", status: "GA" },
-      { name: "Tracking Technical Workflow Fix (v8.9.2)", description: "Fixed tracking technical workflow failures after multivariant package installation in FFDA deployments.", status: "GA" },
-      { name: "Child Workflow State Fix (v8.9.2)", description: "Fixed workflows becoming stuck in Being Edited state, which reduced available transactional workflow capacity.", status: "GA" },
-      { name: "Transactional Event Date Correction (v8.9.2)", description: "Resolved data type conversion causing incorrect event dates in transactional messaging and dynamic reporting.", status: "GA" }
-    ],
-    category_tags: ["Integration", "Deprecation", "Security", "Performance"]
   },
   {
     id: 'data-distiller',
