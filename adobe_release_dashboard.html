@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-08-12'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-08-14'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -756,11 +756,16 @@ const RELEASE_DATA = [
       { name: "Analytics API 1.4 Sunset", description: "Legacy Analytics 1.4 API services and WSSE authentication ceased functioning on August 12, 2026; all integrations must use the 2.0 API.", status: "GA" },
       { name: "Legacy Report Builder End of Life", description: "Legacy Report Builder reached end-of-life in June 2026; users must migrate workbooks to the new Report Builder available via Microsoft Store.", status: "GA" },
       { name: "Bug Fixes: Analysis Workspace", description: "23 bug fixes resolving visualization, segmentation, and workspace behavior issues in the August 2026 release.", status: "GA" },
-      { name: "Bug Fixes: Classifications", description: "54 bug fixes addressing data classification accuracy, import failures, and export issues.", status: "GA" },
+      { name: "Bug Fixes: Classifications", description: "60 bug fixes addressing data classification accuracy, import failures, and export issues.", status: "GA" },
       { name: "Bug Fixes: Report Builder", description: "14 bug fixes improving Report Builder stability, scheduled delivery, and workbook rendering.", status: "GA" },
       { name: "Bug Fixes: Data Feeds and Data Warehouse", description: "7 bug fixes resolving data feed delivery and warehouse export reliability issues.", status: "GA" },
-      { name: "Bug Fixes: Reporting, Segmentation, and Report Suites", description: "14 combined fixes resolving report generation, segmentation logic, report suite configuration, and scheduled report delivery errors.", status: "GA" },
-      { name: "Bug Fixes: Migration", description: "3 fixes addressing migration workflow issues for customers transitioning from Analytics 1.4 to Analytics 2.0.", status: "GA" }
+      { name: "Bug Fixes: Reporting", description: "5 fixes resolving report generation and data accuracy issues.", status: "GA" },
+      { name: "Bug Fixes: Report Suites", description: "3 fixes addressing report suite configuration issues.", status: "GA" },
+      { name: "Bug Fixes: Scheduled Reports", description: "3 fixes resolving scheduled report delivery issues.", status: "GA" },
+      { name: "Bug Fixes: Segmentation", description: "3 fixes addressing segmentation logic and filter issues.", status: "GA" },
+      { name: "Bug Fixes: Migration", description: "3 fixes addressing migration workflow issues for customers transitioning from Analytics 1.4 to Analytics 2.0.", status: "GA" },
+      { name: "Bug Fixes: Other", description: "9 miscellaneous platform fixes across additional feature areas.", status: "GA" },
+      { name: "Streaming Media: Support Schedule Data", description: "Upload scheduled data for past live streaming content to accurately track viewership across FAST platforms, local streams, and live sports.", status: "Limited Availability" }
     ],
     category_tags: ["AI", "Data", "Integration", "Deprecation"]
   },
@@ -1009,9 +1014,14 @@ const RELEASE_DATA = [
       { name: "Updated Comment Notification Email Design", description: "Comment notification emails have a refreshed look and feel aligned with Adobe email standards.", status: "GA" },
       { name: "Enhanced List Keyboard Navigation", description: "Multiple field types on enhanced lists updated to include keyboard navigation and other accessibility improvements.", status: "GA" },
       { name: "Comment Archiving Optimization", description: "Comments older than one year are being archived in a phased rollout with no change to user experience or access.", status: "GA" },
-      { name: "MFA Requirement for Data Connect Reader Users", description: "Password-only authentication for Data Connect reader users is retired August 8, 2026; multi-factor authentication must be enabled.", status: "GA" }
+      { name: "MFA Requirement for Data Connect Reader Users", description: "Password-only authentication for Data Connect reader users is retired August 8, 2026; multi-factor authentication must be enabled.", status: "GA" },
+      { name: "Predefined Views in Requests List", description: "Predefined views help organize request lists in the Requests area and the My Requests widget on the Home page.", status: "GA" },
+      { name: "Use Legacy Storage Template for Adobe Cloud Storage Project", description: "Legacy storage templates can now be used to create Adobe cloud storage projects in organizations using both storage types.", status: "GA" },
+      { name: "Custom Data Support for New Objects", description: "New Workfront objects added in Q3 2026 support custom data fields for extended enterprise use cases.", status: "GA" },
+      { name: "Workfront API Version 22", description: "API version 22 released with modified resources and endpoints supporting Q3 2026 new functionality.", status: "GA" },
+      { name: "Workfront Planning API Version 2", description: "Planning API v2 enables programmatic workspace, record type, and field management with improved URL structure and bulk operations support.", status: "GA" }
     ],
-    category_tags: ["AI", "UI", "Integration", "Data"]
+    category_tags: ["AI", "UI", "Integration", "Data", "Security"]
   },
   {
     id: 'aem',
