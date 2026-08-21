@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-08-19'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-08-21'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -816,6 +816,8 @@ const RELEASE_DATA = [
       { name: "Send Using Waves for Orchestrated Campaigns", description: "Schedule high-volume outbound campaign messages in controlled batches across multiple send waves to manage delivery infrastructure load.", status: "GA" },
       { name: "High Throughput Push Messaging", description: "Supports up to 5,000 push transactions per second for high-volume mobile campaigns with the Journey Optimizer Performance Add-on.", status: "GA" },
       { name: "Multi-Selection on Journey Canvas", description: "Hold Shift to select multiple nodes simultaneously on the journey canvas for bulk move, delete, or configuration operations.", status: "GA" },
+      { name: "Start/End Dates in Journey Header", description: "Journey start and end dates now display in the journey header with adaptive status labels for improved at-a-glance lifecycle visibility.", status: "GA" },
+      { name: "Multi-SAN CSR Generation", description: "Subdomain setup automatically generates multi-SAN certificate signing requests with both SANs included, simplifying SSL certificate configuration.", status: "GA" },
       { name: "Mirror Pages in Visual Fragments", description: "Insert mirror page links with decisioning offer attributes in visual fragments reusable across email campaigns and journeys.", status: "GA" },
       { name: "Profile Target Dimension Management", description: "Delete or edit configured identity namespaces used as profile target dimensions in journeys and campaigns for namespace lifecycle management.", status: "GA" },
       { name: "WhatsApp Flow Templates", description: "Send WhatsApp Flow templates to deliver interactive multi-screen experiences such as surveys and lead capture forms; responses stored as raw JSON payloads.", status: "GA" },
@@ -841,6 +843,7 @@ const RELEASE_DATA = [
       { name: "AJO MCP Server New Tools", description: "Five additional read-only channel configuration tools added: List Channel Configurations, Get Channel Configuration, List Configuration Resources, Get Configuration Resource, and List Marketing Actions.", status: "GA" },
       { name: "Estimated Click Metrics for Email Reporting", description: "New Estimated CTR and Estimated CTOR metrics available across Journeys, Campaigns, and Channel Live reports.", status: "GA" },
       { name: "Batch Audiences Deprecation in Journeys", description: "Starting September 2026, Journey Optimizer blocks publication for journeys using batch audiences in Audience Qualification nodes or Exit Criteria; existing live journeys are unaffected.", status: "GA" },
+      { name: "Journey-Level Holdout", description: "Configure a holdout percentage at the journey level to exclude a control group from messaging and measure incremental lift of the journey program.", status: "Limited Availability" },
       { name: "LINE Channel Support", description: "Deliver personalized content to LINE channel users including text messages, stickers, and Flex Messages for organizations with LINE channel access.", status: "Limited Availability" },
       { name: "Personalized Email Sender Details", description: "Customize From name, From email prefix, and Reply-to name per recipient using profile attributes and conditional logic.", status: "Limited Availability" },
       { name: "Loyalty Challenges", description: "Gamified loyalty programs let marketers design standard, streak, or sequential challenges with task definitions, reward management, and AI-powered reporting dashboards.", status: "Limited Availability" },
@@ -848,7 +851,9 @@ const RELEASE_DATA = [
       { name: "Channel Optimization", description: "Automatically selects the optimal delivery channel per customer via manual ranking, customer preferences, or AI propensity scoring with automatic fallback to the next available channel.", status: "Limited Availability" },
       { name: "Decisioning Rules from Natural Language", description: "Describe a Decisioning eligibility rule in plain language and AI generates the corresponding expression automatically for organizations with Adobe AI capabilities access.", status: "Limited Availability" },
       { name: "Decisioning Rules and Ranking Formulas Simulation", description: "Simulate rules and ranking formulas directly from the editor using manual or AI-generated test variants, then validate eligibility and review ranked results pre-production.", status: "Limited Availability" },
-      { name: "Guided Adoption Capabilities", description: "Dedicated workspace enables migration of existing email content and journeys from other marketing platforms into Journey Optimizer without rebuilding from scratch.", status: "Limited Availability" }
+      { name: "Guided Adoption Capabilities", description: "Dedicated workspace enables migration of existing email content and journeys from other marketing platforms into Journey Optimizer without rebuilding from scratch.", status: "Limited Availability" },
+      { name: "Target Dimension Simplification", description: "Displays the active targeting dimension on the workflow canvas and simplifies multi-entity segmentation configuration for orchestrated campaigns.", status: "GA" },
+      { name: "Live Activity Execution Metadata", description: "Optional executionMetadata field on each recipient allows passing custom key/value pairs such as order ID or loyalty tier for dynamic live activity personalization.", status: "GA" }
     ],
     category_tags: ["AI", "UI", "Data", "Integration", "Deprecation"]
   },
