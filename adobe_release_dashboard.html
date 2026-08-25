@@ -854,7 +854,15 @@ const RELEASE_DATA = [
       { name: "Guided Adoption Capabilities", description: "Dedicated workspace enables migration of existing email content and journeys from other marketing platforms into Journey Optimizer without rebuilding from scratch.", status: "Limited Availability" },
       { name: "Target Dimension Simplification", description: "Displays the active targeting dimension on the workflow canvas and simplifies multi-entity segmentation configuration for orchestrated campaigns.", status: "GA" },
       { name: "Live Activity Execution Metadata", description: "Optional executionMetadata field on each recipient allows passing custom key/value pairs such as order ID or loyalty tier for dynamic live activity personalization.", status: "GA" },
-      { name: "Placement-Level Frequency Capping in Decisioning", description: "Frequency capping rules in Decisioning can now be scoped to individual placements with two modes — placement-specific capping and per-placement capping — for finer control over offer display frequency.", status: "GA" }
+      { name: "Placement-Level Frequency Capping in Decisioning", description: "Frequency capping rules in Decisioning can now be scoped to individual placements with two modes — placement-specific capping and per-placement capping — for finer control over offer display frequency.", status: "GA" },
+      { name: "Inbound Experience Simulation in Action Campaigns", description: "Test inbound channel actions with simulated users before going live, including generated URLs and QR codes for validation of web and mobile experiences.", status: "Beta" },
+      { name: "Action Campaign Authoring Flow Redesign", description: "More intuitive and efficient user experience for Action Campaign creation with improved step sequencing and guided configuration.", status: "Beta" },
+      { name: "Folders for Action Campaigns", description: "Organize Action Campaigns into folders for improved navigation and management within large campaign inventories.", status: "Beta" },
+      { name: "Override Default Execution Fields in Action Campaigns", description: "Override globally configured default execution fields for Email, SMS, and WhatsApp at the individual campaign parameter level.", status: "Beta" },
+      { name: "Decisioning Support in Web Channel", description: "Decision policies become available in the web visual editor to deliver relevant AI-selected offers directly to website visitors.", status: "Beta" },
+      { name: "DateDiff Function in Journey Expression Editor", description: "New function calculates the difference between two dates in days, enabling deadline creation, lifecycle duration calculation, and countdown timer logic in journey expressions.", status: "Beta" },
+      { name: "Content Variant Size Warning", description: "System alerts users when content variants exceed recommended thresholds — 1200 KB for templates and messages, 700 KB for fragments, 1000 KB for landing pages — without blocking saves.", status: "Beta" },
+      { name: "Fragment Count Limits in Content", description: "Validates unique fragment usage in content with warnings at 75% capacity and hard limits at 60 unique fragments per variant and 120 across all variants.", status: "Beta" }
     ],
     category_tags: ["AI", "UI", "Data", "Integration", "Deprecation"]
   },
@@ -982,7 +990,8 @@ const RELEASE_DATA = [
       { name: "9 Sources Promoted to General Availability", description: "Braze, Capillary, Didomi, LAVA, Rainfocus, Relay, Shopify Streaming, Talon.One Batch, and Talon.One Streaming source connectors graduate from beta to GA.", status: "GA" },
       { name: "Self-Serve Sources Streaming SDK", description: "Build custom streaming source connectors with OAuth or HMAC authentication using the updated Self-Serve Sources Streaming SDK documentation.", status: "GA" },
       { name: "TLS v1.3 Compatibility for Sources", description: "Six cloud storage and database source connectors now support TLS 1.3 for enhanced connection security.", status: "GA" },
-      { name: "Updated Batch Sources IP Allowlist", description: "Refreshed IP allowlist for batch source connectors; update firewall and network rules to maintain uninterrupted data ingestion.", status: "GA" }
+      { name: "Updated Batch Sources IP Allowlist", description: "Refreshed IP allowlist for batch source connectors; update firewall and network rules to maintain uninterrupted data ingestion.", status: "GA" },
+      { name: "B2B Audience Export Fix", description: "Fixed issue where all audience data was resent on every export cycle; only changed audiences are now resent per profile, reducing unnecessary export volume.", status: "GA" }
     ],
     category_tags: ["Data", "Security", "Integration", "AI"]
   },
@@ -1075,7 +1084,8 @@ const RELEASE_DATA = [
       { name: "Table Component for Adaptive Forms", description: "Core Components-based forms now support tabular layouts with repeatable rows, column sorting, merged cells, and row calculations with PDF rendering.", status: "Limited Availability" },
       { name: "Document Conversion APIs", description: "Four new conversion methods: HTML-to-PDF, PostScript-to-PDF, PDF-to-Image, and PDF-to-PostScript with transparency flattening for expanded Forms document processing.", status: "Limited Availability" },
       { name: "Locale Support for Interactive Communication", description: "Authors can configure locale to determine language and region-specific formatting such as dates, numbers, and currencies in Interactive Communications.", status: "Limited Availability" },
-      { name: "File Attachment Virus Scanning and Custom Validation", description: "Validate form attachments using custom logic before submission, integrating malware scanning to reject invalid or infected files before persistence.", status: "Limited Availability" }
+      { name: "File Attachment Virus Scanning and Custom Validation", description: "Validate form attachments using custom logic before submission, integrating malware scanning to reject invalid or infected files before persistence.", status: "Limited Availability" },
+      { name: "AI-Powered Content Onboarding and Supply Chain Automation", description: "AI agent guides configuration of one-time migrations and recurring synchronization between repositories by proposing connections, metadata mappings, and transfer settings.", status: "Limited Availability" }
     ],
     category_tags: ["AI", "Security", "UI", "Performance", "Data"]
   },
