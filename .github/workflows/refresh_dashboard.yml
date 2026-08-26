@@ -1,0 +1,43 @@
+name: Refresh Adobe Release Dashboard
+
+on:
+  schedule:
+    # 15:00 UTC = 8:00 AM PDT (UTC-7). In winter (PST/UTC-8) this fires at 7:00 AM Pacific.
+    - cron: "0 15 * * 1-5"
+  workflow_dispatch: # allow manual trigger from GitHub Actions UI
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install anthropic requests
+
+      - name: Refresh dashboard
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python refresh_dashboard.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.email "lauren.m.pellegrini@accenture.com"
+          git config user.name "Lauren Pellegrini (automated)"
+          git add adobe_release_dashboard.html
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: refresh release notes $(date +%Y-%m-%d)"
+            git push
+          fi
