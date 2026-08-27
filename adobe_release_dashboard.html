@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-08-25'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-08-27'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -997,11 +997,11 @@ const RELEASE_DATA = [
   },
   {
     id: 'workfront',
-    title: "Adobe Workfront 26.7: MCP Server, Parallel Approvals, and Custom Form Enhancements",
-    version: "26.7",
-    date: "July 2026",
-    rawDate: "2026-07-01",
-    summary: "Q3 2026 (released July 16) expands AI integration via the Workfront MCP Server connecting to Claude and ChatGPT, adds parallel document approval paths supporting up to 30 independent review tracks, and ships an Internal Lookup Field replacing Typeahead with dynamic filtering. Adobe Cloud Drive reaches GA, Workfront Planning launches as a standalone product, and 12 administrator-facing custom form improvements ship alongside reporting and financial management upgrades.",
+    title: "Adobe Workfront August 2026: AI Task Collaborators, MCP Search Tool, and C2PA Metadata",
+    version: null,
+    date: "August 2026",
+    rawDate: "2026-08-01",
+    summary: "August 2026 (Q4) adds AI Task Collaborators assignable directly to tasks to complete work autonomously, expands the Workfront MCP Connector with a Search Users tool and AEM asset submission capability, and preserves C2PA content provenance metadata on all stored documents. These additions build on Q3 2026 which introduced the MCP Server connecting to Claude and ChatGPT, parallel document approval paths with up to 30 tracks, Adobe Cloud Drive GA, Workfront Planning as a standalone product, and 40+ enhancements across custom forms, governance, and reporting.",
     features: [
       { name: "Workfront MCP Server: Connect AI Agentic Platforms", description: "New server connects Workfront to Claude, ChatGPT, and other AI agentic platforms enabling natural-language creation, updating, and management of Workfront items.", status: "GA" },
       { name: "Workfront MCP Connector New Tools", description: "Added new tools to expand MCP Connector capabilities while deprecating the Search objects and Resolve field name tools.", status: "GA" },
@@ -1049,7 +1049,13 @@ const RELEASE_DATA = [
       { name: "Use Legacy Storage Template for Adobe Cloud Storage Project", description: "Legacy storage templates can now be used to create Adobe cloud storage projects in organizations using both storage types.", status: "GA" },
       { name: "Custom Data Support for New Objects", description: "New Workfront objects added in Q3 2026 support custom data fields for extended enterprise use cases.", status: "GA" },
       { name: "Workfront API Version 22", description: "API version 22 released with modified resources and endpoints supporting Q3 2026 new functionality.", status: "GA" },
-      { name: "Workfront Planning API Version 2", description: "Planning API v2 enables programmatic workspace, record type, and field management with improved URL structure and bulk operations support.", status: "GA" }
+      { name: "Workfront Planning API Version 2", description: "Planning API v2 enables programmatic workspace, record type, and field management with improved URL structure and bulk operations support.", status: "GA" },
+      { name: "New Search Users Tool in Workfront MCP Connector", description: "A dedicated Search Users tool in the MCP Connector helps locate Workfront instance users faster, replacing six deprecated lookup tools for more efficient AI-driven user management.", status: "GA" },
+      { name: "Send Assets to AEM and Custom Approval Messages via MCP", description: "MCP Connector tools now support submitting documents to AEM-linked folders and attaching custom messages to approval requests from connected AI platforms such as Claude and ChatGPT.", status: "GA" },
+      { name: "AI Task Collaborators", description: "AI Collaborators can be assigned directly to Workfront tasks to autonomously complete task-level work, extending AI automation from project orchestration to individual task execution.", status: "GA" },
+      { name: "C2PA Metadata Preservation", description: "Adobe Workfront preserves C2PA content provenance metadata on all documents uploaded, stored, and downloaded, ensuring AI-generated content attribution is maintained without modification.", status: "GA" },
+      { name: "Left Navigation Panel Icon Refresh", description: "Left navigation panel icons redesigned with a modern appearance consistent with other Adobe Experience Cloud applications.", status: "GA" },
+      { name: "Attach Images to Comments on Adobe Cloud Storage", description: "Organizations using Adobe cloud storage can now attach image files directly to comments on documents in unified review and approval workflows.", status: "GA" }
     ],
     category_tags: ["AI", "UI", "Integration", "Data", "Security"]
   },
