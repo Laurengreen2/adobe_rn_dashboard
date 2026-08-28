@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-08-27'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-08-28'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -860,7 +860,8 @@ const RELEASE_DATA = [
       { name: "Folders for Action Campaigns", description: "Organize Action Campaigns into folders for improved navigation and management within large campaign inventories.", status: "Beta" },
       { name: "Override Default Execution Fields in Action Campaigns", description: "Override globally configured default execution fields for Email, SMS, and WhatsApp at the individual campaign parameter level.", status: "Beta" },
       { name: "Decisioning Support in Web Channel", description: "Decision policies become available in the web visual editor to deliver relevant AI-selected offers directly to website visitors.", status: "Beta" },
-      { name: "DateDiff Function in Journey Expression Editor", description: "New function calculates the difference between two dates in days, enabling deadline creation, lifecycle duration calculation, and countdown timer logic in journey expressions.", status: "Beta" },
+      { name: "Generate Expressions with AI in Journeys", description: "Describe desired journey expressions in natural language and the editor generates ready-to-use expression code, reducing authoring complexity for conditional logic and personalization.", status: "GA" },
+      { name: "DateDiff Function in Journey Expression Editor", description: "New function calculates the difference between two dates in days, enabling deadline creation, lifecycle duration calculation, and countdown timer logic in journey expressions.", status: "GA" },
       { name: "Content Variant Size Warning", description: "System alerts users when content variants exceed recommended thresholds — 1200 KB for templates and messages, 700 KB for fragments, 1000 KB for landing pages — without blocking saves.", status: "GA" },
       { name: "Fragment Count Limits in Content", description: "Validates unique fragment usage in content with warnings at 75% capacity and hard limits at 60 unique fragments per variant and 120 across all variants.", status: "GA" }
     ],
@@ -882,9 +883,10 @@ const RELEASE_DATA = [
       { name: "External Split Path Nodes for Person Journeys", description: "Person journeys now support external integration split paths for routing decisions through external services, matching account journey capabilities.", status: "GA" },
       { name: "External Action Nodes for Person Journeys", description: "Person journeys can now execute external action nodes making outbound requests to third-party systems, expanding orchestration reach.", status: "GA" },
       { name: "AEP Relational Datasets", description: "Relational datasets from Adobe Experience Platform are now visible and available in the AEP sandbox alongside existing datasets for enhanced B2B data modeling.", status: "GA" },
-      { name: "WhatsApp Channel Permissions", description: "Administrators can assign Manage B2B WhatsApp Settings and Manage B2B WhatsApp Presets permissions to control who can configure WhatsApp channel access and message presets.", status: "GA" }
+      { name: "WhatsApp Channel Permissions", description: "Administrators can assign Manage B2B WhatsApp Settings and Manage B2B WhatsApp Presets permissions to control who can configure WhatsApp channel access and message presets.", status: "GA" },
+      { name: "C2PA Metadata for AI-Generated Images", description: "Images generated or edited with generative AI tools are automatically signed with C2PA metadata for content provenance and transparency compliance.", status: "GA" }
     ],
-    category_tags: ["Data", "UI", "Integration"]
+    category_tags: ["Data", "UI", "Integration", "Security"]
   },
   {
     id: 'target',
@@ -1061,39 +1063,35 @@ const RELEASE_DATA = [
   },
   {
     id: 'aem',
-    title: "AEM 2026.7.0: Security Health Dashboard, Document APIs, and MCP Server",
-    version: "2026.7.0",
-    date: "July 2026",
-    rawDate: "2026-07-01",
-    summary: "July 2026 adds a daily Security Health Dashboard with OWASP Top 10 and CVE scanning, four new Document Conversion APIs, and the AEM MCP Server for unified AI agent access. Content Fragments gain full folder management parity, Dynamic Media supports countdown timer templates, and seven beta capabilities launch including AEM Edge Functions, Brand Aware Metadata, and the Assets Onboarding Agent. Next release (2026.8.0) is scheduled for August 27, 2026.",
+    title: "AEM 2026.8.0: C2PA Metadata, Edge Functions GA, and Permission Agentic Capabilities",
+    version: "2026.8.0",
+    date: "August 2026",
+    rawDate: "2026-08-01",
+    summary: "The August 27, 2026 release (2026.8.0) graduates AEM Edge Functions from Beta to GA and adds C2PA content provenance metadata support across Assets and Dynamic Media, Permission Management Agentic Capabilities for natural-language ACL audits, and Analytics 2.0 API integration for Assets Insights. Beta programs launch for UI Extensibility for Assets View, Canary Production Deployments, and OpenTelemetry APM. Critical Java API deprecations take effect September 14, 2026, with Java 25 runtime migration scheduled through mid-2027.",
     features: [
-      { name: "Security Health Dashboard", description: "Daily OWASP Top 10 and CVE scans of production environments surface actionable security findings with automated fix options via Experience Hub.", status: "GA" },
-      { name: "ChatGPT Plugin for AEM", description: "One-click installable plugin from the OpenAI marketplace exposes a growing set of tools to interact with AEM including editing content through prompting.", status: "GA" },
-      { name: "AEM MCP Server", description: "Unified Model Context Protocol server at a single endpoint replaces domain-specific configurations, enabling ChatGPT, Claude, and IDE integrations to access AEM content, asset, and governance operations.", status: "GA" },
-      { name: "RDE Snapshots", description: "Rapid Development Environments support capturing the current state of code and content for restoration at a later time, enabling faster feature switching and rollback.", status: "GA" },
-      { name: "AEM Code Assessment IDE Agent", description: "AI-assisted tools automatically detect and fix issues including replacing deprecated APIs, modernizing Sling Models, updating dependencies, and bounding queries.", status: "GA" },
-      { name: "IMS Authentication Rich Errors", description: "Enhanced IMS error responses provide additional context to help diagnose and resolve issues that block authentication and access.", status: "GA" },
-      { name: "Metadata Support for Content Fragments", description: "Authors can view, edit, and manage fragment metadata directly in the Content Fragments Admin UI with full parity across all editors.", status: "GA" },
-      { name: "New Content Reference Picker for Content Fragment Editor", description: "Improved content reference picker deploys progressively — RDE/Development August 10, Stage September 7, Production September 21 — with early access via Adobe support.", status: "GA" },
-      { name: "Content Fragments Folder Actions", description: "Admin UI now supports Rename, Copy, Move, and Delete operations for content fragment folders, achieving full parity with Touch UI and Assets interfaces.", status: "GA" },
-      { name: "Dynamic Media Countdown Timer Layer", description: "Templates support a live countdown to a specified end time with customizable appearance, time unit options, expiration fallback text, and optional clickable URL.", status: "GA" },
-      { name: "Adobe Asset Link UXP 2.0", description: "Updated plugin adds compatibility with Managed Services and On-Premise deployments of Assets, and supports native Apple Silicon macOS performance.", status: "GA" },
-      { name: "AEM Edge Functions", description: "Execute JavaScript at the CDN layer for content personalization based on geolocation or device type, API response reformatting, and edge-rendered HTML composition.", status: "Beta" },
-      { name: "Brand Aware Metadata", description: "AI automatically generates custom metadata for assets upon upload or reprocessing using a configurable prompt library with playground and optimizer, reducing manual entry.", status: "Beta" },
-      { name: "Assets Onboarding Agent", description: "Conversational DAM setup guidance creates configuration artifacts like folder hierarchies, tag taxonomies, and metadata forms for new AEM Assets customers.", status: "Beta" },
-      { name: "Generate Renditions from Content Hub Search", description: "Create channel-specific asset variants directly from Content Hub search through resizing, cropping, compressing, and reformatting without leaving the experience.", status: "Beta" },
-      { name: "UI Extensibility for Assets View", description: "Developer-first capability enabling customization of the Assets View using stable extension points, with a GenAI-powered extension generation tool in early adoption.", status: "Beta" },
-      { name: "Replication AI Troubleshooting", description: "AI Assistant integration enables troubleshooting of blocked replication queues directly through conversational guidance.", status: "Beta" },
-      { name: "Canary Production Deployments", description: "Route internal-only test traffic before promoting to live without impacting customers, enabling safer progressive rollout of new code.", status: "Beta" },
+      { name: "C2PA Metadata Support for Assets", description: "Renditions now carry C2PA metadata based on originals, enabling labeling of generative AI-manipulated content with new JCR properties (dam:hasC2PAManifest and dam:isAiGenerated) for compliance with Gen AI transparency regulations.", status: "GA" },
+      { name: "Assets Insights - Adobe Analytics 2.0 API Support", description: "AEM Admin View integrates with Adobe Analytics 2.0 API using OAuth Server-to-Server authentication, replacing the retired 1.4 API while preserving existing insights data and synchronizing impressions and clicks.", status: "GA" },
+      { name: "Dynamic Media C2PA Metadata", description: "C2PA metadata now applies to Dynamic Media assets via OpenAPI and Scene7 delivery, embedding secure metadata that documents origin, edit history, and generative AI usage.", status: "GA" },
+      { name: "Content Hub On-the-Fly Dynamic Media Renditions", description: "Generate Dynamic Media renditions dynamically within Content Hub to create channel-specific asset variations without maintaining multiple pre-generated versions.", status: "GA" },
+      { name: "Permission Management Agentic Capabilities", description: "Plain-language queries audit effective ACLs in real-time, explaining access decisions, listing privilege holders, identifying denial causes, and recommending least-privilege groups.", status: "GA" },
+      { name: "AEM Edge Functions", description: "Execute JavaScript at the Adobe-managed CDN layer for reduced latency and dynamic edge experiences including geolocation personalization, API response reformatting, and server-rendered HTML composition for both Cloud Service and Edge Delivery Services.", status: "GA" },
+      { name: "IMS Authentication Rich Errors", description: "Enhanced error reporting provides context beyond HTTP status codes for easier IMS integration troubleshooting and authentication issue diagnosis.", status: "GA" },
+      { name: "Java API Deprecations - Critical Notice", description: "Effective September 14, 2026, environments using deprecated APIs (including org.apache.sling.commons.auth, org.eclipse.jetty, com.mongodb, com.google.common, and others) receive no critical Adobe updates, affecting performance, security, and stability.", status: "GA" },
+      { name: "Java 25 Runtime Upgrade Timeline", description: "SDK gains Java 25 support in mid-October 2026; optional cloud adoption from November 2026; lower environments migrate February through May 2027; all environments complete migration June 2027 when Java 21 is decommissioned.", status: "GA" },
+      { name: "UI Extensibility for Assets View", description: "Developers can customize Assets View experiences using stable extension points, with a GenAI-powered extension generation tool that accelerates development.", status: "Beta" },
+      { name: "Brand Aware Metadata", description: "AI-powered capability automatically generates custom metadata for assets upon upload or reprocessing using a configurable prompt library with playground and optimizer, reducing manual metadata entry.", status: "Beta" },
+      { name: "Adobe Express Integration - Additional Asset Types", description: "Asset View Open in Express gains MP4 video support, and the Assets Plugin gains AI, INDD, MOV, MP3, and GIF format compatibility.", status: "Beta" },
+      { name: "Canary Production Deployments", description: "Validate production builds with internal test traffic before live exposure, routing canary traffic via header with ability to monitor, promote, or rollback without impacting real users.", status: "Beta" },
       { name: "Edge Authentication for Edge Delivery Services", description: "Restrict page access via OpenID Connect identity provider authentication at the edge for Edge Delivery Services pages.", status: "Beta" },
-      { name: "Assets Sourcing Portal", description: "Self-service portal allowing external contributors to upload and submit assets for DAM review without requiring direct AEM Assets access.", status: "Limited Availability" },
-      { name: "Table Component for Adaptive Forms", description: "Core Components-based forms now support tabular layouts with repeatable rows, column sorting, merged cells, and row calculations with PDF rendering.", status: "Limited Availability" },
-      { name: "Document Conversion APIs", description: "Four new conversion methods: HTML-to-PDF, PostScript-to-PDF, PDF-to-Image, and PDF-to-PostScript with transparency flattening for expanded Forms document processing.", status: "Limited Availability" },
-      { name: "Locale Support for Interactive Communication", description: "Authors can configure locale to determine language and region-specific formatting such as dates, numbers, and currencies in Interactive Communications.", status: "Limited Availability" },
-      { name: "File Attachment Virus Scanning and Custom Validation", description: "Validate form attachments using custom logic before submission, integrating malware scanning to reject invalid or infected files before persistence.", status: "Limited Availability" },
-      { name: "AI-Powered Content Onboarding and Supply Chain Automation", description: "AI agent guides configuration of one-time migrations and recurring synchronization between repositories by proposing connections, metadata mappings, and transfer settings.", status: "Limited Availability" }
+      { name: "Replication AI Troubleshooting", description: "AI Assistant integration enables conversational troubleshooting of blocked replication queues and other replication issues directly through the AEM interface.", status: "Beta" },
+      { name: "OpenTelemetry APM Support", description: "Export AEM telemetry via OpenTelemetry standard for monitoring within existing APM tools, supporting slow and failing request analysis, JVM health monitoring, dashboards, and cross-service correlation.", status: "Beta" },
+      { name: "Assets Sourcing Portal", description: "Secure, self-service platform for collecting assets from external contributors without requiring direct AEM Assets access; contributors upload assets and metadata to designated intake locations.", status: "Limited Availability" },
+      { name: "Table Component for Adaptive Forms", description: "Core Components-based forms now support tabular layouts with repeatable rows, column sorting, proportional column widths, cell merging and splitting, row-level calculations via Rule Editor, and PDF rendering.", status: "Limited Availability" },
+      { name: "Document Conversion APIs", description: "Five new conversion methods: HTML to PDF, PostScript to PDF, PDF to Image, PDF to PostScript, and PDF Transparency Flattening for expanded Forms document processing workflows.", status: "Limited Availability" },
+      { name: "Interactive Communication Locale Support", description: "Authors configure locale settings determining language and region-specific formatting including dates, numbers, and currencies for localized Interactive Communications delivery.", status: "Limited Availability" },
+      { name: "File Attachment Validation", description: "Custom validation logic for form attachments enables malware and virus scanning integration, with form rules triggering validation before submission to reject invalid or infected files.", status: "Limited Availability" }
     ],
-    category_tags: ["AI", "Security", "UI", "Performance", "Data"]
+    category_tags: ["AI", "Security", "Performance", "Data", "Deprecation"]
   },
   {
     id: 'rtcdp',
