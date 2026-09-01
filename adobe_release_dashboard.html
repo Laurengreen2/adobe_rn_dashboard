@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-08-28'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-09-01'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -799,11 +799,11 @@ const RELEASE_DATA = [
   },
   {
     id: 'journey-optimizer',
-    title: "Journey Optimizer August 2026: PDF Attachments, Bulk Journey Ops, AI Image Sourcing",
+    title: "Journey Optimizer September 2026: AI Expression Generation GA, DateDiff Function, PDF Attachments",
     version: null,
-    date: "August 2026",
-    rawDate: "2026-08-01",
-    summary: "August 2026 adds personalized PDF attachments in API-triggered emails, bulk journey operations, flexible AI image sourcing from AEM Assets Essentials, and a redesigned content simulation experience. New capabilities include send-time optimization in Wait activities, Quiet Hours and wave sending for orchestrated campaigns, high-throughput push messaging at 5,000 TPS, LINE channel support, and new list manipulation functions in the expression editor.",
+    date: "September 2026",
+    rawDate: "2026-09-01",
+    summary: "September 1, 2026 graduates AI-powered natural-language expression generation in the journey editor to GA, adds the dateDiff function for date-difference calculations, and moves inbound experience simulation for Action Campaigns to Limited Availability. The August 2026 release delivered personalized PDF attachments in API-triggered emails, bulk journey operations, flexible AI image sourcing, send-time optimization in Wait activities, Quiet Hours and wave sending for orchestrated campaigns, high-throughput push messaging at 5,000 TPS, and LINE channel support.",
     features: [
       { name: "Personalized PDF Attachments in API-Triggered Emails", description: "API-triggered transactional emails now support up to five PDF attachments per message, including static files and recipient-specific documents fetched from Data Landing Zone at send time.", status: "GA" },
       { name: "Bulk Operations in Journey Inventory", description: "Perform batch actions across multiple journeys simultaneously including adding to packages, deletion, folder movement, tag editing, and access management from the journey list.", status: "GA" },
@@ -855,7 +855,7 @@ const RELEASE_DATA = [
       { name: "Target Dimension Simplification", description: "Displays the active targeting dimension on the workflow canvas and simplifies multi-entity segmentation configuration for orchestrated campaigns.", status: "GA" },
       { name: "Live Activity Execution Metadata", description: "Optional executionMetadata field on each recipient allows passing custom key/value pairs such as order ID or loyalty tier for dynamic live activity personalization.", status: "GA" },
       { name: "Placement-Level Frequency Capping in Decisioning", description: "Frequency capping rules in Decisioning can now be scoped to individual placements with two modes — placement-specific capping and per-placement capping — for finer control over offer display frequency.", status: "GA" },
-      { name: "Inbound Experience Simulation in Action Campaigns", description: "Test inbound channel actions with simulated users before going live, including generated URLs and QR codes for validation of web and mobile experiences.", status: "Beta" },
+      { name: "Inbound Experience Simulation in Action Campaigns", description: "Test inbound channel actions with simulated users before going live, including generated URLs and QR codes for validation of web and mobile experiences.", status: "Limited Availability" },
       { name: "Action Campaign Authoring Flow Redesign", description: "More intuitive and efficient user experience for Action Campaign creation with improved step sequencing and guided configuration.", status: "Beta" },
       { name: "Folders for Action Campaigns", description: "Organize Action Campaigns into folders for improved navigation and management within large campaign inventories.", status: "Beta" },
       { name: "Override Default Execution Fields in Action Campaigns", description: "Override globally configured default execution fields for Email, SMS, and WhatsApp at the individual campaign parameter level.", status: "Beta" },
@@ -890,11 +890,11 @@ const RELEASE_DATA = [
   },
   {
     id: 'target',
-    title: "Adobe Target 26.8.3: API/MCP Activity Editing, Bayesian A/B Testing, and Bug Fixes",
-    version: "26.8.3",
-    date: "August 2026",
-    rawDate: "2026-08-01",
-    summary: "August 2026 brings three maintenance releases — 26.8.3 (August 13), 26.8.2 (August 11), and 26.8.1 (August 4) — with the headline addition enabling editing of activities and audiences created via the Target Admin API and MCP server directly in the Target UI. Supporting fixes resolve audience copy failures, multi-byte character corruption in activity URLs, and truncated VEC icons. The underlying July 26.7.5 release introduced Bayesian statistics for manual A/B activities and CJA as a reporting source for Auto-Allocate.",
+    title: "Adobe Target 26.9.1: Maintenance Release; August 2026 Adds API/MCP Activity Editing and Bayesian A/B",
+    version: "26.9.1",
+    date: "September 2026",
+    rawDate: "2026-09-01",
+    summary: "September 2026 (26.9.1) is a maintenance release addressing an audience copy failure when activity-only audiences are paired with custom code modifications (TGT-55785). The headline August 2026 releases — 26.8.3, 26.8.2, and 26.8.1 — added editing of activities and audiences created via the Target Admin API and MCP server, Bayesian statistics for manual A/B activities, CJA as a reporting source for Auto-Allocate, and Profile-Based Popularity Grouping for Recommendations, alongside numerous VEC and UI fixes.",
     features: [
       { name: "API/MCP Activity and Audience Editing", description: "Activities and audiences created via the Adobe Target Admin API and Target MCP can now be edited in the Target UI, enabling post-creation modifications to programmatically generated content.", status: "GA" },
       { name: "Bayesian Statistics for Manual A/B Activities", description: "Manual A/B activities now support Bayesian statistics reporting probability-based metrics including Chance to Beat Control and credible intervals as an alternative to frequentist t-tests.", status: "GA" },
@@ -983,6 +983,7 @@ const RELEASE_DATA = [
       { name: "Data Type Filter in Destinations Catalog", description: "Filter the destinations catalog by data type to find relevant destinations faster during activation workflow setup.", status: "GA" },
       { name: "Amazon S3 External ID Support", description: "Enhanced security for Amazon S3 destinations by including Organization ID in assume role calls to prevent confused deputy attacks.", status: "GA" },
       { name: "ZoomInfo Account Audiences Destination", description: "New destination for account-based marketing activation sends account audience data to ZoomInfo for targeted outreach.", status: "GA" },
+      { name: "Adobe Target Connection for Journey Optimizer Organizations", description: "Adobe Target destination is now available to Adobe Journey Optimizer organizations in addition to Real-Time CDP, expanding cross-product activation options.", status: "GA" },
       { name: "LiveRamp Onboarding Profile Exclusion", description: "Exited profiles are excluded from LiveRamp Onboarding exports to reduce Records Under Management and associated costs.", status: "GA" },
       { name: "Additional Health Checks", description: "Health checks expanded to include Query Service, Merge Policies, and Segmentation for more comprehensive platform monitoring.", status: "GA" },
       { name: "Batch Segmentation Progress Transparency", description: "Display the percentage of audience evaluated during batch segmentation processing for real-time visibility into job progress.", status: "GA" },
@@ -1037,6 +1038,8 @@ const RELEASE_DATA = [
       { name: "Changes to Actual Hours in Custom Formulas", description: "The legacy actualWorkRequired field is migrated to actualWorkRequiredDouble in custom report formulas for improved precision.", status: "GA" },
       { name: "Automated Access Control for Workfront Planning in Snowflake", description: "Introduces automated, entitlement-driven access management for Workfront Planning data in Snowflake as part of Workfront Data Connect.", status: "GA" },
       { name: "Canvas Dashboard Prompt Defaults and Persistence", description: "Dashboard managers can define default prompt values and user selections are automatically saved and restored on return.", status: "GA" },
+      { name: "Approval Type Field in Canvas Dashboards", description: "The approval entity in Canvas Dashboards now includes a type field that distinguishes between proof approvals, document version approvals, and intake approvals for more precise reporting.", status: "GA" },
+      { name: "Approval Terminology Update in Canvas Dashboards", description: "Canvas Dashboard approval field names have been revised for clarity to better reflect the types of approvals being tracked in reports.", status: "GA" },
       { name: "Add Multiple Power BI IP Ranges to Data Connect Allowlist", description: "Administrators can now add entire Azure IP address region sets to the Data Connect allowlist in a single step.", status: "GA" },
       { name: "Sort Canvas Dashboards List", description: "Canvas Dashboards list can now be sorted by Name, Description, Created by, or Create date columns with persistent sort order.", status: "GA" },
       { name: "Custom Currency Data Fields in Canvas Dashboard Reports", description: "Canvas Dashboard reports now support custom currency fields as columns, filters, groupings, and aggregations.", status: "GA" },
