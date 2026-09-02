@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-09-01'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-09-02'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -847,6 +847,7 @@ const RELEASE_DATA = [
       { name: "LINE Channel Support", description: "Deliver personalized content to LINE channel users including text messages, stickers, and Flex Messages for organizations with LINE channel access.", status: "Limited Availability" },
       { name: "Personalized Email Sender Details", description: "Customize From name, From email prefix, and Reply-to name per recipient using profile attributes and conditional logic.", status: "Limited Availability" },
       { name: "Loyalty Challenges", description: "Gamified loyalty programs let marketers design standard, streak, or sequential challenges with task definitions, reward management, and AI-powered reporting dashboards.", status: "Limited Availability" },
+      { name: "Loyalty Insights Skill", description: "CX Coworker skill enabling natural-language queries about loyalty challenge performance, member engagement metrics, and program data directly within Journey Optimizer.", status: "GA" },
       { name: "Custom Outbound Channel", description: "No-code Channel Builder integrates any HTTP-based messaging platform including WeChat, Kakao Talk, Messenger, or proprietary providers with full personalization and reporting support.", status: "Limited Availability" },
       { name: "Channel Optimization", description: "Automatically selects the optimal delivery channel per customer via manual ranking, customer preferences, or AI propensity scoring with automatic fallback to the next available channel.", status: "Limited Availability" },
       { name: "Decisioning Rules from Natural Language", description: "Describe a Decisioning eligibility rule in plain language and AI generates the corresponding expression automatically for organizations with Adobe AI capabilities access.", status: "Limited Availability" },
@@ -921,9 +922,10 @@ const RELEASE_DATA = [
       { name: "Activity Source Change on UI Edit Fix", description: "Fixed issue where editing an activity through the UI unexpectedly changed the original activity source.", status: "GA" },
       { name: "Default Workspace Audience Fix", description: "Fixed issue where the default workspace was incorrect after editing an audience.", status: "GA" },
       { name: "Profile Script Dialog Localization Fix", description: "Fixed issue where strings in the Create Profile Script dialog were not localized.", status: "GA" },
-      { name: "Recommendation Collection Mismatch Fix", description: "Fixed issue where a Recommendations collection returned additional non-qualifying entities.", status: "GA" }
+      { name: "Recommendation Collection Mismatch Fix", description: "Fixed issue where a Recommendations collection returned additional non-qualifying entities.", status: "GA" },
+      { name: "Target UI Version Toggle Deprecation", description: "The UI version toggle allowing switch between old and new Target interfaces is being phased out; users should refer to the Target UI update FAQs for transition guidance.", status: "GA" }
     ],
-    category_tags: ["AI", "Data", "Performance", "UI"]
+    category_tags: ["AI", "Data", "Performance", "UI", "Deprecation"]
   },
   {
     id: 'marketo',
