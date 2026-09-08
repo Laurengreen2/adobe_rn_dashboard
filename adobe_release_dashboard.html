@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-09-03'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-09-08'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -803,8 +803,12 @@ const RELEASE_DATA = [
     version: null,
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "September 1, 2026 graduates AI-powered natural-language expression generation in the journey editor to GA, adds the dateDiff function for date-difference calculations, and moves inbound experience simulation for Action Campaigns to Limited Availability. The August 2026 release delivered personalized PDF attachments in API-triggered emails, bulk journey operations, flexible AI image sourcing, send-time optimization in Wait activities, Quiet Hours and wave sending for orchestrated campaigns, high-throughput push messaging at 5,000 TPS, and LINE channel support.",
+    summary: "September 8, 2026 adds Decisioning in Journey simulation supporting Content Decision nodes and decision policies, Content Management MCP tools in CX Coworker for natural-language asset management, a mandatory consent checkbox for landing pages, and an Analyze Journey Anomalies skill. September 1 graduated AI-powered expression generation to GA, added the dateDiff function, and moved inbound experience simulation for Action Campaigns to Limited Availability. The August 2026 release delivered personalized PDF attachments in API-triggered emails, bulk journey operations, flexible AI image sourcing, send-time optimization in Wait activities, Quiet Hours and wave sending for orchestrated campaigns, high-throughput push messaging at 5,000 TPS, and LINE channel support.",
     features: [
+      { name: "Decisioning in Journey Simulation", description: "Journey simulation now supports Content Decision nodes, Optimize activity targeting rules, decisioned email actions, and decision policies using offer eligibility and ranking methods for pre-production testing.", status: "GA" },
+      { name: "Content Management MCP Tools in CX Coworker", description: "New MCP tools enable discovery and management of Journey Optimizer assets — templates, fragments, landing pages, and inline message content — through natural language, with creation, updating, cloning, and publishing capabilities.", status: "GA" },
+      { name: "Mandatory Consent Checkbox for Landing Pages", description: "Landing page form components now support mandatory checkbox selection, requiring visitors to check the box before form submission for consent collection use cases.", status: "GA" },
+      { name: "Analyze Journey Anomalies Skill", description: "CX Coworker skill detects unexpected spikes, drops, or flatlines in journey metrics against historical baselines and provides diagnostic analysis and recommendations for impacted journeys.", status: "GA" },
       { name: "Personalized PDF Attachments in API-Triggered Emails", description: "API-triggered transactional emails now support up to five PDF attachments per message, including static files and recipient-specific documents fetched from Data Landing Zone at send time.", status: "GA" },
       { name: "Bulk Operations in Journey Inventory", description: "Perform batch actions across multiple journeys simultaneously including adding to packages, deletion, folder movement, tag editing, and access management from the journey list.", status: "GA" },
       { name: "Flexible Image Sourcing for AI Content Generation", description: "AI content generation sources brand-approved images from AEM Assets Essentials using Balanced (DAM-first), Assets-only, or Creative (AI-generated) modes.", status: "GA" },
@@ -857,7 +861,7 @@ const RELEASE_DATA = [
       { name: "Live Activity Execution Metadata", description: "Optional executionMetadata field on each recipient allows passing custom key/value pairs such as order ID or loyalty tier for dynamic live activity personalization.", status: "GA" },
       { name: "Placement-Level Frequency Capping in Decisioning", description: "Frequency capping rules in Decisioning can now be scoped to individual placements with two modes — placement-specific capping and per-placement capping — for finer control over offer display frequency.", status: "GA" },
       { name: "Inbound Experience Simulation in Action Campaigns", description: "Test inbound channel actions with simulated users before going live, including generated URLs and QR codes for validation of web and mobile experiences.", status: "Limited Availability" },
-      { name: "Action Campaign Authoring Flow Redesign", description: "More intuitive and efficient user experience for Action Campaign creation with improved step sequencing and guided configuration.", status: "Beta" },
+      { name: "Action Campaign Authoring Flow Redesign", description: "More intuitive and efficient user experience for Action Campaign creation with improved step sequencing and guided configuration.", status: "GA" },
       { name: "Folders for Action Campaigns", description: "Organize Action Campaigns into folders for improved navigation and management within large campaign inventories.", status: "Beta" },
       { name: "Override Default Execution Fields in Action Campaigns", description: "Override globally configured default execution fields for Email, SMS, and WhatsApp at the individual campaign parameter level.", status: "Beta" },
       { name: "Decisioning Support in Web Channel", description: "Decision policies become available in the web visual editor to deliver relevant AI-selected offers directly to website visitors.", status: "Beta" },
@@ -891,12 +895,14 @@ const RELEASE_DATA = [
   },
   {
     id: 'target',
-    title: "Adobe Target 26.9.1: Maintenance Release; August 2026 Adds API/MCP Activity Editing and Bayesian A/B",
-    version: "26.9.1",
+    title: "Adobe Target 26.9.2: Feed URL Fix and Automated Segments Fix; August 2026 Adds API/MCP Editing and Bayesian A/B",
+    version: "26.9.2",
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "September 2026 (26.9.1) is a maintenance release addressing an audience copy failure when activity-only audiences are paired with custom code modifications (TGT-55785). The headline August 2026 releases — 26.8.3, 26.8.2, and 26.8.1 — added editing of activities and audiences created via the Target Admin API and MCP server, Bayesian statistics for manual A/B activities, CJA as a reporting source for Auto-Allocate, and Profile-Based Popularity Grouping for Recommendations, alongside numerous VEC and UI fixes.",
+    summary: "September 8, 2026 (26.9.2) fixes incorrect feed URL encoding blocking Recommendations feed creation from URLs (TGT-56084) and an Automated Segments report inconsistency displaying attribute names without values or ranges for AP and Auto-Target activities (TGT-55855). The September 1 maintenance release (26.9.1) fixed an activity-copy failure with activity-only audiences and custom code modifications (TGT-55785). The headline August 2026 releases — 26.8.3, 26.8.2, and 26.8.1 — added editing of activities and audiences created via the Target Admin API and MCP server, Bayesian statistics for manual A/B activities, CJA as a reporting source for Auto-Allocate, and Profile-Based Popularity Grouping for Recommendations, alongside numerous VEC and UI fixes.",
     features: [
+      { name: "Feed URL Encoding Issue Fix (26.9.2)", description: "Fixed incorrect URL encoding when creating a Recommendations feed from a URL in the new Target interface, which caused feed creation to fail with an unknown error (TGT-56084).", status: "GA" },
+      { name: "Automated Segments Report Inconsistency Fix (26.9.2)", description: "Fixed issue where the Automated Segments report showed only attribute names without associated values or ranges for Automated Personalization and Auto-Target activities (TGT-55855).", status: "GA" },
       { name: "API/MCP Activity and Audience Editing", description: "Activities and audiences created via the Adobe Target Admin API and Target MCP can now be edited in the Target UI, enabling post-creation modifications to programmatically generated content.", status: "GA" },
       { name: "Bayesian Statistics for Manual A/B Activities", description: "Manual A/B activities now support Bayesian statistics reporting probability-based metrics including Chance to Beat Control and credible intervals as an alternative to frequentist t-tests.", status: "GA" },
       { name: "CJA Reporting for Auto-Allocate", description: "Auto-Allocate activities can now use Customer Journey Analytics as their reporting source alongside Target and Adobe Analytics.", status: "GA" },
@@ -935,6 +941,7 @@ const RELEASE_DATA = [
     rawDate: "2026-08-01",
     summary: "August 2026 delivers a refreshed Marketo Engage interface with updated menus, icons, and layout rolling out in phases throughout the month. The Email Designer gains an AI-powered Script Builder for rapid personalization creation, and archiving a folder will automatically disable and deschedule all campaigns in that tree. API enforcement continues: SOAP API ended July 31, access_token parameter retires August 31, and Campaign Run IDs now return in correct numerical format.",
     features: [
+      { name: "Marketo AI Renamed to Coworker for Marketo Engage", description: "Marketo AI rebranded as Coworker for Marketo Engage; the service continues providing agent skills to automate marketing functions with no functional changes to existing capabilities.", status: "GA" },
       { name: "Marketo Engage New UI", description: "Refreshed interface with updated menus, icons, and layout for a cleaner, more modern experience rolling out in phases throughout August 2026.", status: "GA" },
       { name: "Email Designer AI Script Builder", description: "AI-powered assistant within Email Designer accelerates creation of personalization scripts for dynamic email content.", status: "Beta" },
       { name: "Disable Campaigns on Archive", description: "Archiving a folder automatically disables and deschedules all campaigns in that folder tree to prevent unintended sends.", status: "Beta" },
@@ -954,6 +961,7 @@ const RELEASE_DATA = [
     rawDate: "2026-08-01",
     summary: "Campaign v8.9.3 (August 11, 2026) upgrades the Web Analytics connector from the deprecated Analytics 1.4 API to the Analytics 2.0 API and adds OAuth2 authentication support for Snowflake and Databricks external accounts. Additional security hardening includes restricted workflow file access and FTP URL allowlisting, alongside 30+ bug fixes addressing workflow stability, push delivery, and PostgreSQL 17 compatibility.",
     features: [
+      { name: "External URL Allowlist Update", description: "Campaign administrators must add all currently-referenced domains to the updated external URL allowlist for delivery content and attachments by September 5, 2026 to prevent delivery disruptions in hosted environments.", status: "GA" },
       { name: "Adobe Analytics Connector: Analytics 2.0 API Upgrade", description: "The Web Analytics connector is upgraded to the Analytics 2.0 API; customers must revalidate metrics export, classification export, and remarketing workflows post-upgrade as the Analytics 1.4 API has reached end-of-life.", status: "GA" },
       { name: "OAuth2 Authentication for Snowflake and Databricks", description: "Snowflake and Databricks external accounts now support OAuth2 authentication for federated data access, replacing legacy credential methods.", status: "GA" },
       { name: "Workflow File Access Security Restriction", description: "Workflow file access is now restricted to authorized directories only, closing a potential path-traversal vulnerability in FFDA deployments.", status: "GA" },
@@ -1002,12 +1010,18 @@ const RELEASE_DATA = [
   },
   {
     id: 'workfront',
-    title: "Adobe Workfront August 2026: AI Task Collaborators, MCP Search Tool, and C2PA Metadata",
+    title: "Adobe Workfront Q4 2026: AI Task Collaborators, Pivot Table Reports, MCP and C2PA Updates",
     version: null,
     date: "August 2026",
     rawDate: "2026-08-01",
-    summary: "August 2026 (Q4) adds AI Task Collaborators assignable directly to tasks to complete work autonomously, expands the Workfront MCP Connector with a Search Users tool and AEM asset submission capability, and preserves C2PA content provenance metadata on all stored documents. These additions build on Q3 2026 which introduced the MCP Server connecting to Claude and ChatGPT, parallel document approval paths with up to 30 tracks, Adobe Cloud Drive GA, Workfront Planning as a standalone product, and 40+ enhancements across custom forms, governance, and reporting.",
+    summary: "Q4 2026 (previewing September 2026, quarterly release October 15) ships AI Task Collaborators assignable directly to tasks, Pivot Table Reports in Canvas Dashboards, End Dates for Scheduled Reports, expanded MCP Connector with Search Users and AEM asset submission, C2PA metadata preservation, and Frame.io collaboration improvements. These additions build on Q3 2026 which introduced the MCP Server connecting to Claude and ChatGPT, parallel document approval paths with up to 30 tracks, Adobe Cloud Drive GA, Workfront Planning as a standalone product, and 40+ enhancements across custom forms, governance, and reporting.",
     features: [
+      { name: "Pivot Table Reports in Canvas Dashboards", description: "Canvas Dashboards now support pivot table reports with accurate data aggregation, roll-up calculations, and drill-down capability for enhanced self-service analytics and cross-dimensional reporting.", status: "GA" },
+      { name: "End Dates for Scheduled Reports", description: "Scheduled reports now require an end date to prevent indefinite delivery; reports without an end date are automatically deactivated to manage system resources.", status: "GA" },
+      { name: "Frame Comment Visibility in Workfront", description: "A comments panel alerts Workfront users when new Frame.io viewer comments arrive, keeping document review discussions synchronized across both platforms.", status: "GA" },
+      { name: "Add Teams to Approvals for Adobe Cloud Storage Objects", description: "Workfront teams can now be assigned as approvers or reviewers on Adobe cloud storage document approval requests.", status: "GA" },
+      { name: "Redesigned Versions Panel", description: "Document versions panel redesigned to display numbered versions with approval status badges for improved at-a-glance tracking.", status: "GA" },
+      { name: "Redesigned Approvals Panel", description: "Approvals panel shows the complete approval history across all document versions in one consolidated view.", status: "GA" },
       { name: "Workfront MCP Server: Connect AI Agentic Platforms", description: "New server connects Workfront to Claude, ChatGPT, and other AI agentic platforms enabling natural-language creation, updating, and management of Workfront items.", status: "GA" },
       { name: "Workfront MCP Connector New Tools", description: "Added new tools to expand MCP Connector capabilities while deprecating the Search objects and Resolve field name tools.", status: "GA" },
       { name: "Workfront MCP Connector: Claude and EU Support", description: "Claude can now connect to the MCP connector, and EU instance access is enabled for international organizations.", status: "GA" },
