@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-09-08'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-09-09'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -1010,11 +1010,11 @@ const RELEASE_DATA = [
   },
   {
     id: 'workfront',
-    title: "Adobe Workfront Q4 2026: AI Task Collaborators, Pivot Table Reports, MCP and C2PA Updates",
+    title: "Adobe Workfront Q4 2026 Preview: AI Task Collaborators, MCP Expansion, Pivot Reports, and 80+ Enhancements",
     version: null,
     date: "August 2026",
     rawDate: "2026-08-01",
-    summary: "Q4 2026 (previewing September 2026, quarterly release October 15) ships AI Task Collaborators assignable directly to tasks, Pivot Table Reports in Canvas Dashboards, End Dates for Scheduled Reports, expanded MCP Connector with Search Users and AEM asset submission, C2PA metadata preservation, and Frame.io collaboration improvements. These additions build on Q3 2026 which introduced the MCP Server connecting to Claude and ChatGPT, parallel document approval paths with up to 30 tracks, Adobe Cloud Drive GA, Workfront Planning as a standalone product, and 40+ enhancements across custom forms, governance, and reporting.",
+    summary: "Q4 2026 (previewing now, GA October 15) ships 80+ enhancements including AI Task Collaborators for task-level automation, Pivot Table Reports in Canvas Dashboards, an expanded MCP Connector with Board tools, Approvals tools, Search Users, and AEM asset submission, C2PA metadata preservation, and Frame.io collaboration improvements. Administrator highlights include group admin management of business profiles, advanced custom form logic preview, layout template support for enhanced list views, configurable change history tracking, and large file support for document integrations. Document management gains private approval templates, direct proof access from emails, Frame.io workspace on project templates, and approval email subject customization.",
     features: [
       { name: "Pivot Table Reports in Canvas Dashboards", description: "Canvas Dashboards now support pivot table reports with accurate data aggregation, roll-up calculations, and drill-down capability for enhanced self-service analytics and cross-dimensional reporting.", status: "GA" },
       { name: "End Dates for Scheduled Reports", description: "Scheduled reports now require an end date to prevent indefinite delivery; reports without an end date are automatically deactivated to manage system resources.", status: "GA" },
@@ -1076,7 +1076,36 @@ const RELEASE_DATA = [
       { name: "AI Task Collaborators", description: "AI Collaborators can be assigned directly to Workfront tasks to autonomously complete task-level work, extending AI automation from project orchestration to individual task execution.", status: "GA" },
       { name: "C2PA Metadata Preservation", description: "Adobe Workfront preserves C2PA content provenance metadata on all documents uploaded, stored, and downloaded, ensuring AI-generated content attribution is maintained without modification.", status: "GA" },
       { name: "Left Navigation Panel Icon Refresh", description: "Left navigation panel icons redesigned with a modern appearance consistent with other Adobe Experience Cloud applications.", status: "GA" },
-      { name: "Attach Images to Comments on Adobe Cloud Storage", description: "Organizations using Adobe cloud storage can now attach image files directly to comments on documents in unified review and approval workflows.", status: "GA" }
+      { name: "Attach Images to Comments on Adobe Cloud Storage", description: "Organizations using Adobe cloud storage can now attach image files directly to comments on documents in unified review and approval workflows.", status: "GA" },
+      { name: "Set Default Access Level for Adobe Admin Console Users", description: "Administrators can establish default access levels for users provisioned through the Adobe Admin Console, streamlining onboarding for new users.", status: "GA" },
+      { name: "Custom Weeks for Planning Customers", description: "Organizations with Workfront Planning packages can configure custom weeks alongside custom quarters for flexible time-period reporting.", status: "GA" },
+      { name: "Reorder Custom Applications in Main Menu", description: "Custom applications added to layout templates can now be repositioned in the Main Menu instead of always appearing at the end.", status: "GA" },
+      { name: "Large File Support for Custom Document Integrations", description: "Chunked upload support enables faster, more reliable transfers of files exceeding 25 MB through custom document integrations.", status: "GA" },
+      { name: "Group Administrators Manage Business Profiles", description: "Group administrators can now create, edit, and delete business profiles without requiring full System Administrator access.", status: "GA" },
+      { name: "Layout Template Support for Enhanced List Views", description: "Enhanced list views are now supported at the system level through layout templates, enabling administrators to standardize list configurations across teams.", status: "GA" },
+      { name: "Bulk Edit External Lookup Fields", description: "Bulk edit dialogs now support editing of external lookup custom fields, enabling mass updates to externally-sourced field values.", status: "GA" },
+      { name: "Advanced Logic in Custom Form Designer Preview", description: "Preview mode for custom forms now renders advanced display, default value, validation, formatting, and editability logic for accurate pre-publish verification.", status: "GA" },
+      { name: "Custom Applications as Landing Pages", description: "Custom applications can be designated as user landing pages in layout templates, enabling personalized home experiences for different user groups.", status: "GA" },
+      { name: "Configure Tracked Fields in Change History", description: "Administrators can now select which specific object fields to track in the Change History, reducing noise and focusing audit trails on relevant changes.", status: "GA" },
+      { name: "Administrative Access to Change History List", description: "Standard access level configuration now includes a configurable option to grant access to the Change History List for governance and audit purposes.", status: "GA" },
+      { name: "New Approvals Tools in MCP Connector", description: "Expanded MCP Connector tools now support managing approval paths including parallel approval path creation from connected AI platforms like Claude and ChatGPT.", status: "GA" },
+      { name: "Board Tools in MCP Connector", description: "New MCP Connector tools enable managing Workfront Boards, cards, checklist items, and columns through connected AI platforms.", status: "GA" },
+      { name: "Share Feedback Tool in MCP Connector", description: "New MCP Connector tool allows users to report sentiment and conversation outcomes, enabling continuous improvement of AI-driven Workfront interactions.", status: "GA" },
+      { name: "System Administrators Full Access to Approval Templates", description: "System administrators can view, edit, delete, and bulk-delete all approval templates regardless of ownership for improved governance.", status: "GA" },
+      { name: "Direct Proof Access from Approval Emails", description: "Go to review links in approval notification emails now open the proof viewer directly when proofs are attached, eliminating extra navigation steps.", status: "GA" },
+      { name: "Frame.io Workspace on Project Templates", description: "Project templates can specify a default Frame.io workspace, automatically routing all projects created from those templates to the correct workspace.", status: "GA" },
+      { name: "Custom Message in Approval Email Subject Lines", description: "Custom messages added to document approval stages now appear in the subject line of approval request emails for clearer reviewer context.", status: "GA" },
+      { name: "Control Approval Template Visibility", description: "Approval templates are now private by default and creators can share them with specific users or system-wide, preventing unauthorized reuse.", status: "GA" },
+      { name: "Link Experience Manager Assets with Cloud Storage", description: "Users can link individual assets from Experience Manager Assets to Workfront objects supporting documents, enabling direct AEM asset association without downloading.", status: "GA" },
+      { name: "Company Billing Rates Enhancements", description: "Billing rates on companies have a modern redesign with improved override behavior; Workflow Ultimate customers can apply rate attributes and effective dates.", status: "GA" },
+      { name: "Automatic Attribute Hierarchy Connections for Rate Cards", description: "Selecting the lowest-level rate attribute on a rate card now automatically assigns every parent attribute level above it, reducing manual configuration steps.", status: "GA" },
+      { name: "Financial Fields Preserved from Project Templates", description: "Financial data configured in project templates is now retained when creating projects from those templates, preventing loss during project initialization.", status: "GA" },
+      { name: "Copy Canvas Dashboards", description: "New Copy dashboard action allows duplication of entire Canvas Dashboards with selective content transfer for faster dashboard creation.", status: "GA" },
+      { name: "Native Reference Fields in Lists and Reports", description: "Native reference fields can now be added as columns to Workfront lists and custom reports without requiring custom field workarounds.", status: "GA" },
+      { name: "Consistent Multi-Select Field Ordering", description: "Selected options in multi-select custom fields now display in a consistent, predictable order across all Workfront interfaces and reports.", status: "GA" },
+      { name: "Enhanced List Row and Column Updates", description: "The add row button moved inside the grid for contextual clarity and the Columns options panel now includes a search field for faster column discovery.", status: "GA" },
+      { name: "Multiple Screens Updated to Enhanced Lists", description: "Lists in Setup, the Documents area, and Scenario Planner now use the enhanced list format for a consistent, modern interface across Workfront.", status: "GA" },
+      { name: "Copy Name and Link from Breadcrumb", description: "Hovering over a breadcrumb item reveals an action to copy both the object name and its direct link simultaneously for faster sharing and reference.", status: "GA" }
     ],
     category_tags: ["AI", "UI", "Integration", "Data", "Security"]
   },
