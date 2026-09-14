@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-09-11'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-09-14'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -739,17 +739,20 @@ const ALL_TAGS = ['AI', 'Performance', 'UI', 'Data', 'Integration', 'Security', 
 const RELEASE_DATA = [
   {
     id: 'analytics',
-    title: "Adobe Analytics September 2026: Segment Date Range GA, Bot Detection Rules, Classification Sets API",
+    title: "Adobe Analytics September 2026: AI Coworker Chat, Segment Date Range GA, Bot Detection",
     version: null,
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "September 9, 2026 graduates the Segment Date Range Limiting option to GA, allowing Visitor-level segments to be scoped to the active reporting date range. Edge data collection gains custom bot detection rules that run before IAB rules without affecting bot scores (Web SDK only). Classification Sets API documentation is enhanced with expanded endpoint and parameter guidance, and the 2.0 API migration docs now explain date itemId encoding. Over 90 bug fixes ship across Activity Map, Analysis Workspace, Classifications, Data Feeds, Exports, Report Builder, and Segmentation.",
+    summary: "September 2026 brings AI-powered analysis through CX Enterprise Coworker Chat for Adobe Analytics report suites, with natural-language root-cause analysis and direct Workspace integration. The Segment Date Range Limiting option graduates to GA for Visitor-level segments, Edge data collection gains custom bot detection rules running before IAB rules, and over 90 bug fixes ship across Activity Map, Analysis Workspace, Classifications, Data Feeds, and Report Builder.",
     features: [
+      { name: "CX Enterprise Coworker: Analyze Adobe Analytics Data", description: "Coworker Chat performs advanced data analysis directly on Analytics report suites using natural-language prompts, surfacing insights without requiring manual report building.", status: "GA" },
+      { name: "CX Enterprise Coworker: Root-Cause Analysis Skill", description: "Identifies metric changes, pinpoints shift dates, and breaks down contributing dimensions with percentages and values for rapid anomaly investigation.", status: "Beta" },
+      { name: "CX Enterprise Coworker: Open Visualization in Workspace", description: "Transitions Coworker Chat analyses directly into Analysis Workspace panels for further refinement and sharing.", status: "Beta" },
       { name: "Segment Date Range Limiting", description: "New segment option restricts results to the specified reporting date range regardless of any date components within the segment itself; available for segments with Visitor-level top containers.", status: "GA" },
       { name: "Bot Detection: Custom Rules for Edge Data Collection", description: "Custom bot detection rules can now identify traffic exceptions that would otherwise be classified as bot traffic; rules execute before IAB rules and do not affect bot scores. Web SDK implementations only.", status: "GA" },
       { name: "Classification Sets API Updates", description: "Enhanced endpoint and parameter documentation for configuring Classification Sets API requests, supporting the ongoing migration away from deprecated classification APIs.", status: "GA" },
       { name: "Date itemId Encoding Guidance for Analytics 2.0 API", description: "New sections in KPI and Advanced report guides explain how date itemId parameters and values are encoded, helping customers complete migrations from the deprecated Analytics 1.4 API.", status: "GA" },
-      { name: "Analytics API 1.4 Sunset", description: "Legacy Analytics 1.4 API services and WSSE authentication ceased functioning on August 12, 2026; all integrations must use the Analytics 2.0 API.", status: "GA" },
+      { name: "Analytics API 1.4 Sunset", description: "Legacy Analytics 1.4 API services and WSSE authentication ceased functioning on August 31, 2026; all integrations must use the Analytics 2.0 API.", status: "GA" },
       { name: "Legacy Report Builder End of Life", description: "Legacy Report Builder reached end-of-life in June 2026; users must migrate workbooks to the new Report Builder available via Microsoft Store.", status: "GA" },
       { name: "Bug Fixes: Activity Map", description: "Multiple bug fixes resolving Activity Map overlay and data collection issues in the September 2026 release.", status: "GA" },
       { name: "Bug Fixes: Analysis Workspace", description: "Multiple fixes resolving visualization rendering, panel behavior, and segmentation issues in Analysis Workspace.", status: "GA" },
@@ -759,7 +762,7 @@ const RELEASE_DATA = [
       { name: "Bug Fixes: Reporting and Segmentation", description: "Multiple fixes resolving report generation accuracy and segment evaluation errors across 90+ total fixes in the September 2026 release.", status: "GA" },
       { name: "Streaming Media: Support Schedule Data", description: "Upload scheduled data for past live streaming content to accurately track viewership across FAST platforms, local streams, and live sports. Originally planned October 2025; new date TBD.", status: "Limited Availability" }
     ],
-    category_tags: ["Data", "Integration", "Deprecation"]
+    category_tags: ["AI", "Data", "Integration", "Deprecation"]
   },
   {
     id: 'journey-analytics',
