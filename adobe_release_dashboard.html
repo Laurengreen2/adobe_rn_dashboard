@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-09-14'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-09-15'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -743,11 +743,11 @@ const RELEASE_DATA = [
     version: null,
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "September 2026 brings AI-powered analysis through CX Enterprise Coworker Chat for Adobe Analytics report suites, with natural-language root-cause analysis and direct Workspace integration. The Segment Date Range Limiting option graduates to GA for Visitor-level segments, Edge data collection gains custom bot detection rules running before IAB rules, and over 90 bug fixes ship across Activity Map, Analysis Workspace, Classifications, Data Feeds, and Report Builder.",
+    summary: "September 2026 brings AI-powered analysis through CX Enterprise Coworker Chat for Adobe Analytics report suites (GA Sept 25), with natural-language root-cause analysis and direct Workspace integration rolling out in October. The Segment Date Range Limiting option graduates to GA for Visitor-level segments, Edge data collection gains custom bot detection rules running before IAB rules, and 28 bug fixes ship across Activity Map, Analysis Workspace, Classifications, Data Feeds, and Report Builder.",
     features: [
-      { name: "CX Enterprise Coworker: Analyze Adobe Analytics Data", description: "Coworker Chat performs advanced data analysis directly on Analytics report suites using natural-language prompts, surfacing insights without requiring manual report building.", status: "GA" },
-      { name: "CX Enterprise Coworker: Root-Cause Analysis Skill", description: "Identifies metric changes, pinpoints shift dates, and breaks down contributing dimensions with percentages and values for rapid anomaly investigation.", status: "Beta" },
-      { name: "CX Enterprise Coworker: Open Visualization in Workspace", description: "Transitions Coworker Chat analyses directly into Analysis Workspace panels for further refinement and sharing.", status: "Beta" },
+      { name: "CX Enterprise Coworker: Analyze Adobe Analytics Data", description: "Coworker Chat performs advanced data analysis directly on Analytics report suites using natural-language prompts, surfacing insights without requiring manual report building. GA rollout begins September 25, 2026.", status: "GA" },
+      { name: "CX Enterprise Coworker: Root-Cause Analysis Skill", description: "Identifies metric changes, pinpoints shift dates, and breaks down contributing dimensions with percentages and values for rapid anomaly investigation. GA rollout begins October 2, 2026.", status: "Beta" },
+      { name: "CX Enterprise Coworker: Open Visualization in Workspace", description: "Transitions Coworker Chat analyses directly into Analysis Workspace panels for further refinement and sharing. GA rollout begins October 2, 2026.", status: "Beta" },
       { name: "Segment Date Range Limiting", description: "New segment option restricts results to the specified reporting date range regardless of any date components within the segment itself; available for segments with Visitor-level top containers.", status: "GA" },
       { name: "Bot Detection: Custom Rules for Edge Data Collection", description: "Custom bot detection rules can now identify traffic exceptions that would otherwise be classified as bot traffic; rules execute before IAB rules and do not affect bot scores. Web SDK implementations only.", status: "GA" },
       { name: "Classification Sets API Updates", description: "Enhanced endpoint and parameter documentation for configuring Classification Sets API requests, supporting the ongoing migration away from deprecated classification APIs.", status: "GA" },
@@ -759,7 +759,7 @@ const RELEASE_DATA = [
       { name: "Bug Fixes: Classifications", description: "Multiple fixes addressing data classification accuracy, import failures, and export issues.", status: "GA" },
       { name: "Bug Fixes: Data Feeds and Exports", description: "Multiple fixes resolving data feed delivery reliability and export accuracy issues.", status: "GA" },
       { name: "Bug Fixes: Report Builder", description: "Multiple fixes improving Report Builder stability, scheduled delivery, and workbook rendering.", status: "GA" },
-      { name: "Bug Fixes: Reporting and Segmentation", description: "Multiple fixes resolving report generation accuracy and segment evaluation errors across 90+ total fixes in the September 2026 release.", status: "GA" },
+      { name: "Bug Fixes: Reporting and Segmentation", description: "Multiple fixes resolving report generation accuracy and segment evaluation errors across 28 total fixes in the September 2026 release.", status: "GA" },
       { name: "Streaming Media: Support Schedule Data", description: "Upload scheduled data for past live streaming content to accurately track viewership across FAST platforms, local streams, and live sports. Originally planned October 2025; new date TBD.", status: "Limited Availability" }
     ],
     category_tags: ["AI", "Data", "Integration", "Deprecation"]
@@ -893,11 +893,11 @@ const RELEASE_DATA = [
   },
   {
     id: 'target',
-    title: "Adobe Target 26.9.2: Feed URL Fix and Automated Segments Fix; August 2026 Adds API/MCP Editing and Bayesian A/B",
+    title: "Adobe Target 26.9.2 / 26.9.1: Feed URL, Automated Segments, Audience Copy Fixes; August 2026 Adds API/MCP Editing and Bayesian A/B",
     version: "26.9.2",
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "September 8, 2026 (26.9.2) fixes incorrect feed URL encoding blocking Recommendations feed creation from URLs (TGT-56084) and an Automated Segments report inconsistency displaying attribute names without values or ranges for AP and Auto-Target activities (TGT-55855). The September 1 maintenance release (26.9.1) fixed an activity-copy failure with activity-only audiences and custom code modifications (TGT-55785). The headline August 2026 releases — 26.8.3, 26.8.2, and 26.8.1 — added editing of activities and audiences created via the Target Admin API and MCP server, Bayesian statistics for manual A/B activities, CJA as a reporting source for Auto-Allocate, and Profile-Based Popularity Grouping for Recommendations, alongside numerous VEC and UI fixes.",
+    summary: "September 8, 2026 (26.9.2) fixes incorrect feed URL encoding blocking Recommendations feed creation from URLs (TGT-56084) and an Automated Segments report inconsistency displaying attribute names without values or ranges for AP and Auto-Target activities (TGT-55855). September 1 (26.9.1) fixed an activity-copy failure when using activity-only audiences with custom code modifications (TGT-55785). The headline August 2026 releases — 26.8.3, 26.8.2, and 26.8.1 — added editing of activities and audiences created via the Target Admin API and MCP server, Bayesian statistics for manual A/B activities, CJA as a reporting source for Auto-Allocate, and Profile-Based Popularity Grouping for Recommendations, alongside numerous VEC and UI fixes.",
     features: [
       { name: "Feed URL Encoding Issue Fix (26.9.2)", description: "Fixed incorrect URL encoding when creating a Recommendations feed from a URL in the new Target interface, which caused feed creation to fail with an unknown error (TGT-56084).", status: "GA" },
       { name: "Automated Segments Report Inconsistency Fix (26.9.2)", description: "Fixed issue where the Automated Segments report showed only attribute names without associated values or ranges for Automated Personalization and Auto-Target activities (TGT-55855).", status: "GA" },
@@ -907,7 +907,7 @@ const RELEASE_DATA = [
       { name: "Profile-Based Popularity Grouping for Recommendations", description: "Most Viewed and Top Sellers recommendations support dynamic grouping by visitor profile attributes such as country, language, and membership level.", status: "GA" },
       { name: "AI Assistant Renamed to Generate Content", description: "Content-generation capability renamed from AI Assistant to Generate Content across all Target UI surfaces for clearer communication of intent.", status: "GA" },
       { name: "Top Performers and Saves UI Update", description: "Updated user interface for the top performers and saves experience on the Target homepage.", status: "GA" },
-      { name: "Audience Copy with Activity-Only Audiences Fix (26.8.2)", description: "Fixed error where copying activities with activity-only audiences failed with an 'Invalid audience ids' message after adding custom code modifications (TGT-55785).", status: "GA" },
+      { name: "Audience Copy with Activity-Only Audiences Fix (26.9.1)", description: "Fixed error where copying activities with activity-only audiences failed with an 'Invalid audience ids' message after adding custom code modifications (TGT-55785). Released September 1, 2026.", status: "GA" },
       { name: "Multi-byte Character Corruption in Activity URLs Fix (26.8.2)", description: "Multi-byte characters in activity URLs and the VEC Collisions tab no longer display as corrupted characters (TGT-55708).", status: "GA" },
       { name: "Deleted Design Error Message Localization Fix (26.8.2)", description: "The 'Requested resource was not found' error is now properly localized when opening a deleted design (TGT-50902).", status: "GA" },
       { name: "VEC Experience Audiences Panel Truncated Icons Fix (26.8.1)", description: "Fixed truncated Add button and expand/collapse icons in the Experience Audiences panel during activity creation (TGT-55372).", status: "GA" },
@@ -1008,12 +1008,14 @@ const RELEASE_DATA = [
   },
   {
     id: 'workfront',
-    title: "Adobe Workfront Q4 2026 Preview: AI Task Collaborators, MCP Expansion, Pivot Reports, and 80+ Enhancements",
+    title: "Adobe Workfront Q4 2026: CX Coworker Launch, AI Task Collaborators, MCP Expansion, Pivot Reports, and 80+ Enhancements",
     version: null,
-    date: "August 2026",
-    rawDate: "2026-08-01",
-    summary: "Q4 2026 (previewing now, GA October 15) ships 80+ enhancements including AI Task Collaborators for task-level automation, Pivot Table Reports in Canvas Dashboards, an expanded MCP Connector with Board tools, Approvals tools, Search Users, and AEM asset submission, C2PA metadata preservation, and Frame.io collaboration improvements. Administrator highlights include group admin management of business profiles, advanced custom form logic preview, layout template support for enhanced list views, configurable change history tracking, and large file support for document integrations. Document management gains private approval templates, direct proof access from emails, Frame.io workspace on project templates, and approval email subject customization.",
+    date: "September 2026",
+    rawDate: "2026-09-01",
+    summary: "Q4 2026 (GA October 15, fast-release September 17) launches CX Coworker as the conversational AI interface for Workfront and ships 80+ enhancements including AI Task Collaborators for task-level automation, Pivot Table Reports in Canvas Dashboards, an expanded MCP Connector with Board tools, Approvals tools, Search Users, and AEM asset submission, C2PA metadata preservation, and Frame.io collaboration improvements. Desktop Proofing Viewer 2.1.59 (production September 9) introduces a native Apple silicon build. Administrator highlights include group admin management of business profiles, advanced custom form logic preview, layout template support for enhanced list views, and large file support for document integrations.",
     features: [
+      { name: "CX Coworker for Workfront", description: "Conversational AI interface for getting work done in Workfront and connected Adobe systems; replaces AI Assistant with a unified, natural-language-driven experience for managing projects, tasks, approvals, and workflows.", status: "GA" },
+      { name: "Desktop Proofing Viewer 2.1.59", description: "Production release September 9, 2026; introduces a native Apple silicon build for improved performance on M-series Macs and updates the underlying Electron framework.", status: "GA" },
       { name: "Pivot Table Reports in Canvas Dashboards", description: "Canvas Dashboards now support pivot table reports with accurate data aggregation, roll-up calculations, and drill-down capability for enhanced self-service analytics and cross-dimensional reporting.", status: "GA" },
       { name: "End Dates for Scheduled Reports", description: "Scheduled reports now require an end date to prevent indefinite delivery; reports without an end date are automatically deactivated to manage system resources.", status: "GA" },
       { name: "Frame Comment Visibility in Workfront", description: "A comments panel alerts Workfront users when new Frame.io viewer comments arrive, keeping document review discussions synchronized across both platforms.", status: "GA" },
@@ -1077,7 +1079,7 @@ const RELEASE_DATA = [
       { name: "Attach Images to Comments on Adobe Cloud Storage", description: "Organizations using Adobe cloud storage can now attach image files directly to comments on documents in unified review and approval workflows.", status: "GA" },
       { name: "Set Default Access Level for Adobe Admin Console Users", description: "Administrators can establish default access levels for users provisioned through the Adobe Admin Console, streamlining onboarding for new users.", status: "GA" },
       { name: "Custom Weeks for Planning Customers", description: "Organizations with Workfront Planning packages can configure custom weeks alongside custom quarters for flexible time-period reporting.", status: "GA" },
-      { name: "Reorder Custom Applications in Main Menu", description: "Custom applications added to layout templates can now be repositioned in the Main Menu instead of always appearing at the end.", status: "GA" },
+      { name: "Reorder Custom Applications in Main Menu", description: "Custom applications added to layout templates can now be repositioned in the Main Menu instead of always appearing at the end. Note: temporarily removed from preview environment September 14; expected to return in a future update.", status: "GA" },
       { name: "Large File Support for Custom Document Integrations", description: "Chunked upload support enables faster, more reliable transfers of files exceeding 25 MB through custom document integrations.", status: "GA" },
       { name: "Group Administrators Manage Business Profiles", description: "Group administrators can now create, edit, and delete business profiles without requiring full System Administrator access.", status: "GA" },
       { name: "Layout Template Support for Enhanced List Views", description: "Enhanced list views are now supported at the system level through layout templates, enabling administrators to standardize list configurations across teams.", status: "GA" },
