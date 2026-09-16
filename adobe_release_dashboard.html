@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-09-15'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-09-16'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -766,11 +766,11 @@ const RELEASE_DATA = [
   },
   {
     id: 'journey-analytics',
-    title: "Customer Journey Analytics September 2026: MCP Server GA, Conversation Insights, Hourly Alerts",
+    title: "Customer Journey Analytics September 2026: MCP Server GA, Brand Visibility GA, Coworker Skills GA",
     version: null,
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "September 2026 graduates the CJA MCP Server Plugin to GA enabling natural-language data access from Claude and ChatGPT, adds C2, C3, and C9 data usage labels for enhanced governance, and brings Consent Policy Filtering to GA. Hourly Alerts and precise alert delivery timing ship for operational monitoring. Upcoming September 22 additions include Conversation Insights for LLM data analysis, Total Population Reporting beyond time-series events, and Adobe Brand Visibility integration for measuring AI-driven discovery. Over 90 bug fixes ship across Analysis Workspace, Connections, Guided Analysis, Report Builder, and Segmentation.",
+    summary: "September 2026 graduates the CJA MCP Server Plugin to GA enabling natural-language data access from Claude and ChatGPT, adds C2, C3, and C9 data usage labels for enhanced governance, and brings Consent Policy Filtering to GA. Hourly Alerts and precise alert delivery timing ship for operational monitoring. September 22 additions now GA include Conversation Insights for LLM data analysis, Total Population Reporting beyond time-series events, Adobe Brand Visibility integration for measuring AI-driven discovery, and CX Enterprise Coworker Skills for implementation guides and data validation. Over 90 bug fixes ship across Analysis Workspace, Connections, Guided Analysis, Report Builder, and Segmentation.",
     features: [
       { name: "CJA MCP Server Plugin", description: "New plugins for ChatGPT and Claude enable natural-language access to CJA data, allowing analysts to query reports, dimensions, and metrics directly from AI assistants.", status: "GA" },
       { name: "Data Usage Labels C2, C3, and C9", description: "Support for C2 (restrict third-party export), C3 (restrict directly identifiable data combination), and C9 (restrict data science) labels provides enhanced data governance controls within datasets.", status: "GA" },
@@ -780,8 +780,8 @@ const RELEASE_DATA = [
       { name: "Alert Delivery Timing", description: "Alerts now deliver strictly at the configured delay window endpoint for predictable, consistent notification timing.", status: "GA" },
       { name: "Conversation Insights for LLM Analysis", description: "Analyzes chat and conversational data including intent, tone, and sentiment, and connects conversational interactions to downstream customer journey outcomes in CJA.", status: "GA" },
       { name: "Total Population Reporting", description: "Analyze entities from profile and lookup datasets beyond time-series events, enabling population-level reporting not constrained to event data.", status: "GA" },
-      { name: "Adobe Brand Visibility Integration", description: "Measure the impact of AI-driven content discovery on customer engagement and outcomes, connecting brand visibility signals to journey analytics.", status: "Beta" },
-      { name: "CX Enterprise Coworker Skills Expansion", description: "New Coworker skills add implementation guides, intelligent checklists, data validation, and streaming media validation capabilities for CJA workflows.", status: "Beta" },
+      { name: "Adobe Brand Visibility Integration", description: "Measure the impact of AI-driven content discovery on customer engagement and outcomes, connecting brand visibility signals to journey analytics.", status: "GA" },
+      { name: "CX Enterprise Coworker Skills Expansion", description: "New Coworker skills add implementation guides, intelligent checklists, data validation, and streaming media validation capabilities for CJA workflows. GA rollout begins September 30, 2026.", status: "GA" },
       { name: "Journey Canvas: Time-Period Comparisons", description: "Compare the current journey against prior timeframes such as 4 weeks prior, 2 quarters prior, 1 year prior, or a custom date range.", status: "GA" },
       { name: "Journey Canvas: Top Dimension Items After Node", description: "Display top dimension items appearing after any selected node in the journey to reveal common onward paths.", status: "GA" },
       { name: "Journey Canvas: Arrow Customization", description: "Drag arrows to modify shape and curvature; right-click to set style as solid, dashed, dotted, dashed-dot, or animated.", status: "GA" },
@@ -797,7 +797,7 @@ const RELEASE_DATA = [
   },
   {
     id: 'journey-optimizer',
-    title: "Journey Optimizer September 2026: AI Expression Generation GA, DateDiff Function, PDF Attachments",
+    title: "Journey Optimizer September 2026: Journey Anomaly Alert, AI Expressions, Branch Detachment, Loyalty",
     version: null,
     date: "September 2026",
     rawDate: "2026-09-01",
@@ -845,6 +845,10 @@ const RELEASE_DATA = [
       { name: "AJO MCP Server New Tools", description: "Five additional read-only channel configuration tools added: List Channel Configurations, Get Channel Configuration, List Configuration Resources, Get Configuration Resource, and List Marketing Actions.", status: "GA" },
       { name: "Estimated Click Metrics for Email Reporting", description: "New Estimated CTR and Estimated CTOR metrics available across Journeys, Campaigns, and Channel Live reports.", status: "GA" },
       { name: "Batch Audiences Deprecation in Journeys", description: "Starting September 2026, Journey Optimizer blocks publication for journeys using batch audiences in Audience Qualification nodes or Exit Criteria; existing live journeys are unaffected.", status: "GA" },
+      { name: "Journey Anomaly Detected Alert", description: "System alert warns when daily journey traffic deviates significantly from the historical baseline or drops unexpectedly, enabling rapid triage of delivery or entry issues. Available for production sandboxes only.", status: "GA" },
+      { name: "Forever Loyalty Challenges", description: "Loyalty challenges can now run indefinitely by setting the end date to 'No end date', enabling always-on engagement programs without manual renewal.", status: "GA" },
+      { name: "Additional Reserved Keywords in Personalization Syntax", description: "Expanded PQL reserved keywords list for Journey Optimizer personalization; field names that match reserved keywords must be wrapped in backticks to avoid syntax errors.", status: "GA" },
+      { name: "Easier Branch Detachment and Joining", description: "Journey canvas branches can be detached without deletion and rejoined at different downstream points via canvas drag or list selection, enabling faster journey restructuring.", status: "GA" },
       { name: "Journey-Level Holdout", description: "Configure a holdout percentage at the journey level to exclude a control group from messaging and measure incremental lift of the journey program.", status: "Limited Availability" },
       { name: "LINE Channel Support", description: "Deliver personalized content to LINE channel users including text messages, stickers, and Flex Messages for organizations with LINE channel access.", status: "Limited Availability" },
       { name: "Personalized Email Sender Details", description: "Customize From name, From email prefix, and Reply-to name per recipient using profile attributes and conditional logic.", status: "Limited Availability" },
@@ -942,7 +946,8 @@ const RELEASE_DATA = [
       { name: "Marketo AI Renamed to Coworker for Marketo Engage", description: "Marketo AI rebranded as Coworker for Marketo Engage; the service continues providing agent skills to automate marketing functions with no functional changes to existing capabilities.", status: "GA" },
       { name: "Marketo Engage New UI", description: "Refreshed interface with updated menus, icons, and layout for a cleaner, more modern experience rolling out in phases throughout August 2026.", status: "GA" },
       { name: "Email Designer AI Script Builder", description: "AI-powered assistant within Email Designer accelerates creation of personalization scripts for dynamic email content.", status: "Beta" },
-      { name: "Disable Campaigns on Archive", description: "Archiving a folder automatically disables and deschedules all campaigns in that folder tree to prevent unintended sends.", status: "Beta" },
+      { name: "Email Designer Generate Content Menu", description: "Contextual Generate content menu in Email Designer provides quick access to AI text actions and content generation features at the point of editing.", status: "Beta" },
+      { name: "Disable Campaigns on Archive", description: "Archiving a folder automatically disables and deschedules all campaigns in that folder tree to prevent unintended sends.", status: "GA" },
       { name: "Campaign Run ID Formatting Fix", description: "Campaign Run ID values now return in correct numerical format instead of incorrectly double-quoted string format.", status: "GA" },
       { name: "REST API access_token Deprecation", description: "The access_token query parameter is retired after August 31, 2026; all integrations must switch to the Authorization header for continued access.", status: "GA" },
       { name: "SOAP API End of Support", description: "SOAP API support ended July 31, 2026; all services must migrate to the REST API to avoid integration failures.", status: "GA" },
@@ -978,7 +983,7 @@ const RELEASE_DATA = [
   },
   {
     id: 'experience-platform',
-    title: "Experience Platform August 2026: Dataset Access Control, Batch Guardrails, and 9 Sources to GA",
+    title: "Experience Platform August 2026: Dataset Access Control, Batch Guardrails, 9 Sources to GA",
     version: null,
     date: "August 2026",
     rawDate: "2026-08-01",
@@ -988,7 +993,7 @@ const RELEASE_DATA = [
       { name: "mTLS Certificate Hierarchy Update", description: "New certificate authority hierarchy for mTLS connections requires updating trust stores by the specified deadline to prevent connection failures.", status: "GA" },
       { name: "Updated Batch Ingestion Guardrails", description: "Batch ingestion limits increased to 25,000 files per batch and up to 1 TB total, enabling ingestion of significantly larger datasets.", status: "GA" },
       { name: "Activate Audiences On-Demand to Streaming Destinations", description: "Trigger immediate audience membership resends to streaming destinations without waiting for scheduled evaluation windows.", status: "Beta" },
-      { name: "Data Type Filter in Destinations Catalog", description: "Filter the destinations catalog by data type to find relevant destinations faster during activation workflow setup.", status: "GA" },
+      { name: "Data Type Filter in Destinations Catalog", description: "Filter the destinations catalog by data type to find relevant destinations faster during activation workflow setup. Postponed from August 2026; expected in September 2026 release.", status: "Beta" },
       { name: "Amazon S3 External ID Support", description: "Enhanced security for Amazon S3 destinations by including Organization ID in assume role calls to prevent confused deputy attacks.", status: "GA" },
       { name: "ZoomInfo Account Audiences Destination", description: "New destination for account-based marketing activation sends account audience data to ZoomInfo for targeted outreach.", status: "GA" },
       { name: "Adobe Target Connection for Journey Optimizer Organizations", description: "Adobe Target destination is now available to Adobe Journey Optimizer organizations in addition to Real-Time CDP, expanding cross-product activation options.", status: "GA" },
@@ -1111,7 +1116,7 @@ const RELEASE_DATA = [
   },
   {
     id: 'aem',
-    title: "AEM 2026.8.0: C2PA Metadata, Edge Functions GA, and Permission Agentic Capabilities",
+    title: "AEM 2026.8.0: C2PA Metadata, Edge Functions GA, Dynamic Media and Content Hub Expansions",
     version: "2026.8.0",
     date: "August 2026",
     rawDate: "2026-08-01",
@@ -1144,7 +1149,13 @@ const RELEASE_DATA = [
       { name: "Table Component for Adaptive Forms", description: "Core Components-based forms now support tabular layouts with repeatable rows, column sorting, proportional column widths, cell merging and splitting, row-level calculations via Rule Editor, and PDF rendering.", status: "Limited Availability" },
       { name: "Document Conversion APIs", description: "Five new conversion methods: HTML to PDF, PostScript to PDF, PDF to Image, PDF to PostScript, and PDF Transparency Flattening for expanded Forms document processing workflows.", status: "Limited Availability" },
       { name: "Interactive Communication Locale Support", description: "Authors configure locale settings determining language and region-specific formatting including dates, numbers, and currencies for localized Interactive Communications delivery.", status: "Limited Availability" },
-      { name: "File Attachment Validation", description: "Custom validation logic for form attachments enables malware and virus scanning integration, with form rules triggering validation before submission to reject invalid or infected files.", status: "Limited Availability" }
+      { name: "File Attachment Validation", description: "Custom validation logic for form attachments enables malware and virus scanning integration, with form rules triggering validation before submission to reject invalid or infected files.", status: "Limited Availability" },
+      { name: "Dynamic Media: Multi-Caption and Multi-Audio Video", description: "Dynamic Media via OpenAPI now supports multiple language-specific caption tracks and audio tracks for a single video asset, enabling global multi-language video delivery without separate asset copies.", status: "Limited Availability" },
+      { name: "Dynamic Media: AI-Generated Video Captions", description: "Automatically generates caption files by analyzing video audio content using AI, reducing manual captioning effort for accessibility and compliance.", status: "Limited Availability" },
+      { name: "Dynamic Media: Secure Delivery with Attribute-Based Access Control", description: "Restrict Dynamic Media asset delivery to designated IMS users or groups using metadata-driven access restrictions for secure, permission-based content distribution.", status: "Limited Availability" },
+      { name: "Dynamic Media: New Video Viewer", description: "High-performance, customizable video player with configurable modifiers, modern playback controls, and integrated analytics tracking for Dynamic Media video assets.", status: "Limited Availability" },
+      { name: "Content Hub: AI Search", description: "Semantic AI-powered search understands user intent beyond exact keyword matches, surfacing relevant assets based on meaning and context rather than literal text.", status: "Limited Availability" },
+      { name: "Content Hub: Custom Sorting Options", description: "Administrators can enable business-specific metadata fields as sorting criteria in Content Hub, allowing users to organize assets by relevant custom attributes.", status: "Limited Availability" }
     ],
     category_tags: ["AI", "Security", "Performance", "Data", "Deprecation"]
   },
