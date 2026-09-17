@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-09-16'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-09-17'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -847,6 +847,7 @@ const RELEASE_DATA = [
       { name: "Batch Audiences Deprecation in Journeys", description: "Starting September 2026, Journey Optimizer blocks publication for journeys using batch audiences in Audience Qualification nodes or Exit Criteria; existing live journeys are unaffected.", status: "GA" },
       { name: "Journey Anomaly Detected Alert", description: "System alert warns when daily journey traffic deviates significantly from the historical baseline or drops unexpectedly, enabling rapid triage of delivery or entry issues. Available for production sandboxes only.", status: "GA" },
       { name: "Forever Loyalty Challenges", description: "Loyalty challenges can now run indefinitely by setting the end date to 'No end date', enabling always-on engagement programs without manual renewal.", status: "GA" },
+      { name: "Loyalty for Healthcare Shield and Privacy Shield Customers", description: "Journey Optimizer Loyalty is now accessible to customers on Healthcare Shield and Privacy Shield subscription packages, expanding the loyalty program audience.", status: "GA" },
       { name: "Additional Reserved Keywords in Personalization Syntax", description: "Expanded PQL reserved keywords list for Journey Optimizer personalization; field names that match reserved keywords must be wrapped in backticks to avoid syntax errors.", status: "GA" },
       { name: "Easier Branch Detachment and Joining", description: "Journey canvas branches can be detached without deletion and rejoined at different downstream points via canvas drag or list selection, enabling faster journey restructuring.", status: "GA" },
       { name: "Journey-Level Holdout", description: "Configure a holdout percentage at the journey level to exclude a control group from messaging and measure incremental lift of the journey program.", status: "Limited Availability" },
@@ -897,12 +898,14 @@ const RELEASE_DATA = [
   },
   {
     id: 'target',
-    title: "Adobe Target 26.9.2 / 26.9.1: Feed URL, Automated Segments, Audience Copy Fixes; August 2026 Adds API/MCP Editing and Bayesian A/B",
-    version: "26.9.2",
+    title: "Adobe Target 26.9.3 / 26.9.2 / 26.9.1: A4T Auto-Target Lift Fix, Read-Only Reporting Source, Feed URL Fix",
+    version: "26.9.3",
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "September 8, 2026 (26.9.2) fixes incorrect feed URL encoding blocking Recommendations feed creation from URLs (TGT-56084) and an Automated Segments report inconsistency displaying attribute names without values or ranges for AP and Auto-Target activities (TGT-55855). September 1 (26.9.1) fixed an activity-copy failure when using activity-only audiences with custom code modifications (TGT-55785). The headline August 2026 releases — 26.8.3, 26.8.2, and 26.8.1 — added editing of activities and audiences created via the Target Admin API and MCP server, Bayesian statistics for manual A/B activities, CJA as a reporting source for Auto-Allocate, and Profile-Based Popularity Grouping for Recommendations, alongside numerous VEC and UI fixes.",
+    summary: "September 16, 2026 (26.9.3) fixes missing Lift and Confidence values in A4T Auto-Target reports when using the Maximize Visit Conversion Rate goal (TGT-56137) and makes the Reporting Source field read-only for live activities when the owner lacks Adobe Analytics access (TGT-56089). September 8 (26.9.2) fixes incorrect feed URL encoding blocking Recommendations feed creation (TGT-56084) and an Automated Segments report inconsistency (TGT-55855). September 1 (26.9.1) fixed an activity-copy failure with activity-only audiences (TGT-55785). The August 2026 releases added API/MCP activity editing, Bayesian A/B statistics, CJA reporting for Auto-Allocate, and Profile-Based Popularity Grouping for Recommendations.",
     features: [
+      { name: "Missing Lift and Confidence Fix in A4T Auto-Target Reports (26.9.3)", description: "Fixed issue where Lift and Confidence fields were blank in A4T Auto-Target reports when using the Maximize Visit Conversion Rate optimization goal due to a default metric resolution failure (TGT-56137).", status: "GA" },
+      { name: "Reporting Source Field Read-Only for Live Activities (26.9.3)", description: "The Reporting Source field is now read-only for live activities when the activity owner lacks Adobe Analytics access, preventing unintended reporting source changes (TGT-56089).", status: "GA" },
       { name: "Feed URL Encoding Issue Fix (26.9.2)", description: "Fixed incorrect URL encoding when creating a Recommendations feed from a URL in the new Target interface, which caused feed creation to fail with an unknown error (TGT-56084).", status: "GA" },
       { name: "Automated Segments Report Inconsistency Fix (26.9.2)", description: "Fixed issue where the Automated Segments report showed only attribute names without associated values or ranges for Automated Personalization and Auto-Target activities (TGT-55855).", status: "GA" },
       { name: "API/MCP Activity and Audience Editing", description: "Activities and audiences created via the Adobe Target Admin API and Target MCP can now be edited in the Target UI, enabling post-creation modifications to programmatically generated content.", status: "GA" },
