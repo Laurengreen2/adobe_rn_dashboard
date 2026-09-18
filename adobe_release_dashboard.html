@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-09-17'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-09-18'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -797,7 +797,7 @@ const RELEASE_DATA = [
   },
   {
     id: 'journey-optimizer',
-    title: "Journey Optimizer September 2026: Journey Anomaly Alert, AI Expressions, Branch Detachment, Loyalty",
+    title: "Journey Optimizer September 2026: Batch Audience Trigger, Journey Anomaly Alert, AI Expressions, Loyalty",
     version: null,
     date: "September 2026",
     rawDate: "2026-09-01",
@@ -864,6 +864,7 @@ const RELEASE_DATA = [
       { name: "Live Activity Execution Metadata", description: "Optional executionMetadata field on each recipient allows passing custom key/value pairs such as order ID or loyalty tier for dynamic live activity personalization.", status: "GA" },
       { name: "Placement-Level Frequency Capping in Decisioning", description: "Frequency capping rules in Decisioning can now be scoped to individual placements with two modes — placement-specific capping and per-placement capping — for finer control over offer display frequency.", status: "GA" },
       { name: "Inbound Experience Simulation in Action Campaigns", description: "Test inbound channel actions with simulated users before going live, including generated URLs and QR codes for validation of web and mobile experiences.", status: "Limited Availability" },
+      { name: "Trigger Journeys After Batch Audience Evaluation", description: "Journey entries can now wait up to 6 hours after a batch audience evaluation cycle completes before triggering, ensuring fresh audience membership data is used at journey execution time.", status: "GA" },
       { name: "Action Campaign Authoring Flow Redesign", description: "More intuitive and efficient user experience for Action Campaign creation with improved step sequencing and guided configuration.", status: "GA" },
       { name: "Folders for Action Campaigns", description: "Organize Action Campaigns into folders for improved navigation and management within large campaign inventories.", status: "Beta" },
       { name: "Override Default Execution Fields in Action Campaigns", description: "Override globally configured default execution fields for Email, SMS, and WhatsApp at the individual campaign parameter level.", status: "Beta" },
