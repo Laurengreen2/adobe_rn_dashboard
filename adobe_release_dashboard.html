@@ -732,6 +732,7 @@ const PRODUCTS = [
   { id: 'ajo-b2b',             name: 'Journey Optimizer B2B',     color: '#e879f9', url: 'https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/release-notes' },
   { id: 'rtcdp',               name: 'Real-Time CDP',             color: '#0ea5e9', url: 'https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest' },
   { id: 'data-distiller',      name: 'Data Distiller',            color: '#f472b6', url: 'https://experienceleague.adobe.com/en/docs/experience-platform/query/home' },
+  { id: 'cx-coworker',         name: 'CX Coworker',               color: '#6366f1', url: 'https://experienceleague.adobe.com/en/docs/cx-enterprise-ai/experience-cloud-ai/home' },
 ];
 
 const ALL_TAGS = ['AI', 'Performance', 'UI', 'Data', 'Integration', 'Security', 'Deprecation'];
@@ -1186,6 +1187,26 @@ const RELEASE_DATA = [
     category_tags: ["Data", "Security", "AI", "Integration", "Deprecation"]
   },
   {
+    id: 'cx-coworker',
+    title: "CX Coworker September 2026: Analytics Skills GA, Coworker Campaigns, MCP Gateway, Agentic Monitoring",
+    version: null,
+    date: "September 2026",
+    rawDate: "2026-09-01",
+    summary: "Adobe CX Coworker is the company's agentic AI application that automates end-to-end customer experience workflows across the Adobe ecosystem. September 2026 brings GA rollout of Analytics data analysis and root-cause analysis skills within Coworker Chat, while Coworker Campaigns graduates for marketing teams to build and execute AI-guided campaigns with Marketo Engage and HubSpot connectors. The Adobe CX Coworker Gateway provides a unified MCP endpoint connecting to seven Adobe products. Agentic AI Monitoring dashboards (Overview, Users, Feedback, AI Credits) provide governance visibility across all agents.",
+    features: [
+      { name: "Coworker Chat", description: "Conversational agentic AI interface for automating Adobe product tasks using natural language. Supports multi-step planning and execution across CX Enterprise applications including data analysis, audience building, journey management, and implementation guidance.", status: "GA" },
+      { name: "Coworker Campaigns", description: "AI-native application consolidating campaign briefing, audience building, content generation, journey design, and proofing into a single conversational experience for small agile teams. Includes connectors for Marketo Engage and HubSpot.", status: "GA" },
+      { name: "Analyze Adobe Analytics Data Skill", description: "Coworker Chat skill for advanced natural-language data analysis directly on Analytics report suites, surfacing insights without requiring manual report building. GA rollout begins September 25, 2026.", status: "GA" },
+      { name: "Root-Cause Analysis Skill", description: "Identifies metric changes, pinpoints shift dates, and breaks down contributing dimensions with percentages and values for rapid anomaly investigation in Adobe Analytics and CJA.", status: "Beta" },
+      { name: "Open Visualization in Workspace Skill", description: "Transitions Coworker Chat analyses directly into Analysis Workspace panels for further refinement and sharing. GA rollout begins October 2, 2026.", status: "Beta" },
+      { name: "CX Coworker Gateway (MCP)", description: "Unified Model Context Protocol endpoint connecting Coworker to Real-Time CDP, Experience Platform, Journey Optimizer, Customer Journey Analytics, Adobe Analytics, Workfront, and Target for cross-application AI access from any MCP-compatible client.", status: "GA" },
+      { name: "AI Assistant (Next-Gen)", description: "Full-screen and right-rail conversational interface powered by Experience Platform Agent Orchestrator. Features discovery prompts (Learn, Analyze, Optimize), context configuration by sandbox and dataview, data visualization across multiple chart types, and response transparency with step-by-step reasoning.", status: "GA" },
+      { name: "Agentic AI Monitoring", description: "Dashboards providing four views — Overview, Users, Feedback, and AI Credits — to track agentic AI adoption, conversation activity, user feedback, and credit consumption across all Experience Platform Agents.", status: "GA" },
+      { name: "Coworker Projects", description: "Unified workspace for automating end-to-end customer experience orchestration workflows, supporting task coordination, approvals, and execution management.", status: "Beta" }
+    ],
+    category_tags: ["AI", "Integration", "Data", "Performance"]
+  },
+  {
     id: 'data-distiller',
     title: "Data Distiller: Session Management and Credential Security Updates",
     version: null,
@@ -1229,6 +1250,7 @@ const ROADMAP_URLS = {
   'ajo-b2b':             'https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/release-notes',
   'rtcdp':               'https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/release-notes/latest',
   'data-distiller':      'https://experienceleague.adobe.com/en/docs/experience-platform/query/home',
+  'cx-coworker':         'https://experienceleague.adobe.com/en/docs/cx-enterprise-ai/experience-cloud-ai/home',
 };
 
 function relativeDate(rawDate) {
