@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-09-18'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-09-21'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -744,7 +744,7 @@ const RELEASE_DATA = [
     version: null,
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "September 2026 brings AI-powered analysis through CX Enterprise Coworker Chat for Adobe Analytics report suites (GA Sept 25), with natural-language root-cause analysis and direct Workspace integration rolling out in October. The Segment Date Range Limiting option graduates to GA for Visitor-level segments, Edge data collection gains custom bot detection rules running before IAB rules, and 28 bug fixes ship across Activity Map, Analysis Workspace, Classifications, Data Feeds, and Report Builder.",
+    summary: "September 2026 brings AI-powered analysis through CX Enterprise Coworker Chat for Adobe Analytics report suites (GA Sept 25), with natural-language root-cause analysis and direct Workspace integration rolling out in October. The Segment Date Range Limiting option graduates to GA for Visitor-level segments, Edge data collection gains custom bot detection rules running before IAB rules, Over 96 bug fixes ship across Activity Map (3), Analysis Workspace (18), Classifications (27), Data Feeds/Warehouse (9), Exports (3), Report Builder (12), Reporting (3), Report Suites (4), Scheduled Reports (1), Segmentation (2), and other areas.",
     features: [
       { name: "CX Enterprise Coworker: Analyze Adobe Analytics Data", description: "Coworker Chat performs advanced data analysis directly on Analytics report suites using natural-language prompts, surfacing insights without requiring manual report building. GA rollout begins September 25, 2026.", status: "GA" },
       { name: "CX Enterprise Coworker: Root-Cause Analysis Skill", description: "Identifies metric changes, pinpoints shift dates, and breaks down contributing dimensions with percentages and values for rapid anomaly investigation. GA rollout begins October 2, 2026.", status: "Beta" },
@@ -900,12 +900,13 @@ const RELEASE_DATA = [
   },
   {
     id: 'target',
-    title: "Adobe Target 26.9.3 / 26.9.2 / 26.9.1: A4T Auto-Target Lift Fix, Read-Only Reporting Source, Feed URL Fix",
-    version: "26.9.3",
+    title: "Adobe Target 26.9.4 / 26.9.3 / 26.9.2 / 26.9.1: VEC Insert Before Fix, A4T Lift Fix, Read-Only Reporting Source",
+    version: "26.9.4",
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "September 16, 2026 (26.9.3) fixes missing Lift and Confidence values in A4T Auto-Target reports when using the Maximize Visit Conversion Rate goal (TGT-56137) and makes the Reporting Source field read-only for live activities when the owner lacks Adobe Analytics access (TGT-56089). September 8 (26.9.2) fixes incorrect feed URL encoding blocking Recommendations feed creation (TGT-56084) and an Automated Segments report inconsistency (TGT-55855). September 1 (26.9.1) fixed an activity-copy failure with activity-only audiences (TGT-55785). The August 2026 releases added API/MCP activity editing, Bayesian A/B statistics, CJA reporting for Auto-Allocate, and Profile-Based Popularity Grouping for Recommendations.",
+    summary: "September 17, 2026 (26.9.4) fixes the VEC Insert Before control rendering above the visible viewport when selecting the topmost page element with Experience Fragments (TGT-55829). September 16 (26.9.3) fixes missing Lift and Confidence values in A4T Auto-Target reports when using the Maximize Visit Conversion Rate goal (TGT-56137) and makes the Reporting Source field read-only for live activities when the owner lacks Adobe Analytics access (TGT-56089). September 8 (26.9.2) fixes incorrect feed URL encoding blocking Recommendations feed creation (TGT-56084) and an Automated Segments report inconsistency (TGT-55855). September 1 (26.9.1) fixed an activity-copy failure with activity-only audiences (TGT-55785). The August 2026 releases added API/MCP activity editing, Bayesian A/B statistics, CJA reporting for Auto-Allocate, and Profile-Based Popularity Grouping for Recommendations.",
     features: [
+      { name: "VEC Insert Before Control Viewport Fix (26.9.4)", description: "Fixed issue where selecting the topmost page element in the Visual Experience Composer caused the Insert Before control to render above the visible viewport, making it inaccessible when working with Experience Fragments (TGT-55829). Released September 17, 2026.", status: "GA" },
       { name: "Missing Lift and Confidence Fix in A4T Auto-Target Reports (26.9.3)", description: "Fixed issue where Lift and Confidence fields were blank in A4T Auto-Target reports when using the Maximize Visit Conversion Rate optimization goal due to a default metric resolution failure (TGT-56137).", status: "GA" },
       { name: "Reporting Source Field Read-Only for Live Activities (26.9.3)", description: "The Reporting Source field is now read-only for live activities when the activity owner lacks Adobe Analytics access, preventing unintended reporting source changes (TGT-56089).", status: "GA" },
       { name: "Feed URL Encoding Issue Fix (26.9.2)", description: "Fixed incorrect URL encoding when creating a Recommendations feed from a URL in the new Target interface, which caused feed creation to fail with an unknown error (TGT-56084).", status: "GA" },
@@ -942,22 +943,28 @@ const RELEASE_DATA = [
   },
   {
     id: 'marketo',
-    title: "Marketo Engage August 2026: UI Refresh, AI Script Builder, and API Enforcement",
+    title: "Marketo Engage September 2026: New UI GA Rollout Complete, Email Tables, Partition Import, CRM Sync Alerts",
     version: null,
-    date: "August 2026",
-    rawDate: "2026-08-01",
-    summary: "August 2026 delivers a refreshed Marketo Engage interface with updated menus, icons, and layout rolling out in phases throughout the month. The Email Designer gains an AI-powered Script Builder for rapid personalization creation, and archiving a folder will automatically disable and deschedule all campaigns in that tree. API enforcement continues: SOAP API ended July 31, access_token parameter retires August 31, and Campaign Run IDs now return in correct numerical format.",
+    date: "September 2026",
+    rawDate: "2026-09-01",
+    summary: "The September 25, 2026 release (phased rollout) completes the Marketo Engage New UI general availability rollout; Classic UI remains available through January 2027. Upcoming additions include Select Partition on Import for workspace environments, Instant Alert on CRM Sync status changes, Self-Service Flow Steps with an extended 4-hour callback timeout, and drag-and-drop Email Designer Tables. API enforcement milestones: Static List Lead Activity endpoints enforce 10,000-lead limits on September 30, 2026, and Grab Images from Web is deprecated in the October release.",
     features: [
+      { name: "Marketo Engage New UI", description: "Refreshed interface with updated menus, icons, and layout graduates to general availability by end of September 2026; Classic UI remains available through January 2027 for transition.", status: "GA" },
+      { name: "Select Partition on Import", description: "Choose from local workspace Partitions when importing person records in environments with Workspaces and Partitions enabled for precise audience segmentation control.", status: "Beta" },
+      { name: "Instant Alert on CRM Sync Status Change", description: "Immediate notifications sent to subscribed administrators when native CRM sync enabled status changes, enhancing visibility into sync disruptions and ensuring timely intervention.", status: "Beta" },
+      { name: "Self-Service Flow Steps: Increased Callback Timeout", description: "Callback timeout for Self-Service Flow Steps extended from one hour to four hours automatically with no action required from customers.", status: "Beta" },
+      { name: "Email Designer: Tables", description: "New drag-and-drop table content type with configurable columns and rows for structured email content layout in the Email Designer.", status: "Beta" },
+      { name: "Custom Activity Attribute API Name Restrictions", description: "API names for Custom Activity Attributes now restricted to alphanumeric characters and underscores beginning with an alphanumeric character, ensuring consistent naming across integrations.", status: "GA" },
+      { name: "Static List Lead Activity Endpoint Limits", description: "Get Lead Activities and Get Lead Changes endpoints return error 1003 for static lists with 10,000 or more leads beginning September 30, 2026.", status: "GA" },
+      { name: "Grab Images from Web Deprecation", description: "The Grab Images from Web feature is deprecated as of the October 2026 release per security and privacy standards.", status: "GA" },
       { name: "Marketo AI Renamed to Coworker for Marketo Engage", description: "Marketo AI rebranded as Coworker for Marketo Engage; the service continues providing agent skills to automate marketing functions with no functional changes to existing capabilities.", status: "GA" },
-      { name: "Marketo Engage New UI", description: "Refreshed interface with updated menus, icons, and layout for a cleaner, more modern experience rolling out in phases throughout August 2026.", status: "GA" },
       { name: "Email Designer AI Script Builder", description: "AI-powered assistant within Email Designer accelerates creation of personalization scripts for dynamic email content.", status: "Beta" },
       { name: "Email Designer Generate Content Menu", description: "Contextual Generate content menu in Email Designer provides quick access to AI text actions and content generation features at the point of editing.", status: "Beta" },
       { name: "Disable Campaigns on Archive", description: "Archiving a folder automatically disables and deschedules all campaigns in that folder tree to prevent unintended sends.", status: "GA" },
       { name: "Campaign Run ID Formatting Fix", description: "Campaign Run ID values now return in correct numerical format instead of incorrectly double-quoted string format.", status: "GA" },
-      { name: "REST API access_token Deprecation", description: "The access_token query parameter is retired after August 31, 2026; all integrations must switch to the Authorization header for continued access.", status: "GA" },
+      { name: "REST API access_token Deprecation", description: "The access_token query parameter retired after August 31, 2026; all integrations must switch to the Authorization header for continued access.", status: "GA" },
       { name: "SOAP API End of Support", description: "SOAP API support ended July 31, 2026; all services must migrate to the REST API to avoid integration failures.", status: "GA" },
-      { name: "Merge Leads API ID Limit", description: "Merge Leads API calls with more than 25 IDs in the leadIds parameter return error code 1080 starting July 31, 2026.", status: "GA" },
-      { name: "Static List Lead Activity Endpoint Limits", description: "Get Lead Activities and Get Lead Changes endpoints return error 1003 for static lists with 10,000 or more leads beginning September 30, 2026.", status: "GA" }
+      { name: "Merge Leads API ID Limit", description: "Merge Leads API calls with more than 25 IDs in the leadIds parameter return error code 1080 starting July 31, 2026.", status: "GA" }
     ],
     category_tags: ["AI", "UI", "Integration", "Deprecation"]
   },
