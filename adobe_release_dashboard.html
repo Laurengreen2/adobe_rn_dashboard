@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-09-21'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-09-22'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -798,11 +798,11 @@ const RELEASE_DATA = [
   },
   {
     id: 'journey-optimizer',
-    title: "Journey Optimizer September 2026: Batch Audience Trigger, Journey Anomaly Alert, AI Expressions, Loyalty",
+    title: "Journey Optimizer September 2026: AI Expressions, Journey Anomaly, Orchestrated Campaign Alerts, AEP Profile Simulation",
     version: null,
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "September 8, 2026 adds Decisioning in Journey simulation supporting Content Decision nodes and decision policies, Content Management MCP tools in CX Coworker for natural-language asset management, a mandatory consent checkbox for landing pages, and an Analyze Journey Anomalies skill. September 1 graduated AI-powered expression generation to GA, added the dateDiff function, and moved inbound experience simulation for Action Campaigns to Limited Availability. The August 2026 release delivered personalized PDF attachments in API-triggered emails, bulk journey operations, flexible AI image sourcing, send-time optimization in Wait activities, Quiet Hours and wave sending for orchestrated campaigns, high-throughput push messaging at 5,000 TPS, and LINE channel support.",
+    summary: "September 22, 2026 adds Jump Activities support in Audience Qualification journeys, Alerting for Orchestrated Campaigns for failure/timeout notifications, Conditional Content with Relational Data in orchestrated campaigns, Fix Syntax with AI in the Personalization Editor, and AEP Profile simulation for rule and ranking formula testing. September 15 added Journey Anomaly Detected alerts and Decisioning in Journey Simulation; September 8 added Content Management MCP tools in CX Coworker and the Analyze Journey Anomalies skill; September 1 graduated AI expression generation and the dateDiff function to GA. Earlier August additions include personalized PDF attachments in API-triggered emails, bulk journey operations, high-throughput push at 5,000 TPS, LINE channel support, and the redesigned journey canvas.",
     features: [
       { name: "Decisioning in Journey Simulation", description: "Journey simulation now supports Content Decision nodes, Optimize activity targeting rules, decisioned email actions, and decision policies using offer eligibility and ranking methods for pre-production testing.", status: "GA" },
       { name: "Content Management MCP Tools in CX Coworker", description: "New MCP tools enable discovery and management of Journey Optimizer assets — templates, fragments, landing pages, and inline message content — through natural language, with creation, updating, cloning, and publishing capabilities.", status: "GA" },
@@ -870,6 +870,11 @@ const RELEASE_DATA = [
       { name: "Folders for Action Campaigns", description: "Organize Action Campaigns into folders for improved navigation and management within large campaign inventories.", status: "Beta" },
       { name: "Override Default Execution Fields in Action Campaigns", description: "Override globally configured default execution fields for Email, SMS, and WhatsApp at the individual campaign parameter level.", status: "Beta" },
       { name: "Decisioning Support in Web Channel", description: "Decision policies become available in the web visual editor to deliver relevant AI-selected offers directly to website visitors.", status: "Beta" },
+      { name: "Jump Activities in Audience Qualification Journeys", description: "Jump activities are now supported in journeys that start with Audience Qualification nodes, enabling more flexible multi-journey orchestration patterns from qualification-based entries.", status: "GA" },
+      { name: "Alerting for Orchestrated Campaigns", description: "Automated system alerts notify administrators when orchestrated campaign execution fails or times out, with detailed logs to accelerate diagnosis and resolution of campaign delivery issues.", status: "GA" },
+      { name: "Conditional Content with Relational Data in Orchestrated Campaigns", description: "Build Email Designer conditions on related records beyond standard profile attributes, enabling richer personalization logic driven by relational data within orchestrated campaign workflows.", status: "GA" },
+      { name: "Fix Syntax with AI", description: "The Personalization Editor now offers AI-assisted corrections for PQL syntax validation errors, automatically suggesting and applying fixes to invalid expressions without manual debugging.", status: "GA" },
+      { name: "AEP Profiles in Rule and Ranking Formula Simulation", description: "Simulate Decisioning rules and ranking formulas by selecting real Adobe Experience Platform profiles to auto-fill test attributes, enabling more realistic pre-production formula validation.", status: "GA" },
       { name: "Generate Expressions with AI in Journeys", description: "Describe desired journey expressions in natural language and the editor generates ready-to-use expression code, reducing authoring complexity for conditional logic and personalization.", status: "GA" },
       { name: "DateDiff Function in Journey Expression Editor", description: "New function calculates the difference between two dates in days, enabling deadline creation, lifecycle duration calculation, and countdown timer logic in journey expressions.", status: "GA" },
       { name: "Content Variant Size Warning", description: "System alerts users when content variants exceed recommended thresholds — 1200 KB for templates and messages, 700 KB for fragments, 1000 KB for landing pages — without blocking saves.", status: "GA" },
@@ -900,12 +905,13 @@ const RELEASE_DATA = [
   },
   {
     id: 'target',
-    title: "Adobe Target 26.9.4 / 26.9.3 / 26.9.2 / 26.9.1: VEC Insert Before Fix, A4T Lift Fix, Read-Only Reporting Source",
-    version: "26.9.4",
+    title: "Adobe Target 26.9.5 / 26.9.4 / 26.9.3 / 26.9.2 / 26.9.1: A4T Report Links Fix, VEC Insert Fix, A4T Lift Fix",
+    version: "26.9.5",
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "September 17, 2026 (26.9.4) fixes the VEC Insert Before control rendering above the visible viewport when selecting the topmost page element with Experience Fragments (TGT-55829). September 16 (26.9.3) fixes missing Lift and Confidence values in A4T Auto-Target reports when using the Maximize Visit Conversion Rate goal (TGT-56137) and makes the Reporting Source field read-only for live activities when the owner lacks Adobe Analytics access (TGT-56089). September 8 (26.9.2) fixes incorrect feed URL encoding blocking Recommendations feed creation (TGT-56084) and an Automated Segments report inconsistency (TGT-55855). September 1 (26.9.1) fixed an activity-copy failure with activity-only audiences (TGT-55785). The August 2026 releases added API/MCP activity editing, Bayesian A/B statistics, CJA reporting for Auto-Allocate, and Profile-Based Popularity Grouping for Recommendations.",
+    summary: "September 2026 delivers a series of targeted fixes: 26.9.5 fixes missing A4T report links in the Target UI; 26.9.4 (Sept 17) fixes the VEC Insert Before control rendering outside the viewport (TGT-55829); 26.9.3 (Sept 16) fixes missing Lift and Confidence values in A4T Auto-Target reports (TGT-56137) and makes the Reporting Source field read-only for live activities (TGT-56089); 26.9.2 (Sept 8) fixes Recommendations feed URL encoding (TGT-56084) and an Automated Segments display issue (TGT-55855); 26.9.1 (Sept 1) fixed activity-copy failures with activity-only audiences (TGT-55785). The August 2026 releases added API/MCP activity editing, Bayesian A/B statistics, CJA reporting for Auto-Allocate, and Profile-Based Popularity Grouping for Recommendations.",
     features: [
+      { name: "A4T Report Link Generation Fix (26.9.5)", description: "Fixed missing report links in the Reports section for A4T activities where underlying data was visible in both Target and Analytics but report links failed to generate in the Target UI.", status: "GA" },
       { name: "VEC Insert Before Control Viewport Fix (26.9.4)", description: "Fixed issue where selecting the topmost page element in the Visual Experience Composer caused the Insert Before control to render above the visible viewport, making it inaccessible when working with Experience Fragments (TGT-55829). Released September 17, 2026.", status: "GA" },
       { name: "Missing Lift and Confidence Fix in A4T Auto-Target Reports (26.9.3)", description: "Fixed issue where Lift and Confidence fields were blank in A4T Auto-Target reports when using the Maximize Visit Conversion Rate optimization goal due to a default metric resolution failure (TGT-56137).", status: "GA" },
       { name: "Reporting Source Field Read-Only for Live Activities (26.9.3)", description: "The Reporting Source field is now read-only for live activities when the activity owner lacks Adobe Analytics access, preventing unintended reporting source changes (TGT-56089).", status: "GA" },
