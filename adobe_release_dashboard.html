@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-09-22'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-09-23'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -878,7 +878,9 @@ const RELEASE_DATA = [
       { name: "Generate Expressions with AI in Journeys", description: "Describe desired journey expressions in natural language and the editor generates ready-to-use expression code, reducing authoring complexity for conditional logic and personalization.", status: "GA" },
       { name: "DateDiff Function in Journey Expression Editor", description: "New function calculates the difference between two dates in days, enabling deadline creation, lifecycle duration calculation, and countdown timer logic in journey expressions.", status: "GA" },
       { name: "Content Variant Size Warning", description: "System alerts users when content variants exceed recommended thresholds — 1200 KB for templates and messages, 700 KB for fragments, 1000 KB for landing pages — without blocking saves.", status: "GA" },
-      { name: "Fragment Count Limits in Content", description: "Validates unique fragment usage in content with warnings at 75% capacity and hard limits at 60 unique fragments per variant and 120 across all variants.", status: "GA" }
+      { name: "Fragment Count Limits in Content", description: "Validates unique fragment usage in content with warnings at 75% capacity and hard limits at 60 unique fragments per variant and 120 across all variants.", status: "GA" },
+      { name: "Loyalty Event Mapping Updates", description: "New visual mapping builder with a searchable field selector and JSONata expression preview enables clearer, more efficient configuration of loyalty event data mappings. Released September 22, 2026.", status: "GA" },
+      { name: "Journey Simulation in Coworker", description: "CX Coworker automates end-to-end journey validation by running journey simulations and interpreting results, surfacing issues without requiring manual test-profile setup. Released September 23, 2026.", status: "GA" }
     ],
     category_tags: ["AI", "UI", "Data", "Integration", "Deprecation"]
   },
@@ -905,12 +907,14 @@ const RELEASE_DATA = [
   },
   {
     id: 'target',
-    title: "Adobe Target 26.9.5 / 26.9.4 / 26.9.3 / 26.9.2 / 26.9.1: A4T Report Links Fix, VEC Insert Fix, A4T Lift Fix",
+    title: "Adobe Target 26.9.5: Content Pre-hiding GA, MCP Recommendations Tools Beta, A4T Fixes",
     version: "26.9.5",
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "September 2026 delivers a series of targeted fixes: 26.9.5 fixes missing A4T report links in the Target UI; 26.9.4 (Sept 17) fixes the VEC Insert Before control rendering outside the viewport (TGT-55829); 26.9.3 (Sept 16) fixes missing Lift and Confidence values in A4T Auto-Target reports (TGT-56137) and makes the Reporting Source field read-only for live activities (TGT-56089); 26.9.2 (Sept 8) fixes Recommendations feed URL encoding (TGT-56084) and an Automated Segments display issue (TGT-55855); 26.9.1 (Sept 1) fixed activity-copy failures with activity-only audiences (TGT-55785). The August 2026 releases added API/MCP activity editing, Bayesian A/B statistics, CJA reporting for Auto-Allocate, and Profile-Based Popularity Grouping for Recommendations.",
+    summary: "September 2026 adds Content Pre-hiding to reduce page flicker by hiding only sections targeted by personalization, and the Adobe Target MCP Server gains Recommendations Tools for listing, creating, and updating recommendations components from AI assistants. Bug fix releases 26.9.5 through 26.9.1 address missing A4T report links, VEC Insert Before viewport inaccessibility (TGT-55829), missing Lift and Confidence in A4T Auto-Target reports (TGT-56137), Recommendations feed URL encoding (TGT-56084), and Automated Segments display inconsistency (TGT-55855). August 2026 releases added API/MCP activity editing, Bayesian A/B statistics, CJA reporting for Auto-Allocate, and Profile-Based Popularity Grouping for Recommendations.",
     features: [
+      { name: "Content Pre-hiding for Personalization", description: "Hides only the specific page sections that Adobe Target personalization is about to modify, reducing visible page flicker during content loading without hiding the entire page.", status: "GA" },
+      { name: "Adobe Target MCP Server: Recommendations Tools", description: "New MCP server tools enable AI assistants such as Claude to list, create, and update Recommendations components including criteria, collections, feeds, and designs directly from natural language.", status: "Beta" },
       { name: "A4T Report Link Generation Fix (26.9.5)", description: "Fixed missing report links in the Reports section for A4T activities where underlying data was visible in both Target and Analytics but report links failed to generate in the Target UI.", status: "GA" },
       { name: "VEC Insert Before Control Viewport Fix (26.9.4)", description: "Fixed issue where selecting the topmost page element in the Visual Experience Composer caused the Insert Before control to render above the visible viewport, making it inaccessible when working with Experience Fragments (TGT-55829). Released September 17, 2026.", status: "GA" },
       { name: "Missing Lift and Confidence Fix in A4T Auto-Target Reports (26.9.3)", description: "Fixed issue where Lift and Confidence fields were blank in A4T Auto-Target reports when using the Maximize Visit Conversion Rate optimization goal due to a default metric resolution failure (TGT-56137).", status: "GA" },
@@ -1001,33 +1005,36 @@ const RELEASE_DATA = [
   },
   {
     id: 'experience-platform',
-    title: "Experience Platform August 2026: Dataset Access Control, Batch Guardrails, 9 Sources to GA",
+    title: "Experience Platform September 2026: Growth Credits, Multi-Sandbox, Entra ID Auth, 20+ Features",
     version: null,
-    date: "August 2026",
-    rawDate: "2026-08-01",
-    summary: "August 18, 2026 delivers object-level access control for entire datasets, expanded batch ingestion limits (25,000 files per batch, up to 1 TB), and on-demand audience activation for streaming destinations in beta. Nine source connectors graduate to general availability, B2B segmentation gains external account audiences and time-series custom objects, and health checks now cover Query Service, Merge Policies, and Segmentation.",
+    date: "September 2026",
+    rawDate: "2026-09-01",
+    summary: "The September 22, 2026 release ships AEP Growth Credits for self-service capacity management across streaming, edge, and batch segmentation with monitoring alerts, multi-sandbox object migration in a single workflow, and Audience Validation in the Audience Builder for inline field compatibility checking. Destinations gain Entra ID authentication for Azure services, Salesforce CRM OAuth 2 Client Credentials, and auto-refreshing Facebook OAuth tokens. Query Service enforces schema-level read permissions on accelerated queries, and India's Digital Personal Data Protection Act is added to Privacy Service. New source capabilities ship: HubSpot V2 Connector, Amazon S3 with combined encryption and 10 GB file support, and Self-Serve Sources Streaming SDK on AWS.",
     features: [
-      { name: "Object-Level Access Control for Datasets", description: "Apply access labels to entire datasets to control which users and applications can read or write dataset data, extending field-level governance to the dataset level.", status: "GA" },
-      { name: "mTLS Certificate Hierarchy Update", description: "New certificate authority hierarchy for mTLS connections requires updating trust stores by the specified deadline to prevent connection failures.", status: "GA" },
-      { name: "Updated Batch Ingestion Guardrails", description: "Batch ingestion limits increased to 25,000 files per batch and up to 1 TB total, enabling ingestion of significantly larger datasets.", status: "GA" },
-      { name: "Activate Audiences On-Demand to Streaming Destinations", description: "Trigger immediate audience membership resends to streaming destinations without waiting for scheduled evaluation windows.", status: "Beta" },
-      { name: "Data Type Filter in Destinations Catalog", description: "Filter the destinations catalog by data type to find relevant destinations faster during activation workflow setup. Postponed from August 2026; expected in September 2026 release.", status: "Beta" },
-      { name: "Amazon S3 External ID Support", description: "Enhanced security for Amazon S3 destinations by including Organization ID in assume role calls to prevent confused deputy attacks.", status: "GA" },
-      { name: "ZoomInfo Account Audiences Destination", description: "New destination for account-based marketing activation sends account audience data to ZoomInfo for targeted outreach.", status: "GA" },
-      { name: "Adobe Target Connection for Journey Optimizer Organizations", description: "Adobe Target destination is now available to Adobe Journey Optimizer organizations in addition to Real-Time CDP, expanding cross-product activation options.", status: "GA" },
-      { name: "LiveRamp Onboarding Profile Exclusion", description: "Exited profiles are excluded from LiveRamp Onboarding exports to reduce Records Under Management and associated costs.", status: "GA" },
-      { name: "Additional Health Checks", description: "Health checks expanded to include Query Service, Merge Policies, and Segmentation for more comprehensive platform monitoring.", status: "GA" },
-      { name: "Batch Segmentation Progress Transparency", description: "Display the percentage of audience evaluated during batch segmentation processing for real-time visibility into job progress.", status: "GA" },
-      { name: "Run Now for On-Demand Audience Evaluation", description: "Trigger on-demand audience evaluation for batch segmentation without waiting for the next scheduled evaluation window.", status: "Beta" },
-      { name: "External Account Audiences for B2B", description: "Upload account audiences via the external audiences endpoint to use in B2B segmentation and activation workflows.", status: "GA" },
-      { name: "Time-Series Custom Objects for B2B Segmentation", description: "Use time-series relational schemas in custom objects for more complex temporal segmentation in Real-Time CDP B2B Edition.", status: "GA" },
-      { name: "9 Sources Promoted to General Availability", description: "Braze, Capillary, Didomi, LAVA, Rainfocus, Relay, Shopify Streaming, Talon.One Batch, and Talon.One Streaming source connectors graduate from beta to GA.", status: "GA" },
-      { name: "Self-Serve Sources Streaming SDK", description: "Build custom streaming source connectors with OAuth or HMAC authentication using the updated Self-Serve Sources Streaming SDK documentation.", status: "GA" },
-      { name: "TLS v1.3 Compatibility for Sources", description: "Six cloud storage and database source connectors now support TLS 1.3 for enhanced connection security.", status: "GA" },
-      { name: "Updated Batch Sources IP Allowlist", description: "Refreshed IP allowlist for batch source connectors; update firewall and network rules to maintain uninterrupted data ingestion.", status: "GA" },
-      { name: "B2B Audience Export Fix", description: "Fixed issue where all audience data was resent on every export cycle; only changed audiences are now resent per profile, reducing unnecessary export volume.", status: "GA" }
+      { name: "AEP Growth Credits for Capacity Management", description: "Manage and scale streaming ingestion, edge throughput, and batch segmentation capacity through a self-service workflow with monitoring dashboards and alerts as usage approaches limits.", status: "GA" },
+      { name: "Batch Capacity Monitoring", description: "Monitor on-demand audience evaluation runs, scheduled batch runs, and batch audience counts with dedicated capacity metrics for operational visibility.", status: "GA" },
+      { name: "Edge Throughput Monitor Enhancement", description: "Edge throughput monitor now displays a Requests skipped metric alongside improved graph visualization for clearer operational visibility.", status: "GA" },
+      { name: "Updated Data Governance Label Application Workflows", description: "Apply governance labels through inline actions directly in the Datasets workspace or Schema Editor without navigating to a separate governance interface.", status: "GA" },
+      { name: "Data Type Filter in Destinations Catalog", description: "Filter the Browse tab in the Destinations Catalog by data type to locate relevant destinations faster during activation workflow setup.", status: "GA" },
+      { name: "Microsoft Entra ID Authentication for Azure Destinations", description: "Azure Event Hubs and Azure Blob Storage destinations now support service principal authentication via Microsoft Entra ID for enterprise-grade access control.", status: "GA" },
+      { name: "Salesforce CRM OAuth 2 Client Credentials Authentication", description: "Salesforce CRM destination supports a new OAuth 2 Client Credentials authentication flow as an alternative to existing authentication methods.", status: "GA" },
+      { name: "Facebook Credential Auto-Refresh", description: "Facebook destination automatically refreshes OAuth tokens without requiring manual reauthentication, eliminating export disruptions from expired credentials.", status: "GA" },
+      { name: "Amazon Ads Marketing Actions Default Removal", description: "Default marketing action requirement removed for Amazon Ads destinations, simplifying data activation configuration.", status: "GA" },
+      { name: "India Digital Personal Data Protection Act Support", description: "Privacy Service now supports regulation-specific privacy request types for India's Digital Personal Data Protection Act alongside existing global privacy regulations.", status: "GA" },
+      { name: "Accelerated Queries Schema Permission Enforcement", description: "Existing schema-level read permissions are now enforced on accelerated Query Service queries to prevent unauthorized data access via the accelerated store.", status: "GA" },
+      { name: "Job Schedules Identity Ingestion Runs", description: "The Job Schedules timeline now includes identity ingestion run tracking for end-to-end data pipeline visibility.", status: "GA" },
+      { name: "Job Schedules Campaign Runs", description: "Scheduled Adobe Journey Optimizer batch campaign runs are now displayed in the Job Schedules interface with filtering options.", status: "GA" },
+      { name: "Additional Platform Health Checks", description: "Expanded to 32 new health checks across categories including Sources and Profile for more comprehensive platform observability.", status: "GA" },
+      { name: "Multi-Sandbox Object Migration", description: "Supported configuration objects can now be migrated to multiple target sandboxes through a single workflow, reducing repetitive sandbox setup effort.", status: "GA" },
+      { name: "Audience Validation in Audience Builder", description: "Inline field compatibility validation during audience creation flags incompatible conditions immediately without requiring segment evaluation to discover errors.", status: "GA" },
+      { name: "CX Enterprise Coworker Data Management Agentic Skills", description: "Conversational AI skills enable identifying high-storage datasets and assessing data retention policy changes through natural language queries in Experience Platform.", status: "GA" },
+      { name: "Flexible Batch Segmentation Schedules", description: "Trigger on-demand audience evaluation with user-defined schedules rather than relying exclusively on system-managed evaluation windows.", status: "Limited Availability" },
+      { name: "Large Scale Audiences", description: "Support expanded to up to 10,000 audiences per sandbox, enabling enterprises with large audience portfolios to manage segmentation at scale.", status: "Limited Availability" },
+      { name: "HubSpot V2 Source Connector", description: "Updated HubSpot connector for data ingestion with improved API coverage and reliability.", status: "GA" },
+      { name: "Amazon S3 Combined Encryption Support", description: "Amazon S3 source now supports combined server-side encryption (SSE) and PGP encryption, with maximum file size increased to 10 GB on the VA6 region.", status: "GA" },
+      { name: "Self-Serve Sources Streaming SDK on AWS", description: "Build custom streaming source connectors for Experience Platform running on AWS infrastructure using the updated Streaming SDK.", status: "Limited Availability" }
     ],
-    category_tags: ["Data", "Security", "Integration", "AI"]
+    category_tags: ["Data", "Security", "Integration", "AI", "Performance"]
   },
   {
     id: 'workfront',
@@ -1179,25 +1186,27 @@ const RELEASE_DATA = [
   },
   {
     id: 'rtcdp',
-    title: "Real-Time CDP August 2026: B2B Account Audiences, Batch Segmentation Transparency, Dataset Access Labels",
+    title: "Real-Time CDP September 2026: Growth Credits GA, Audience Validation, Large Scale Audiences",
     version: null,
-    date: "August 2026",
-    rawDate: "2026-08-01",
-    summary: "August 18, 2026 expands Real-Time CDP B2B Edition with external account audience uploads via API and time-series custom object support for richer temporal segmentation. Batch segmentation now displays real-time evaluation progress as a percentage, on-demand audience evaluation (Run Now) launches in beta, and object-level dataset access labels provide granular data governance controls.",
+    date: "September 2026",
+    rawDate: "2026-09-01",
+    summary: "September 22, 2026 brings AEP Growth Credits for self-service capacity management across streaming, edge, and batch segmentation, plus Audience Validation in the Audience Builder for inline field compatibility checking during segment creation. Flexible Batch Schedules for on-demand audience evaluation and Large Scale Audiences supporting up to 10,000 audiences per sandbox arrive in Limited Availability. Data governance gains updated label application workflows directly in the Datasets workspace and Schema Editor, and multi-sandbox object migration ships in a single workflow.",
     features: [
-      { name: "Object-Level Access Control for Datasets", description: "Apply access labels to entire datasets to control which users and applications can read or write data, extending governance from fields to the full dataset level.", status: "GA" },
-      { name: "External Account Audiences for B2B", description: "Upload account audiences via the external audiences endpoint to use in Real-Time CDP B2B Edition segmentation and downstream activation workflows.", status: "GA" },
-      { name: "Time-Series Custom Objects for B2B Segmentation", description: "Use time-series relational schemas in B2B custom objects for complex temporal segmentation unavailable with standard event data.", status: "GA" },
-      { name: "Batch Segmentation Progress Transparency", description: "Real-time percentage indicator shows how much of an audience has been evaluated during batch segmentation jobs for operational visibility.", status: "GA" },
-      { name: "Run Now for On-Demand Audience Evaluation", description: "Trigger immediate batch audience evaluation without waiting for the next scheduled window, enabling faster audience refresh for time-sensitive activations.", status: "Beta" },
-      { name: "Activate Audiences On-Demand to Streaming Destinations", description: "Resend audience membership immediately to streaming destinations outside of scheduled evaluation cycles.", status: "Beta" },
-      { name: "ZoomInfo Account Audiences Destination", description: "New destination for account-based marketing sends account audience data to ZoomInfo for targeted outreach and enrichment.", status: "GA" },
-      { name: "LiveRamp Onboarding Profile Exclusion", description: "Exited profiles are automatically excluded from LiveRamp Onboarding exports to reduce Records Under Management costs.", status: "GA" },
-      { name: "Amazon S3 External ID Security Enhancement", description: "Organization ID is now included in Amazon S3 assume role calls to prevent confused deputy privilege escalation attacks.", status: "GA" },
-      { name: "mTLS Certificate Hierarchy Update", description: "New certificate authority hierarchy for mTLS connections requires updating trust stores by the Adobe-specified deadline.", status: "GA" },
+      { name: "AEP Growth Credits for Segmentation Capacity", description: "Self-service capacity management for streaming, edge, and batch segmentation with monitoring dashboards and alerts when usage approaches configured limits.", status: "GA" },
+      { name: "Audience Validation in Audience Builder", description: "Field compatibility validation during audience creation surfaces inline error flags immediately when incompatible conditions are combined, reducing iteration time.", status: "GA" },
+      { name: "Updated Data Governance Label Application", description: "Apply governance labels through inline actions in the Datasets workspace or Schema Editor for streamlined compliance enforcement across Real-Time CDP data.", status: "GA" },
+      { name: "Multi-Sandbox Object Migration", description: "Migrate supported Real-Time CDP configuration objects to multiple target sandboxes through a single workflow, reducing repetitive sandbox configuration effort.", status: "GA" },
+      { name: "Data Type Filter in Destinations Catalog", description: "Filter the Destinations Catalog Browse tab by data type to locate relevant activation destinations faster during workflow setup.", status: "GA" },
+      { name: "Microsoft Entra ID Authentication for Azure Destinations", description: "Azure Event Hubs and Azure Blob Storage destinations support service principal authentication via Microsoft Entra ID for enterprise access control.", status: "GA" },
+      { name: "Salesforce CRM OAuth 2 Client Credentials", description: "New authentication flow option for the Salesforce CRM destination alongside existing authentication methods.", status: "GA" },
+      { name: "Facebook Credential Auto-Refresh", description: "Automatically refreshes Facebook OAuth tokens, eliminating manual reauthentication and preventing export disruptions from expired credentials.", status: "GA" },
+      { name: "CX Enterprise Coworker Data Management Skills", description: "Conversational AI capabilities enable identifying high-storage datasets and assessing data retention changes through natural language queries.", status: "GA" },
+      { name: "India Digital Personal Data Protection Act Support", description: "Privacy Service now handles regulation-specific privacy requests under India's DPDPA alongside existing global regulations.", status: "GA" },
+      { name: "Flexible Batch Segmentation Schedules", description: "Trigger on-demand audience evaluation with user-defined schedules for time-sensitive activations rather than waiting for system-managed evaluation windows.", status: "Limited Availability" },
+      { name: "Large Scale Audiences", description: "Support expanded to up to 10,000 audiences per sandbox for enterprises managing large audience portfolios.", status: "Limited Availability" },
       { name: "Segment Match Deprecation", description: "Segment Match retires November 27, 2026; customers must migrate to Real-Time CDP Collaboration to maintain partner data sharing capabilities.", status: "GA" }
     ],
-    category_tags: ["Data", "Security", "AI", "Integration", "Deprecation"]
+    category_tags: ["Data", "Security", "Integration", "AI"]
   },
   {
     id: 'cx-coworker',
@@ -1221,17 +1230,18 @@ const RELEASE_DATA = [
   },
   {
     id: 'data-distiller',
-    title: "Data Distiller: Session Management and Credential Security Updates",
+    title: "Data Distiller September 2026: Accelerated Queries Schema Permission Enforcement",
     version: null,
-    date: "April 2026",
-    rawDate: "2026-04-01",
-    summary: "Data Distiller's most recent updates focus on operational control and security. Administrators can now monitor and terminate active Query Service sessions to reclaim idle capacity, while a credential migration from JWT to OAuth Server-to-Server improves long-term API security. A legacy results table option was also added for spreadsheet-friendly data exports.",
+    date: "September 2026",
+    rawDate: "2026-09-01",
+    summary: "September 22, 2026 adds schema-level read permission enforcement on accelerated Query Service queries, preventing unauthorized data access via the accelerated store for Data Distiller workloads. Earlier 2026 updates added Query Service session management for administrators to monitor and terminate idle sessions, JWT-to-OAuth credential migration for API security, and a legacy results table for spreadsheet-compatible exports.",
     features: [
+      { name: "Accelerated Queries Schema Permission Enforcement", description: "Existing schema-level read permissions are now enforced on accelerated Query Service queries, preventing users without schema access from retrieving data via the accelerated store.", status: "GA" },
       { name: "Query Service Session Management", description: "Administrators can view and terminate active Query Service sessions from the Admin tab to monitor capacity usage and free idle resources for Data Distiller workflows.", status: "GA" },
       { name: "JWT to OAuth Server-to-Server Credential Migration", description: "Non-expiring JWT credentials migrated to OAuth Server-to-Server to prevent service interruptions and meet modern security standards.", status: "GA" },
       { name: "Legacy Results Table", description: "Enables drag-to-select workflows with browser-native selection and tab-delimited output for direct compatibility with spreadsheet tools.", status: "Limited Availability" }
     ],
-    category_tags: ["Performance", "UI", "Security"]
+    category_tags: ["Performance", "Security", "Data"]
   }
 ];
 
