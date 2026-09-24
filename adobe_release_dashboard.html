@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-09-23'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-09-24'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -744,7 +744,7 @@ const RELEASE_DATA = [
     version: null,
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "September 2026 brings AI-powered analysis through CX Enterprise Coworker Chat for Adobe Analytics report suites (GA Sept 25), with natural-language root-cause analysis and direct Workspace integration rolling out in October. The Segment Date Range Limiting option graduates to GA for Visitor-level segments, Edge data collection gains custom bot detection rules running before IAB rules, Over 96 bug fixes ship across Activity Map (3), Analysis Workspace (18), Classifications (27), Data Feeds/Warehouse (9), Exports (3), Report Builder (12), Reporting (3), Report Suites (4), Scheduled Reports (1), Segmentation (2), and other areas.",
+    summary: "September 2026 brings AI-powered analysis through CX Enterprise Coworker Chat for Adobe Analytics report suites (GA Sept 25), with natural-language root-cause analysis and direct Workspace integration rolling out in October. The Segment Date Range Limiting option graduates to GA for Visitor-level segments, Edge data collection gains custom bot detection rules running before IAB rules. Over 150 bug fixes ship across Activity Map, Analysis Workspace, Classifications, Data Feeds/Warehouse, Exports, Report Builder, Reporting, Report Suites, Scheduled Reports, Segmentation, and other areas.",
     features: [
       { name: "CX Enterprise Coworker: Analyze Adobe Analytics Data", description: "Coworker Chat performs advanced data analysis directly on Analytics report suites using natural-language prompts, surfacing insights without requiring manual report building. GA rollout begins September 25, 2026.", status: "GA" },
       { name: "CX Enterprise Coworker: Root-Cause Analysis Skill", description: "Identifies metric changes, pinpoints shift dates, and breaks down contributing dimensions with percentages and values for rapid anomaly investigation. GA rollout begins October 2, 2026.", status: "Beta" },
@@ -860,7 +860,7 @@ const RELEASE_DATA = [
       { name: "Channel Optimization", description: "Automatically selects the optimal delivery channel per customer via manual ranking, customer preferences, or AI propensity scoring with automatic fallback to the next available channel.", status: "Limited Availability" },
       { name: "Decisioning Rules from Natural Language", description: "Describe a Decisioning eligibility rule in plain language and AI generates the corresponding expression automatically for organizations with Adobe AI capabilities access.", status: "Limited Availability" },
       { name: "Decisioning Rules and Ranking Formulas Simulation", description: "Simulate rules and ranking formulas directly from the editor using manual or AI-generated test variants, then validate eligibility and review ranked results pre-production.", status: "Limited Availability" },
-      { name: "Guided Adoption Capabilities", description: "Dedicated workspace enables migration of existing email content and journeys from other marketing platforms into Journey Optimizer without rebuilding from scratch.", status: "Limited Availability" },
+      { name: "Guided Adoption Capabilities", description: "Dedicated workspace enables migration of existing email content and journeys from other marketing platforms into Journey Optimizer without rebuilding from scratch; now includes content block migration recommendations and enhanced interface guidance.", status: "GA" },
       { name: "Target Dimension Simplification", description: "Displays the active targeting dimension on the workflow canvas and simplifies multi-entity segmentation configuration for orchestrated campaigns.", status: "GA" },
       { name: "Live Activity Execution Metadata", description: "Optional executionMetadata field on each recipient allows passing custom key/value pairs such as order ID or loyalty tier for dynamic live activity personalization.", status: "GA" },
       { name: "Placement-Level Frequency Capping in Decisioning", description: "Frequency capping rules in Decisioning can now be scoped to individual placements with two modes — placement-specific capping and per-placement capping — for finer control over offer display frequency.", status: "GA" },
@@ -869,7 +869,7 @@ const RELEASE_DATA = [
       { name: "Action Campaign Authoring Flow Redesign", description: "More intuitive and efficient user experience for Action Campaign creation with improved step sequencing and guided configuration.", status: "GA" },
       { name: "Folders for Action Campaigns", description: "Organize Action Campaigns into folders for improved navigation and management within large campaign inventories.", status: "Beta" },
       { name: "Override Default Execution Fields in Action Campaigns", description: "Override globally configured default execution fields for Email, SMS, and WhatsApp at the individual campaign parameter level.", status: "Beta" },
-      { name: "Decisioning Support in Web Channel", description: "Decision policies become available in the web visual editor to deliver relevant AI-selected offers directly to website visitors.", status: "Beta" },
+      { name: "Decisioning Support in Web Channel", description: "Decision policies become available in the web visual editor to deliver relevant AI-selected offers directly to website visitors.", status: "GA" },
       { name: "Jump Activities in Audience Qualification Journeys", description: "Jump activities are now supported in journeys that start with Audience Qualification nodes, enabling more flexible multi-journey orchestration patterns from qualification-based entries.", status: "GA" },
       { name: "Alerting for Orchestrated Campaigns", description: "Automated system alerts notify administrators when orchestrated campaign execution fails or times out, with detailed logs to accelerate diagnosis and resolution of campaign delivery issues.", status: "GA" },
       { name: "Conditional Content with Relational Data in Orchestrated Campaigns", description: "Build Email Designer conditions on related records beyond standard profile attributes, enabling richer personalization logic driven by relational data within orchestrated campaign workflows.", status: "GA" },
@@ -880,7 +880,11 @@ const RELEASE_DATA = [
       { name: "Content Variant Size Warning", description: "System alerts users when content variants exceed recommended thresholds — 1200 KB for templates and messages, 700 KB for fragments, 1000 KB for landing pages — without blocking saves.", status: "GA" },
       { name: "Fragment Count Limits in Content", description: "Validates unique fragment usage in content with warnings at 75% capacity and hard limits at 60 unique fragments per variant and 120 across all variants.", status: "GA" },
       { name: "Loyalty Event Mapping Updates", description: "New visual mapping builder with a searchable field selector and JSONata expression preview enables clearer, more efficient configuration of loyalty event data mappings. Released September 22, 2026.", status: "GA" },
-      { name: "Journey Simulation in Coworker", description: "CX Coworker automates end-to-end journey validation by running journey simulations and interpreting results, surfacing issues without requiring manual test-profile setup. Released September 23, 2026.", status: "GA" }
+      { name: "Journey Simulation in Coworker", description: "CX Coworker automates end-to-end journey validation by running journey simulations and interpreting results, surfacing issues without requiring manual test-profile setup. Released September 23, 2026.", status: "GA" },
+      { name: "Channel Content Plugin in Coworker", description: "Unified CX Coworker plugin delivering campaign copy, image generation, and email HTML skills from strategy through deployment in a single conversational interface. Released September 24, 2026.", status: "GA" },
+      { name: "Direct Joins on Collections", description: "Orchestrated campaigns support three join mode options when targeting collection data, with cartesian product performance warnings to prevent unintended data explosion during segmentation. Released September 22, 2026.", status: "GA" },
+      { name: "AEM Content Fragments for Decisioning in Managed Services", description: "Adobe Experience Manager Managed Services content fragments are now supported as offer content in Decisioning, extending fragment support beyond AEM Cloud Service implementations. Released September 23, 2026.", status: "GA" },
+      { name: "AI Overview in Fragment Validation Alerts", description: "Summarized AI-generated explanations of fragment validation issues appear alongside alerts for faster troubleshooting without navigating to source content. Released September 22, 2026.", status: "GA" }
     ],
     category_tags: ["AI", "UI", "Data", "Integration", "Deprecation"]
   },
@@ -1032,7 +1036,8 @@ const RELEASE_DATA = [
       { name: "Large Scale Audiences", description: "Support expanded to up to 10,000 audiences per sandbox, enabling enterprises with large audience portfolios to manage segmentation at scale.", status: "Limited Availability" },
       { name: "HubSpot V2 Source Connector", description: "Updated HubSpot connector for data ingestion with improved API coverage and reliability.", status: "GA" },
       { name: "Amazon S3 Combined Encryption Support", description: "Amazon S3 source now supports combined server-side encryption (SSE) and PGP encryption, with maximum file size increased to 10 GB on the VA6 region.", status: "GA" },
-      { name: "Self-Serve Sources Streaming SDK on AWS", description: "Build custom streaming source connectors for Experience Platform running on AWS infrastructure using the updated Streaming SDK.", status: "Limited Availability" }
+      { name: "Self-Serve Sources Streaming SDK on AWS", description: "Build custom streaming source connectors for Experience Platform running on AWS infrastructure using the updated Streaming SDK.", status: "Limited Availability" },
+      { name: "Activated Destinations View for Audiences", description: "Each audience in the Segmentation Service now displays its activated destinations with type, schedule, and flow-run status for improved activation monitoring and troubleshooting.", status: "Beta" }
     ],
     category_tags: ["Data", "Security", "Integration", "AI", "Performance"]
   },
