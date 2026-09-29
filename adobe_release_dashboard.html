@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-09-28'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-09-29'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -891,7 +891,16 @@ const RELEASE_DATA = [
       { name: "New Inbound Monitoring Graphs", description: "Six new Data Management graphs covering edge network throughput, latency, and proposition event volume for real-time inbound channel health monitoring. Released September 24, 2026.", status: "GA" },
       { name: "Direct Joins on Collections", description: "Orchestrated campaigns support three join mode options when targeting collection data, with cartesian product performance warnings to prevent unintended data explosion during segmentation. Released September 22, 2026.", status: "GA" },
       { name: "AEM Content Fragments for Decisioning in Managed Services", description: "Adobe Experience Manager Managed Services content fragments are now supported as offer content in Decisioning, extending fragment support beyond AEM Cloud Service implementations. Released September 23, 2026.", status: "GA" },
-      { name: "AI Overview in Fragment Validation Alerts", description: "Summarized AI-generated explanations of fragment validation issues appear alongside alerts for faster troubleshooting without navigating to source content. Released September 22, 2026.", status: "GA" }
+      { name: "AI Overview in Fragment Validation Alerts", description: "Summarized AI-generated explanations of fragment validation issues appear alongside alerts for faster troubleshooting without navigating to source content. Released September 22, 2026.", status: "GA" },
+      { name: "Email Designer: Collaboration Tools", description: "Built-in commenting and threaded discussion directly within the Email Designer enables team review and issue resolution without leaving the authoring interface. Released September 25, 2026.", status: "GA" },
+      { name: "Email Designer: Table Component", description: "Native table creation with customizable rows, columns, and cell styling available as a drag-and-drop component in the Email Designer for structured content layouts. Released September 24, 2026.", status: "GA" },
+      { name: "Email Designer: Dark Mode Support", description: "Configure independent dark color palettes for each email theme variant, ensuring branded presentation when recipients view email in dark mode. Released September 24, 2026.", status: "GA" },
+      { name: "Increased Subdomain Delegation Limit", description: "Organizations can now request delegation of up to 3,000 subdomains (previously 100) for large-scale multi-brand or multi-region email infrastructure. Released September 25, 2026.", status: "Limited Availability" },
+      { name: "URL Validation in Journey Simulation", description: "Automatically checks all links within journey content for broken, insecure, or unreachable URLs before activating, reducing post-launch link failures.", status: "Limited Availability" },
+      { name: "Supplemental ID Support in Journey Simulation", description: "Journey Simulation now supports testing complex scenarios involving supplemental identities, enabling more realistic pre-production validation for multi-identity profiles. Released September 28, 2026.", status: "GA" },
+      { name: "Email Configuration Overrides", description: "Personalize sender details and execution parameters such as From name, From email, and Reply-to at the individual email action level, overriding global channel configuration defaults.", status: "GA" },
+      { name: "Direct Mail Enhancements", description: "Direct mail now supports automatic file splitting for extractions exceeding 20 GB and an expanded audience limit of 100 million recipients for large-volume direct mail programs.", status: "GA" },
+      { name: "Suppression List Override for Email", description: "Bypass the suppression list at the email action level for critical communications that must reach all recipients regardless of suppression status.", status: "GA" }
     ],
     category_tags: ["AI", "UI", "Data", "Integration", "Deprecation"]
   },
@@ -919,13 +928,13 @@ const RELEASE_DATA = [
   },
   {
     id: 'target',
-    title: "Adobe Target 26.9.6: VEC SSO Fix, Content Pre-hiding GA, MCP Recommendations Tools Beta",
-    version: "26.9.6",
+    title: "Adobe Target 26.9.7: VEC SSO Fix, Content Pre-hiding GA, MCP Recommendations Tools Beta",
+    version: "26.9.7",
     date: "September 2026",
     rawDate: "2026-09-01",
     summary: "Target 26.9.6 resolves an endless redirect loop when the VEC loads SSO-authenticated pages. September 2026 also adds Content Pre-hiding to reduce page flicker by hiding only sections targeted by personalization, and the Adobe Target MCP Server gains Recommendations Tools for listing, creating, and updating recommendations components from AI assistants. Earlier bug fix releases 26.9.5 through 26.9.1 address missing A4T report links, VEC Insert Before viewport inaccessibility (TGT-55829), missing Lift and Confidence in A4T Auto-Target reports (TGT-56137), Recommendations feed URL encoding (TGT-56084), and Automated Segments display inconsistency (TGT-55855).",
     features: [
-      { name: "VEC SSO Redirection Loop Fix (26.9.6)", description: "Resolved endless redirect loops when the Visual Experience Composer loaded SSO-authenticated pages, which previously prevented access to the intended page for editing.", status: "GA" },
+      { name: "VEC SSO Redirection Loop Fix (26.9.7)", description: "Resolved endless redirect loops when the Visual Experience Composer loaded SSO-authenticated pages, which previously prevented access to the intended page for editing. Released September 28, 2026.", status: "GA" },
       { name: "Content Pre-hiding for Personalization", description: "Hides only the specific page sections that Adobe Target personalization is about to modify, reducing visible page flicker during content loading without hiding the entire page.", status: "GA" },
       { name: "Adobe Target MCP Server: Recommendations Tools", description: "New MCP server tools enable AI assistants such as Claude to list, create, and update Recommendations components including criteria, collections, feeds, and designs directly from natural language.", status: "Beta" },
       { name: "A4T Report Link Generation Fix (26.9.5)", description: "Fixed missing report links in the Reports section for A4T activities where underlying data was visible in both Target and Analytics but report links failed to generate in the Target UI.", status: "GA" },
