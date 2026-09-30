@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-09-29'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-09-30'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -798,11 +798,11 @@ const RELEASE_DATA = [
   },
   {
     id: 'journey-optimizer',
-    title: "Journey Optimizer September 2026: AI Expressions, Journey Anomaly, Orchestrated Campaign Alerts, AEP Profile Simulation",
+    title: "Journey Optimizer September 2026: Agentic Translation, AI Expressions, Journey Anomaly, Orchestrated Campaign Alerts",
     version: null,
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "September 28, 2026 adds Content Preview in Journey Canvas, New Orchestrated Campaigns APIs, and a Campaign Orchestration Monitoring Dashboard. September 24 added Channel Content Plugin in Coworker and Compare Journey Versions skill; September 22 graduated Decisioning in Web Channel and Alerting for Orchestrated Campaigns to GA; September 16 added the Decisioning Explainer and Rules & Ranking Coworker skills. Earlier September additions include Jump Activities in Audience Qualification journeys, Journey Anomaly Detected alerts, Content Management MCP tools, Fix Syntax with AI, and AI expression generation. August additions include personalized PDF attachments, bulk journey operations, high-throughput push at 5,000 TPS, LINE channel support, and the redesigned journey canvas.",
+    summary: "September 29-30, 2026 adds the Agentic Translation Provider (GA) supporting Azure OpenAI and Gemini (Vertex AI) for multilingual content with locale-specific guidelines. September 28 adds Content Preview in Journey Canvas, New Orchestrated Campaigns APIs, and a Campaign Orchestration Monitoring Dashboard. September 24 added Channel Content Plugin in Coworker and Compare Journey Versions skill; September 22 graduated Decisioning in Web Channel and Alerting for Orchestrated Campaigns to GA; September 16 added the Decisioning Explainer and Rules & Ranking Coworker skills. Earlier September additions include Jump Activities in Audience Qualification journeys, Journey Anomaly Detected alerts, Content Management MCP tools, Fix Syntax with AI, and AI expression generation.",
     features: [
       { name: "Decisioning in Journey Simulation", description: "Journey simulation now supports Content Decision nodes, Optimize activity targeting rules, decisioned email actions, and decision policies using offer eligibility and ranking methods for pre-production testing.", status: "GA" },
       { name: "Content Management MCP Tools in CX Coworker", description: "New MCP tools enable discovery and management of Journey Optimizer assets — templates, fragments, landing pages, and inline message content — through natural language, with creation, updating, cloning, and publishing capabilities.", status: "GA" },
@@ -841,6 +841,7 @@ const RELEASE_DATA = [
       { name: "Quick Launch Shortcuts in Templates Inventory", description: "More actions button in Content Templates list enables editing template details, simulating content, deleting, and for email templates additional shortcuts for proofing and spam reporting.", status: "GA" },
       { name: "New Helper Functions in Personalization Expressions", description: "Nine new functions added: appendQueryParams, dateBetween, equalsAnyIgnoreCase, getUrlFragment, join, decode64, parseJson, valueAtPath, abort; plus enhanced concat and template migration functions.", status: "GA" },
       { name: "AI Assistant Renamed to Generate Content", description: "Terminology update renaming AI Assistant to Generate Content across all Journey Optimizer navigation labels, buttons, menus, and dialogs with no functional changes.", status: "GA" },
+      { name: "Agentic Translation Provider", description: "Supports Azure OpenAI and Gemini (Vertex AI) as translation providers for multilingual content, including locale-specific guidelines in PDF and JSON formats for brand-consistent localization. Released September 29, 2026.", status: "GA" },
       { name: "Multilingual Improvements", description: "Language Settings can be duplicated from existing active settings, and conditions can be copied between locales during authoring to streamline multi-language setup.", status: "GA" },
       { name: "Countdown Timer Using Dynamic Media", description: "AEM Dynamic Media integration enables open-time personalization for Dynamic Media countdown timer templates used in Journey Optimizer campaigns and journeys.", status: "GA" },
       { name: "AJO MCP Server New Tools", description: "Five additional read-only channel configuration tools added: List Channel Configurations, Get Channel Configuration, List Configuration Resources, Get Configuration Resource, and List Marketing Actions.", status: "GA" },
@@ -1027,7 +1028,7 @@ const RELEASE_DATA = [
   },
   {
     id: 'experience-platform',
-    title: "Experience Platform September 2026: Growth Credits, Multi-Sandbox, Entra ID Auth, 20+ Features",
+    title: "Experience Platform September 2026: Growth Credits, Multi-Sandbox, Entra ID Auth, Data Validation AI",
     version: null,
     date: "September 2026",
     rawDate: "2026-09-01",
@@ -1050,6 +1051,7 @@ const RELEASE_DATA = [
       { name: "Multi-Sandbox Object Migration", description: "Supported configuration objects can now be migrated to multiple target sandboxes through a single workflow, reducing repetitive sandbox setup effort.", status: "GA" },
       { name: "Audience Validation in Audience Builder", description: "Inline field compatibility validation during audience creation flags incompatible conditions immediately without requiring segment evaluation to discover errors.", status: "GA" },
       { name: "CX Enterprise Coworker Data Management Agentic Skills", description: "Conversational AI skills enable identifying high-storage datasets and assessing data retention policy changes through natural language queries in Experience Platform.", status: "GA" },
+      { name: "CX Enterprise Coworker Data Validation Skills", description: "Conversational AI capabilities enable statistical and semantic validation of Experience Platform datasets and fields, identifying data quality concerns through the chat interface without writing custom validation logic.", status: "GA" },
       { name: "Flexible Batch Segmentation Schedules", description: "Trigger on-demand audience evaluation with user-defined schedules rather than relying exclusively on system-managed evaluation windows.", status: "Limited Availability" },
       { name: "Large Scale Audiences", description: "Support expanded to up to 10,000 audiences per sandbox, enabling enterprises with large audience portfolios to manage segmentation at scale.", status: "Limited Availability" },
       { name: "HubSpot V2 Source Connector", description: "Updated HubSpot connector for data ingestion with improved API coverage and reliability.", status: "GA" },
