@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-09-30'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-10-01'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -929,12 +929,15 @@ const RELEASE_DATA = [
   },
   {
     id: 'target',
-    title: "Adobe Target 26.9.7: VEC SSO Fix, Content Pre-hiding GA, MCP Recommendations Tools Beta",
-    version: "26.9.7",
+    title: "Adobe Target 26.9.8: Sample Size Calculator Beta, AI Insights Beta, Admin AI Permissions Fix",
+    version: "26.9.8",
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "Target 26.9.6 resolves an endless redirect loop when the VEC loads SSO-authenticated pages. September 2026 also adds Content Pre-hiding to reduce page flicker by hiding only sections targeted by personalization, and the Adobe Target MCP Server gains Recommendations Tools for listing, creating, and updating recommendations components from AI assistants. Earlier bug fix releases 26.9.5 through 26.9.1 address missing A4T report links, VEC Insert Before viewport inaccessibility (TGT-55829), missing Lift and Confidence in A4T Auto-Target reports (TGT-56137), Recommendations feed URL encoding (TGT-56084), and Automated Segments display inconsistency (TGT-55855).",
+    summary: "Target 26.9.8 adds a Sample Size Calculator Beta for estimating required traffic and test duration, and an AI Insights Beta that generates experiment learnings and optimization opportunities for manual A/B tests. Earlier September releases: 26.9.7 resolves an endless VEC redirect loop on SSO-authenticated pages, 26.9.6 fixes the admin AI permissions Unauthorized error. September 2026 also graduates Content Pre-hiding to GA and adds MCP Recommendations Tools in Beta. Earlier bug fix releases 26.9.5 through 26.9.1 address missing A4T report links, VEC Insert Before viewport inaccessibility (TGT-55829), missing Lift and Confidence in A4T Auto-Target reports (TGT-56137), Recommendations feed URL encoding (TGT-56084), and Automated Segments display inconsistency (TGT-55855).",
     features: [
+      { name: "Sample Size Calculator", description: "Helps plan experiments by estimating required traffic, test duration, and minimum detectable effect for more confident A/B test design.", status: "Beta" },
+      { name: "AI Insights", description: "Generates experiment learnings and optimization opportunities for A/B tests with manual traffic allocation, surfacing actionable findings without manual analysis.", status: "Beta" },
+      { name: "Admin AI Permissions Fix (26.9.6)", description: "Resolved Unauthorized error received by Product and System Administrators when attempting to grant AI permissions to users in the Target Administration panel.", status: "GA" },
       { name: "VEC SSO Redirection Loop Fix (26.9.7)", description: "Resolved endless redirect loops when the Visual Experience Composer loaded SSO-authenticated pages, which previously prevented access to the intended page for editing. Released September 28, 2026.", status: "GA" },
       { name: "Content Pre-hiding for Personalization", description: "Hides only the specific page sections that Adobe Target personalization is about to modify, reducing visible page flicker during content loading without hiding the entire page.", status: "GA" },
       { name: "Adobe Target MCP Server: Recommendations Tools", description: "New MCP server tools enable AI assistants such as Claude to list, create, and update Recommendations components including criteria, collections, feeds, and designs directly from natural language.", status: "Beta" },
