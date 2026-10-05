@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-10-02'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-10-05'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -901,17 +901,21 @@ const RELEASE_DATA = [
       { name: "Supplemental ID Support in Journey Simulation", description: "Journey Simulation now supports testing complex scenarios involving supplemental identities, enabling more realistic pre-production validation for multi-identity profiles. Released September 28, 2026.", status: "GA" },
       { name: "Email Configuration Overrides", description: "Personalize sender details and execution parameters such as From name, From email, and Reply-to at the individual email action level, overriding global channel configuration defaults.", status: "GA" },
       { name: "Direct Mail Enhancements", description: "Direct mail now supports automatic file splitting for extractions exceeding 20 GB and an expanded audience limit of 100 million recipients for large-volume direct mail programs.", status: "GA" },
-      { name: "Suppression List Override for Email", description: "Bypass the suppression list at the email action level for critical communications that must reach all recipients regardless of suppression status.", status: "GA" }
+      { name: "Suppression List Override for Email", description: "Bypass the suppression list at the email action level for critical communications that must reach all recipients regardless of suppression status.", status: "GA" },
+      { name: "Live Activities for Android Live Updates", description: "Extends real-time mobile personalization to Android, enabling delivery of order tracking, flight statuses, live event updates, and real-time sports scores via broadcast and transactional update flows through API-triggered campaigns and headless APIs. GA September 30, 2026.", status: "GA" },
+      { name: "Challenge Recommendations", description: "New Opportunities and Trend tabs in the Loyalty Performance menu surface AI-detected trends with projected impact and one-click Create with AI action; also integrates with Coworker for natural-language challenge opportunity requests. GA September 30, 2026.", status: "GA" },
+      { name: "Loyalty Challenge Details Page", description: "Dedicated page reviewing challenge configuration and performance, displaying summary, targeted audience, connected journey, tasks, rewards, and key metrics for at-a-glance challenge governance. GA September 30, 2026.", status: "GA" },
+      { name: "Browsing Integrations", description: "New integration configuration type for selector experience enabling browse, search, and selection of items from external APIs directly within Journey Optimizer authoring workflows using tables, lists, or cards. GA September 30, 2026.", status: "GA" }
     ],
     category_tags: ["AI", "UI", "Data", "Integration", "Deprecation"]
   },
   {
     id: 'ajo-b2b',
-    title: "Journey Optimizer B2B September 2026: Service Health Dashboards, People Lists, Person Journeys GA",
+    title: "Journey Optimizer B2B September 2026: Service Health Dashboards, Member of Profile Audience Filter, People Lists",
     version: "2026.9",
     date: "September 2026",
     rawDate: "2026-09-01",
-    summary: "The September 2026 (2026.9) release adds Service Health Dashboards for monitoring external action operational metrics and performance, and Journey Re-entry to allow profiles to traverse person journeys multiple times. The prior August 2026 (2026.8) release graduated Person Journeys to GA alongside Person Lists for static and dynamic audience segmentation, External Split Path and Action nodes bringing person journeys to parity with account journeys, Variant Split Paths graduating from beta, multiple simultaneous event triggers for account journeys, AEP relational datasets, and granular WhatsApp channel permissions management.",
+    summary: "The September 2026 (2026.9) release adds Service Health Dashboards for monitoring external action operational metrics and performance, Journey Re-entry for person journeys, and a Member of Profile Audience filter usable across person journey split paths, account journey person split paths, and people lists. The prior August 2026 (2026.8) release graduated Person Journeys to GA alongside Person Lists, External Split Path and Action nodes, Variant Split Paths, multiple simultaneous event triggers for account journeys, AEP relational datasets, and granular WhatsApp channel permissions management.",
     features: [
       { name: "Service Health Dashboards", description: "Operational dashboards track performance metrics and health indicators for external actions within account and person journeys, enabling proactive monitoring of third-party integration stability.", status: "GA" },
       { name: "Journey Re-entry for Person Journeys", description: "Allows people to progress through the same person journey multiple times, enabling re-evaluation and repeated engagement scenarios within a single journey definition.", status: "GA" },
@@ -923,7 +927,8 @@ const RELEASE_DATA = [
       { name: "External Action Nodes for Person Journeys", description: "Person journeys can now execute external action nodes making outbound requests to third-party systems, expanding orchestration reach.", status: "GA" },
       { name: "AEP Relational Datasets", description: "Relational datasets from Adobe Experience Platform are now visible and available in the AEP sandbox alongside existing datasets for enhanced B2B data modeling.", status: "GA" },
       { name: "WhatsApp Channel Permissions", description: "Administrators can assign Manage B2B WhatsApp Settings and Manage B2B WhatsApp Presets permissions to control who can configure WhatsApp channel access and message presets.", status: "GA" },
-      { name: "C2PA Metadata for AI-Generated Images", description: "Images generated or edited with generative AI tools are automatically signed with C2PA metadata for content provenance and transparency compliance.", status: "GA" }
+      { name: "C2PA Metadata for AI-Generated Images", description: "Images generated or edited with generative AI tools are automatically signed with C2PA metadata for content provenance and transparency compliance.", status: "GA" },
+      { name: "Member of Profile Audience Filter", description: "Available for person journey split path conditions, account journey person split paths, and people lists to include or exclude profiles by their Adobe Experience Platform audience membership. GA September 25, 2026.", status: "GA" }
     ],
     category_tags: ["Data", "UI", "Integration", "Security"]
   },
