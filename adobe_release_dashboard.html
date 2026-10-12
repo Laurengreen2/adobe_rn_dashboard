@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-10-09'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-10-12'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -752,7 +752,8 @@ const RELEASE_DATA = [
       { name: "CX Enterprise Coworker: Analyze Adobe Analytics Data", description: "Coworker Chat performs advanced data analysis directly on Analytics report suites, enabling natural-language queries without manual report building; GA rollout October 2, 2026.", status: "GA" },
       { name: "Adobe Analytics API 1.4 End-of-Life", description: "Legacy Analytics 1.4 API services ceased on August 31, 2026; all integrations must use the Analytics 2.0 API.", status: "GA" },
       { name: "Legacy Report Builder Retirement", description: "Legacy Report Builder reached end-of-life in June 2026; users must migrate workbooks to the new Report Builder available via Microsoft Store.", status: "GA" },
-      { name: "WSSE Authentication End-of-Life", description: "WSSE authentication retired August 31, 2026; all Analytics integrations must migrate to OAuth-based authentication.", status: "GA" }
+      { name: "WSSE Authentication End-of-Life", description: "WSSE authentication retired August 31, 2026; all Analytics integrations must migrate to OAuth-based authentication.", status: "GA" },
+      { name: "Bug Fixes (October 2 release)", description: "56 bug fixes across Activity Map, Analysis Workspace, Classifications (22 fixes), Data Feeds and Data Warehouse, Migration, Exports, Report Builder (8 fixes), Reporting, Report Suites, Scheduled Reports, and other areas.", status: "GA" }
     ],
     category_tags: ["AI", "Integration", "Deprecation", "Security"]
   },
@@ -1026,7 +1027,13 @@ const RELEASE_DATA = [
       { name: "Interface Update for Left Navigation Panel Icons", description: "Left navigation panel icons updated with a modern design aligned with Adobe application consistency.", status: "GA" },
       { name: "Workload Balancer Bulk Assignment Enhancement", description: "Replace action renamed to Assign to better describe bulk assignment functionality in the Workload Balancer.", status: "GA" },
       { name: "Large File Support for Custom Document Integrations", description: "Chunked uploads enable faster, more reliable file transfers for files over 25 MB in custom document integrations.", status: "GA" },
-      { name: "Desktop Proofing Viewer 2.2.1", description: "Viewer supports opening proofs from any environment without reinstalling and keeps 10 recent proofs for quick access.", status: "GA" }
+      { name: "Desktop Proofing Viewer 2.2.1", description: "Viewer supports opening proofs from any environment without reinstalling and keeps 10 recent proofs for quick access.", status: "GA" },
+      { name: "View User Employment History", description: "Track changes to a user's job role, agency, cost center, and billing rates in a filterable historical view.", status: "GA" },
+      { name: "Add Web Link as Document", description: "Add a website URL in the Documents area and request approval on the live page directly from Workfront.", status: "GA" },
+      { name: "Enhanced List Filter and Grouping Updates", description: "Groups collapse by default and filter operator labels are clearer across enhanced lists for improved navigation.", status: "GA" },
+      { name: "Enhanced List Column Manager and Drag-and-Drop", description: "Multiple improvements to the Column manager and row drag-and-drop behavior across enhanced lists.", status: "GA" },
+      { name: "Copy Name and Link from Breadcrumb", description: "Copy an object's name and shareable link together directly from its breadcrumb for faster sharing.", status: "GA" },
+      { name: "Consistent Multi-Select Ordering in Legacy Lists", description: "Multi-select field values now display in a predictable order on legacy list and report views.", status: "GA" }
     ],
     category_tags: ["AI", "Integration", "UI", "Data", "Security"]
   },
@@ -1038,10 +1045,10 @@ const RELEASE_DATA = [
     rawDate: "2026-09-01",
     summary: "Release 2026.9.0 delivers Content Hub AI Search for semantic asset discovery across languages, Canary Deployments for production validation before full traffic acceptance, and a fully customizable Dynamic Media Video Viewer with actionable analytics. AEM Agentic Capabilities with CX Coworker graduate to GA alongside expanded MCP Server support for Cloud Manager operations and AI-assisted Cloud Migration and Query Optimization agent skills.",
     features: [
-      { name: "Content Hub AI Search", description: "Semantic search engine interpreting user intent and context rather than exact keywords, delivering accurate results across multiple languages and handling misspellings.", status: "GA" },
-      { name: "Smart Collections", description: "Automated asset organization based on defined search criteria that dynamically updates when new assets match configured filters.", status: "GA" },
-      { name: "Content Hub Custom Sorting", description: "Administrator-configurable metadata fields as sorting options on the Content Hub interface.", status: "GA" },
-      { name: "Dynamic Media New Video Viewer", description: "Fully customizable video player with configurable playback controls, custom CSS styling, and actionable analytics tracking views and engagement metrics.", status: "GA" },
+      { name: "Content Hub AI Search", description: "Semantic search engine interpreting user intent and context rather than exact keywords, delivering accurate results across multiple languages and handling misspellings.", status: "Limited Availability" },
+      { name: "Smart Collections", description: "Automated asset organization based on defined search criteria that dynamically updates when new assets match configured filters.", status: "Limited Availability" },
+      { name: "Content Hub Custom Sorting", description: "Administrator-configurable metadata fields as sorting options on the Content Hub interface.", status: "Limited Availability" },
+      { name: "Dynamic Media New Video Viewer", description: "Fully customizable video player with configurable playback controls, custom CSS styling, and actionable analytics tracking views and engagement metrics.", status: "Limited Availability" },
       { name: "Dynamic Media Template Component in Adobe Journey Optimizer", description: "Native component enabling marketers to add and personalize Dynamic Media templates directly in the email editor with layer-level customization.", status: "Limited Availability" },
       { name: "Dynamic Media Multi-Caption and Multi-Audio Support", description: "Associate multiple language-specific caption and audio tracks with single video assets for localized global delivery.", status: "Limited Availability" },
       { name: "AI-Generated Video Captions", description: "Automatic caption generation using AI analysis of video audio to create transcripts that meet accessibility requirements.", status: "Limited Availability" },
@@ -1067,6 +1074,9 @@ const RELEASE_DATA = [
       { name: "Cloud Migration Agent Skill Enhancements", description: "Read-only migration runbook with pattern support for Classic UI conversion, template modernization, Guava to Caffeine migration, Dispatcher conversion, and unsupported run mode detection.", status: "Beta" },
       { name: "Edge Authentication for Edge Delivery Services", description: "OIDC-based access restriction limiting Edge Delivery Services pages to authenticated identity provider users.", status: "Beta" },
       { name: "CX Enterprise Coworker Developer Capabilities", description: "AI troubleshooting and productivity support for CDN/dispatcher, replication, workflows, and code modernization.", status: "Beta" },
+      { name: "Content Advisor Browser Extension", description: "Brings AEM Content Advisor asset suggestions to external apps such as Google Docs, WordPress, and PowerPoint, with direct asset and rendition insertion.", status: "Beta" },
+      { name: "mTLS Authentication for Log Forwarding", description: "Mutual TLS client certificate support for log forwarding destinations including Splunk, Elasticsearch/OpenSearch, and HTTPS endpoints.", status: "Beta" },
+      { name: "IMS Authentication Rich Errors", description: "The imsauth module now returns detailed error context instead of only an HTTP status code, simplifying authentication debugging.", status: "GA" },
       { name: "Java 25 Runtime Upgrade", description: "SDK supports Java 25 from mid-October 2026; optional customer enablement in November 2026 with all environments migrated by June 2027 and Java 21 decommissioned.", status: "GA" },
       { name: "Java API Deprecations Enforcement", description: "Multiple deprecated Java API packages removed September 28, 2026; environments not compliant lose access to critical updates and standard support commitments.", status: "GA" }
     ],
