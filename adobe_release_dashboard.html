@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-10-12'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-10-13'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -775,11 +775,11 @@ const RELEASE_DATA = [
   },
   {
     id: 'journey-optimizer',
-    title: "Journey Optimizer October 2026: Custom Outbound Channel GA, On-Demand Journey Validation, Android Live Activities",
+    title: "Journey Optimizer October 2026: Custom Outbound Channel GA, Stop Action Activity, Loyalty Performance Settings",
     version: null,
     date: "October 2026",
     rawDate: "2026-10-01",
-    summary: "October 2026 graduates Custom Outbound Channel to GA enabling any HTTP-based messaging platform with full decisioning and reporting parity, and adds On-Demand Journey Validation (GA October 9) for pre-publication configuration checks. The September–October cycle also delivers Android Live Activities for real-time push updates, Loyalty Challenge Recommendations, Decisioning in Web Channel, Orchestrated Campaigns alerting and LINE channel support, Direct Mail audience expansion to 100 million profiles, and extensive Email Designer and Coworker enhancements. Coming soon: AI Recommendation Cards for Journey Alerts and Inbound Activity Deactivation.",
+    summary: "October 2026 graduates Custom Outbound Channel to GA, launches the Stop Action Activity for inbound profile removal (GA October 12), adds On-Demand Journey Validation (GA October 9), and introduces Loyalty Performance Settings (October 1) for KPI-driven loyalty insights. The Business Performance Analysis Skill reached GA on October 7. The September–October cycle also delivers Android Live Activities, Loyalty Challenge Recommendations, Decisioning in Web Channel, Orchestrated Campaigns alerting and LINE channel support, Direct Mail audience expansion to 100 million profiles, and extensive Email Designer and Coworker enhancements. Coming soon: AI Recommendation Cards for Journey Alerts, journey creation from Coworker rail, and Hygiene Analysis.",
     features: [
       { name: "Custom Outbound Channel", description: "Administrators can integrate any HTTP-based messaging channel through a no-code builder with personalization, experimentation, reporting parity, Journey Optimizer Decisioning in payloads, and business rules application.", status: "GA" },
       { name: "On-Demand Journey Validation", description: "New validation button runs configuration checks before testing or publishing, reducing repeated validation interruptions during journey editing; available October 9, 2026.", status: "GA" },
@@ -828,14 +828,16 @@ const RELEASE_DATA = [
       { name: "Direct Mail — Split Large Files Automatically", description: "Automatically segments Direct Mail files exceeding approximately 20 GB or enables manual splitting by target file size.", status: "GA" },
       { name: "Direct Mail — Increased Audience Limit", description: "Raises Direct Mail channel audience capacity from 3 million to 100 million profiles.", status: "GA" },
       { name: "Guided Capabilities for Onboarding", description: "Email and journey migration support with content block identification and improved onboarding interface.", status: "GA" },
+      { name: "Loyalty Performance Settings", description: "Select loyalty profile and event datasets and set a priority KPI (Revenue, Engagement, Redemptions, or Conversions) to emphasize in loyalty performance insights and recommendations.", status: "GA" },
       { name: "Dataset Time-to-Live Enforcement", description: "TTL enforcement from October 1, 2026: 90 days for profile store and 13 months for data lake in Journey Optimizer.", status: "GA" },
+      { name: "Stop Action Activity", description: "Removes profiles from up to five inbound activities or experiences, decoupling inbound disqualification from journey exit for cross-channel orchestration; GA October 12, 2026.", status: "GA" },
       { name: "AI Recommendation Cards for Journey Alerts", description: "Journey Optimizer home page will display AI-powered recommendation cards when journey alerts fire, with pre-populated analysis accessible from the right rail.", status: "Beta" },
-      { name: "Inbound Activity Deactivation", description: "New journey canvas activity will remove profiles from up to five inbound activities directly, decoupling inbound disqualification from journey exit.", status: "Beta" },
       { name: "Journey Creation from Coworker Rail", description: "AI-powered journey generation available directly from the CX Coworker right rail.", status: "Beta" },
       { name: "Hygiene Analysis Skill", description: "CX Coworker will scan active and draft journeys for broken configurations, silent failures, and decaying assets with recommended fixes.", status: "Beta" },
-      { name: "Business Performance Analysis Skill", description: "CX Coworker will analyze journey performance and deliver concrete optimization recommendations within chat.", status: "Beta" },
-      { name: "Dynamic Token Substitution for AEM Fragments", description: "Content Fragment references will support a tokenSubstitution attribute; when set to false, personalization resolves directly without token mapping.", status: "Beta" },
+      { name: "Business Performance Analysis Skill", description: "CX Coworker analyzes journey performance and delivers concrete optimization recommendations within chat; available October 7, 2026.", status: "GA" },
+      { name: "Dynamic Token Substitution for AEM Fragments", description: "Content Fragment references support a tokenSubstitution attribute; when set to false, personalization resolves directly without token mapping.", status: "Limited Availability" },
       { name: "Per-Member Loyalty Challenge Completion Deadlines", description: "Challenges will support per-member deadlines calculated from individual opt-in dates rather than fixed end dates.", status: "Beta" },
+      { name: "Reduced Step Events for Wait and Event Activities", description: "Journey step events will no longer generate for wait and event activities when a profile was not actually processed there, reducing event volume and storage costs.", status: "Beta" },
       { name: "Unified Calendar for Campaigns, Journeys, and Orchestrated Campaigns", description: "Calendar view will consolidate journeys and campaigns into a single unified left-rail accessible menu.", status: "Beta" }
     ],
     category_tags: ["AI", "Integration", "UI", "Data"]
