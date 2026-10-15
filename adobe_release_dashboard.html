@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-10-14'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-10-15'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -759,13 +759,14 @@ const RELEASE_DATA = [
   },
   {
     id: 'journey-analytics',
-    title: "Customer Journey Analytics October 2026: Conversation Insights, MCP Read-Only, Auto Descriptions",
+    title: "Customer Journey Analytics October 2026: Conversation Insights, Coworker Chat Panel, MCP Read-Only",
     version: null,
     date: "October 2026",
     rawDate: "2026-10-01",
-    summary: "October 2026 introduces Conversation Insights (GA October 8) to bring LLM-powered chat data including prompts, responses, intent, tone, and sentiment directly into Analysis Workspace for unified customer journey analysis. Read-only MCP server permissions land alongside automatic component description generation to improve governance and usability across large teams. Adobe Brand Visibility integration connects AI-driven content discovery metrics to CJA data.",
+    summary: "October 2026 introduces Conversation Insights (GA October 8) to bring LLM-powered chat data including prompts, responses, intent, tone, and sentiment directly into Analysis Workspace for unified customer journey analysis. A new in-product Coworker chat panel embeds directly in Analysis Workspace to summarize projects, surface insights, perform root-cause analysis, and build or edit projects with natural-language prompts. Read-only MCP server permissions and automatic component description generation improve governance and usability across large teams.",
     features: [
       { name: "Conversation Insights", description: "Analyze LLM-powered chat data including prompts, responses, intent, tone, and sentiment alongside traditional customer journeys in Analysis Workspace; GA rollout October 8, 2026.", status: "GA" },
+      { name: "In-Product Coworker Experience for Analysis Workspace", description: "Embedded Coworker chat panel within Analysis Workspace uses the open project as context to summarize it, find insights, run root-cause analysis, and build or edit reports using natural-language prompts.", status: "GA" },
       { name: "Read-Only MCP Server Permission", description: "Administrators can grant users read-only access to the CJA MCP server with full tool access but without create or delete capabilities; existing MCP Access permission renamed to MCP Full Access.", status: "GA" },
       { name: "Automatic Component Descriptions", description: "System auto-generates descriptions for dimensions, metrics, segments, and calculated metrics to aid user discovery and guidance in Analysis Workspace.", status: "GA" },
       { name: "Adobe Brand Visibility Integration", description: "Connects Brand Visibility data with CJA to measure AI-driven content discovery impact on website engagement and business outcomes.", status: "GA" },
