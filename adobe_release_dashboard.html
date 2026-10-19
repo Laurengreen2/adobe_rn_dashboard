@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-10-15'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-10-19'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -844,125 +844,62 @@ const RELEASE_DATA = [
     category_tags: ["AI", "Integration", "UI", "Data"]
   },
   {
-    id: 'ajo-b2b',
-    title: "Journey Optimizer B2B Edition 2026.9: People Lists, Service Health Dashboards, Journey Re-entry",
-    version: "2026.9",
-    date: "September 2026",
-    rawDate: "2026-09-01",
-    summary: "The September 2026 (2026.9) release adds Service Health Dashboards for monitoring external action operational metrics and performance, Journey Re-entry for person journeys, and a Member of Profile Audience filter usable across person journey split paths, account journey person split paths, and people lists. The prior August 2026 (2026.8) release graduated Person Journeys to GA alongside Person Lists, External Split Path and Action nodes, Variant Split Paths, and multiple simultaneous event triggers for account journeys.",
-    features: [
-      { name: "People Lists", description: "Create static and dynamic people lists to target profiles by demographic attributes and experience event history for precise audience segmentation.", status: "GA" },
-      { name: "Service Health Dashboards", description: "Track operational health of external actions through success and error metrics with administrator monitoring dashboards.", status: "GA" },
-      { name: "Member of Profile Audience Filter", description: "Available for person journey split paths, account journey person split paths, and people lists for audience-based filtering.", status: "GA" },
-      { name: "Journey Re-entry for Person Journeys", description: "Support for sending people through journey workflows multiple times for re-evaluation and reusable nurture scenarios.", status: "GA" },
-      { name: "Person Journeys", description: "Lead-based marketing orchestration using Experience Platform Audiences graduated from beta to generally available, enabling full person journey creation and management.", status: "GA" },
-      { name: "Variant Split Paths for Person Journeys", description: "Assigns people to different journey paths using defined percentage splits for A/B testing, graduated from beta to generally available.", status: "GA" },
-      { name: "Multiple Triggers in Listen for Event Nodes", description: "Account journey event listener nodes now support multiple triggers and filters simultaneously for more flexible account-level orchestration.", status: "GA" },
-      { name: "External Split Path Nodes for Person Journeys", description: "Person journeys now support external integration split paths for routing decisions through external services.", status: "GA" },
-      { name: "External Action Nodes for Person Journeys", description: "Person journeys can now execute external action nodes making outbound requests to third-party systems, expanding orchestration reach.", status: "GA" },
-      { name: "AEP Relational Datasets", description: "Relational datasets from Adobe Experience Platform are now visible and available in the AEP sandbox alongside existing datasets for enhanced B2B data modeling.", status: "GA" },
-      { name: "WhatsApp Channel Permissions", description: "Administrators can assign Manage B2B WhatsApp Settings and Manage B2B WhatsApp Presets permissions to control who can configure WhatsApp channel access.", status: "GA" },
-      { name: "C2PA Metadata for AI-Generated Images", description: "Images generated or edited with generative AI tools are automatically signed with C2PA metadata for content provenance and transparency compliance.", status: "GA" }
-    ],
-    category_tags: ["Data", "AI", "Integration", "Security"]
-  },
-  {
     id: 'target',
-    title: "Adobe Target 26.9.8: Sample Size Calculator Beta, AI Insights Beta, Content Pre-hiding GA",
-    version: "26.9.8",
-    date: "September 2026",
-    rawDate: "2026-09-01",
-    summary: "Target 26.9.8 (September 30) adds Sample Size Calculator Beta for estimating required traffic and test duration, and AI Insights Beta that generates experiment learnings and optimization opportunities for manual A/B tests. Earlier in September, Content Pre-hiding graduated to GA to reduce page flicker, and the Adobe Target MCP Server with Recommendations Tools launched in public beta. Multiple bug fixes across VEC, A4T reports, Recommendations, and Automated Segments shipped throughout the month.",
+    title: "Adobe Target 26.10.2: Safari Support in VEC, Reporting Preset and Recommendations Fixes",
+    version: "26.10.2",
+    date: "October 2026",
+    rawDate: "2026-10-01",
+    summary: "Target Standard/Premium 26.10.2 (October 15, 2026) fixes incorrect Activity Overview goal details, duplicate promotions when editing live Recommendations activities, and saved reporting presets being auto-deleted after about two weeks. Target also now works in Safari, though the Visual Experience Composer and Enhanced Experience Composer still require Chrome.",
     features: [
-      { name: "Sample Size Calculator", description: "Estimates required traffic, test duration, number of experiences, and minimum detectable effect before experiment launch to improve test planning.", status: "Beta" },
-      { name: "AI Insights", description: "Generates experiment learnings and optimization opportunities for A/B tests with manual traffic allocation, highlighting winning experience attributes and suggesting implementation guidance.", status: "Beta" },
-      { name: "Content Pre-hiding", description: "Hides only sections undergoing personalization to reduce page flicker and provide smoother content loading experience; graduated from Limited Availability to GA.", status: "GA" },
-      { name: "Adobe Target MCP Server — Recommendations Tools", description: "Exposes Recommendations tools for listing, inspecting, creating, and updating criteria, collections, designs, promotions, exclusions, and catalog searches from AI assistants; requires Target Premium with Recommendations.", status: "Beta" },
-      { name: "Fix: AI Permissions Grant Issue", description: "Resolved inability for Product and System Admins to grant AI permissions to users, which previously returned an Unauthorized error.", status: "GA" },
-      { name: "Fix: Visual Experience Composer Error in Recommendations", description: "Fixed Invalid user input error appearing when editing and closing Recommendations activities in the VEC.", status: "GA" },
-      { name: "Fix: SSO Redirection Loop in VEC", description: "Resolved endless redirect loops when accessing SSO-authenticated pages through the Visual Experience Composer.", status: "GA" },
-      { name: "Fix: A4T Report Link Generation", description: "Fixed missing report links in Target UI's Reports section for A4T activities despite underlying data being visible.", status: "GA" },
-      { name: "Fix: Insert Before Control Access in VEC", description: "Resolved inaccessible Insert Before control when selecting top-most page elements, which caused unexpected viewport scrolling.", status: "GA" },
-      { name: "Fix: Missing Lift and Confidence Values in A4T Auto-Target", description: "Fixed blank Lift and Confidence values in A4T Auto-Target reports using the Maximize Visit Conversion Rate optimization goal.", status: "GA" },
-      { name: "Fix: Read-Only Reporting Source Field", description: "Made Reporting Source field read-only for live activities when the activity owner lacks Adobe Analytics access.", status: "GA" },
-      { name: "Fix: Feed URL Encoding in Recommendations", description: "Fixed incorrect URL encoding when creating recommendations feeds from URLs in the new Target interface.", status: "GA" },
-      { name: "Fix: Automated Segments Attribute Display", description: "Resolved inconsistent attribute value and range display in Automated Segments reports for Automation Personalization and Auto-Target activities.", status: "GA" },
-      { name: "Fix: Activity-Only Audience Copy Failure", description: "Fixed failure to save copied A/B activities using activity-only audiences with Custom Code modifications.", status: "GA" }
+      { name: "Activity Overview Goal Settings Fix", description: "Fixed incorrect goal details on the Overview page, such as an added https:// and a missing URL condition (TGT-56326).", status: "GA" },
+      { name: "Backup Recommendations Fix", description: "Fixed editing a promotion in a live Recommendations activity creating new promotions and units even when definitions were unchanged (TGT-56369).", status: "GA" },
+      { name: "Reporting Presets Fix", description: "Fixed saved reporting presets being automatically deleted after about two weeks (TGT-56374).", status: "GA" },
+      { name: "Safari Support", description: "Target now works in Safari, while VEC and Enhanced Experience Composer show an overlay directing users to Chrome (TGT-55853).", status: "GA" }
     ],
-    category_tags: ["AI", "Performance", "UI"]
+    category_tags: ["UI", "Performance"]
   },
   {
     id: 'marketo',
-    title: "Marketo Engage September 2026: New UI Refresh, Partition Selection on Import, Email Tables",
+    title: "Marketo Engage October 2026: Clone to Program/Folder, CRM Sync Alerts, Grab Images Deprecation",
     version: null,
-    date: "September 2026",
-    rawDate: "2026-09-01",
-    summary: "September 2026 (rollout began September 25) delivers a refreshed Marketo Engage UI with updated menus, icons, and layout while preserving Classic UI access through January 2027. New capabilities include partition selection on person record import, instant CRM sync alerts, extended self-service flow step timeouts, and table support in Email Designer. Key deprecations cover the access_token query parameter, Grab Images from Web feature, and static list size limits for REST API calls.",
+    date: "October 2026",
+    rawDate: "2026-10-01",
+    summary: "The October 2026 standard release (rolling out from October 23) adds a This Folder/This Program destination when cloning assets and instant alerts when native CRM sync is toggled. Grab Images from Web is deprecated, Custom Activity Attribute API names are now restricted, and static list size limits apply to Get Lead Activities and Get Lead Changes.",
     features: [
-      { name: "Marketo Engage New UI", description: "Refreshed look with updated menus, icons, and layout for a cleaner modern experience with no functional changes; Classic UI remains available through January 2027.", status: "GA" },
-      { name: "Select Partition on Import", description: "Users can choose from local workspace partitions when importing person records in environments with Workspaces and Partitions enabled.", status: "GA" },
-      { name: "Instant Alert on CRM Sync", description: "Provides immediate notifications when native CRM sync enabled status changes, improving administrator visibility into sync health.", status: "GA" },
-      { name: "Self-Service Flow Steps — Increased Callback Timeout", description: "Extends callback timeout from one hour to four hours with no required user action, supporting longer-running third-party integrations.", status: "GA" },
-      { name: "Email Designer — Tables", description: "Drag table content type into emails with customizable column and row configuration for structured content layouts.", status: "GA" },
-      { name: "API Name Restrictions for Custom Activity Attributes", description: "Custom Activity Attribute API names now limited to alphanumeric characters and underscores and must start with an alphanumeric character.", status: "GA" },
-      { name: "Static List Size Limits for REST API", description: "Get Lead Activities and Changes endpoints with listId parameter fail if lists exceed 10,000 leads; effective September 30, 2026.", status: "GA" },
-      { name: "REST API Authentication — access_token Deprecation", description: "The access_token query parameter is deprecated; all integrations must switch to the Authorization header for API authentication.", status: "GA" },
-      { name: "Campaign Run ID Formatting Fix", description: "Fixed incorrect quotation mark formatting in campaign run ID values returned by the API.", status: "GA" },
-      { name: "Grab Images from Web Deprecation", description: "Feature deprecated as of October release for security compliance; users must upload images directly or use DAM integrations.", status: "GA" }
+      { name: "Clone to This Program/Folder", description: "Cloning offers This Folder or This Program as the first destination choice, placing the copy in the current asset's parent.", status: "GA" },
+      { name: "Instant Alert on CRM Sync", description: "Users subscribed to the CRM notification channel are notified when native CRM sync is turned on or off for an environment.", status: "GA" },
+      { name: "Deprecation of Grab Images from Web", description: "Feature retired with the October release for security and privacy reasons.", status: "GA" },
+      { name: "API Name Restrictions for Custom Activity Attributes", description: "API names may contain only letters, numbers, and underscores and must start with a letter or number.", status: "GA" },
+      { name: "Static List Size Limits for Get Lead Activities and Changes", description: "Calls using listId fail with error 1003 when the static list has 10,000 or more leads; in effect since September 30, 2026.", status: "GA" }
     ],
     category_tags: ["UI", "Integration", "Security", "Deprecation"]
   },
   {
     id: 'campaign',
-    title: "Adobe Campaign v8.9.3: Security Fixes, External URL Allow List, Analytics 2.0 API Upgrade",
-    version: "8.9.3",
-    date: "August 2026",
-    rawDate: "2026-08-01",
-    summary: "Release 8.9.3 (August 11, 2026) prioritizes security enhancements and critical connector updates. The external URL allow list requirement for delivery content and attachments took effect September 5, 2026, requiring administrator action to prevent delivery disruptions. The Web Analytics connector has been upgraded from the deprecated Analytics 1.4 APIs to the Analytics 2.0 API.",
+    title: "Adobe Campaign v8.9.4: Shareable UI Themes and 15 Fixes",
+    version: "8.9.4",
+    date: "October 2026",
+    rawDate: "2026-10-01",
+    summary: "Release 8.9.4 (October 15, 2026) lets Client Console UI themes be saved and shared across users, and fixes 15 issues including stalled delivery status updates, mid-sourcing crashes, invalid Read Group SQL, SMS under-reporting, and a server CPU spike from a locking retry loop.",
     features: [
-      { name: "Security Fixes", description: "Multiple security vulnerabilities addressed to strengthen Campaign environment protection across v8.9.3.", status: "GA" },
-      { name: "External URL Allow List Update", description: "Administrators must add all referenced delivery domains to approved allow lists for content and attachments; required by September 5, 2026 to prevent delivery disruptions.", status: "GA" },
-      { name: "Adobe Analytics 2.0 API Upgrade", description: "Web Analytics connector upgraded from deprecated Analytics 1.4 APIs; built-in workflows re-imported with updated JavaScript files to ensure continued analytics tracking.", status: "GA" }
+      { name: "Shared UI Themes", description: "Client Console UI themes can be saved and shared across users (NEO-96823).", status: "GA" },
+      { name: "Fix: Stalled Delivery Status", description: "Certain bounce-feedback messages could stop delivery status updates, leaving deliveries stuck at Service provider (NEO-98183).", status: "GA" },
+      { name: "Fix: False Delivery Alerts", description: "A threshold calculation error could trigger alerts for deliveries stuck in a long start-pending state (NEO-93434).", status: "GA" },
+      { name: "Fix: Mid-Sourcing Crash", description: "Sending text-content deliveries could crash the mid-sourcing server process (NEO-95122).", status: "GA" },
+      { name: "Fix: Read Group SQL", description: "Read Group activity could generate invalid SQL for calculated-expression fields (NEO-95233).", status: "GA" },
+      { name: "Fix: Duplicate Part IDs", description: "Delivery part IDs for FFDA mid-sourcing deliveries could collide (NEO-95777).", status: "GA" },
+      { name: "Fix: Client Console Crash", description: "Certain characters in embedded browser navigation URLs could crash the Client Console (NEO-96267).", status: "GA" },
+      { name: "Fix: SMS Reporting", description: "SMS deliveries were under-reported in Dynamic Reporting (NEO-96401).", status: "GA" },
+      { name: "Fix: Delivery Preparation Failure", description: "Snowflake and FFDA external-file targets without profile mapping could fail during delivery preparation (NEO-96507).", status: "GA" },
+      { name: "Fix: Multi-Source Queries", description: "Workflows with queries linked to different FDA sources could fail (NEO-97249).", status: "GA" },
+      { name: "Fix: Near-Real-Time Enrichment", description: "Enrichment workflows could intermittently fail with SQL errors when events triggered close together (NEO-97557).", status: "GA" },
+      { name: "Fix: Server CPU Spike", description: "An internal locking mechanism could enter a retry loop and drive high server CPU usage (NEO-94845).", status: "GA" },
+      { name: "Fix: Seed Address SQL Error", description: "Delivery preparation could fail when seed addresses were combined with a custom target mapping (NEO-94966).", status: "GA" },
+      { name: "Fix: Redshift Column Overflow", description: "FDA workflows could fail with a column overflow error when loading data into Redshift (NEO-96125).", status: "GA" },
+      { name: "Fix: Analytics Account Error", description: "The Analytics external account could fail with a Gone (410) error (NEO-99019).", status: "GA" },
+      { name: "Fix: Stuck Personalization", description: "Some deliveries could remain in personalization pending even though messages were sent (NEO-94471).", status: "GA" }
     ],
-    category_tags: ["Security", "Integration", "Deprecation"]
-  },
-  {
-    id: 'experience-platform',
-    title: "Adobe Experience Platform September 2026: Updated Audience Builder GA, Growth Credits, 4 New Sources",
-    version: null,
-    date: "September 2026",
-    rawDate: "2026-09-01",
-    summary: "September 22, 2026 graduates the updated Audience Builder to GA with semantic search, AI suggestions, and field favoriting, alongside Experience Platform Growth Credits for capacity monitoring across streaming, edge, and batch segmentation. New advertising sources (Snapchat Ads, Pinterest Ads, Google Ads) and multi-sandbox schema and dataset migration ship alongside India DPDPA privacy support and Microsoft Entra ID authentication for Azure destinations.",
-    features: [
-      { name: "CX Enterprise Coworker: Data Management Agentic Skills", description: "Identify high-storage datasets and assess retention changes through conversational AI within Experience Platform.", status: "GA" },
-      { name: "CX Enterprise Coworker: Data Validation Skills", description: "Run statistical and semantic validations on datasets through natural-language chat within Experience Platform.", status: "GA" },
-      { name: "Adobe Experience Platform Growth Credits", description: "Manage capacity across streaming, edge, and batch segmentation with monitoring dashboards and threshold alerts.", status: "GA" },
-      { name: "Batch Capacity Monitoring", description: "Monitor on-demand runs, scheduled runs, and batch audience counts for infrastructure capacity planning.", status: "GA" },
-      { name: "Edge Throughput Monitor", description: "Reports skipped requests and displays clearer graph details with peak callouts for edge capacity visibility.", status: "GA" },
-      { name: "Updated Label Application Workflows in Data Governance", description: "Apply data governance labels via inline actions in Datasets workspace or Schema Editor for streamlined compliance workflows.", status: "GA" },
-      { name: "Data Type Filter in Destinations Catalog", description: "Filter destinations by data type in the Browse tab for faster discovery of the right destination connector.", status: "GA" },
-      { name: "Microsoft Entra ID Authentication for Azure Destinations", description: "Authenticate to Azure Event Hubs and Azure Blob Storage using service principal credentials for enhanced enterprise security.", status: "GA" },
-      { name: "Salesforce CRM OAuth 2 Client Credentials", description: "New authentication type for Salesforce CRM supporting Client Credentials flow for automated system integrations.", status: "GA" },
-      { name: "Facebook Credentials Auto-Refresh", description: "OAuth tokens for Facebook destination refresh automatically, eliminating periodic manual reauthentication requirements.", status: "GA" },
-      { name: "Amazon Ads Marketing Actions Removal", description: "Amazon Ads connector updated to remove the marketing action requirement, simplifying activation setup.", status: "GA" },
-      { name: "India Digital Personal Data Protection Act Support", description: "Select India when creating privacy requests to comply with India's DPDPA regulation.", status: "GA" },
-      { name: "Accelerated Queries Schema Permission Enforcement", description: "Accelerated queries now enforce existing schema-level read permissions to ensure roles have appropriate data access.", status: "GA" },
-      { name: "Usage Insights General Availability", description: "Visibility into Real-Time CDP and Journey Optimizer usage across profiles, audiences, destinations, and campaigns.", status: "GA" },
-      { name: "Job Schedules: Identity Ingestion Runs", description: "Job Schedules timeline now includes identity ingestion runs for full pipeline visibility.", status: "GA" },
-      { name: "Job Schedules: Campaign Runs", description: "Displays scheduled batch Journey Optimizer campaigns with filtering options in the Job Schedules view.", status: "GA" },
-      { name: "32 New Health Checks", description: "32 new health checks added across multiple categories including Sources and Profile for improved operational monitoring.", status: "GA" },
-      { name: "Multi-Sandbox Management", description: "Migrate schemas and datasets to multiple target sandboxes in a single workflow for streamlined sandbox governance.", status: "GA" },
-      { name: "Updated Audience Builder", description: "Now generally available with Discovery Panel, semantic search, AI suggestions, and field favoriting for improved audience creation workflows.", status: "GA" },
-      { name: "Audience Validation in Audience Builder", description: "Validates field compatibility with the selected evaluation method and flags incompatible fields before audience save.", status: "GA" },
-      { name: "Activated Destinations View", description: "View an audience's activated destinations with type, schedule, and flow-run status directly from the audience details.", status: "Beta" },
-      { name: "Flexible Batch Schedules", description: "Evaluate audiences on demand using user-defined schedules for more flexible batch processing.", status: "Limited Availability" },
-      { name: "Large Scale Audiences", description: "Support for up to 10,000 audiences in a single sandbox to support enterprise-scale audience management.", status: "Limited Availability" },
-      { name: "Snapchat Ads, Pinterest Ads, Google Ads Sources", description: "Ingest advertising performance data from Snapchat, Pinterest, and Google Ads platforms (Customer Journey Analytics SKU required).", status: "GA" },
-      { name: "HubSpot V2 Connector", description: "Updated HubSpot connector for improved data ingestion reliability and feature parity.", status: "GA" },
-      { name: "Server-Side Encryption for Amazon S3", description: "Combine SSE with PGP file encryption for Amazon S3 sources; max file size increases to 10 GB on VA6 region.", status: "GA" },
-      { name: "Self-Serve Sources Streaming SDK on AWS", description: "Build custom streaming source connectors for Experience Platform on AWS infrastructure.", status: "GA" }
-    ],
-    category_tags: ["Data", "AI", "Security", "Integration"]
+    category_tags: ["UI", "Performance"]
   },
   {
     id: 'workfront',
@@ -1039,6 +976,67 @@ const RELEASE_DATA = [
       { name: "Consistent Multi-Select Ordering in Legacy Lists", description: "Multi-select field values now display in a predictable order on legacy list and report views.", status: "GA" }
     ],
     category_tags: ["AI", "Integration", "UI", "Data", "Security"]
+  },
+  {
+    id: 'ajo-b2b',
+    title: "Journey Optimizer B2B Edition 2026.9: People Lists, Service Health Dashboards, Journey Re-entry",
+    version: "2026.9",
+    date: "September 2026",
+    rawDate: "2026-09-01",
+    summary: "The September 2026 (2026.9) release adds Service Health Dashboards for monitoring external action operational metrics and performance, Journey Re-entry for person journeys, and a Member of Profile Audience filter usable across person journey split paths, account journey person split paths, and people lists. The prior August 2026 (2026.8) release graduated Person Journeys to GA alongside Person Lists, External Split Path and Action nodes, Variant Split Paths, and multiple simultaneous event triggers for account journeys.",
+    features: [
+      { name: "People Lists", description: "Create static and dynamic people lists to target profiles by demographic attributes and experience event history for precise audience segmentation.", status: "GA" },
+      { name: "Service Health Dashboards", description: "Track operational health of external actions through success and error metrics with administrator monitoring dashboards.", status: "GA" },
+      { name: "Member of Profile Audience Filter", description: "Available for person journey split paths, account journey person split paths, and people lists for audience-based filtering.", status: "GA" },
+      { name: "Journey Re-entry for Person Journeys", description: "Support for sending people through journey workflows multiple times for re-evaluation and reusable nurture scenarios.", status: "GA" },
+      { name: "Person Journeys", description: "Lead-based marketing orchestration using Experience Platform Audiences graduated from beta to generally available, enabling full person journey creation and management.", status: "GA" },
+      { name: "Variant Split Paths for Person Journeys", description: "Assigns people to different journey paths using defined percentage splits for A/B testing, graduated from beta to generally available.", status: "GA" },
+      { name: "Multiple Triggers in Listen for Event Nodes", description: "Account journey event listener nodes now support multiple triggers and filters simultaneously for more flexible account-level orchestration.", status: "GA" },
+      { name: "External Split Path Nodes for Person Journeys", description: "Person journeys now support external integration split paths for routing decisions through external services.", status: "GA" },
+      { name: "External Action Nodes for Person Journeys", description: "Person journeys can now execute external action nodes making outbound requests to third-party systems, expanding orchestration reach.", status: "GA" },
+      { name: "AEP Relational Datasets", description: "Relational datasets from Adobe Experience Platform are now visible and available in the AEP sandbox alongside existing datasets for enhanced B2B data modeling.", status: "GA" },
+      { name: "WhatsApp Channel Permissions", description: "Administrators can assign Manage B2B WhatsApp Settings and Manage B2B WhatsApp Presets permissions to control who can configure WhatsApp channel access.", status: "GA" },
+      { name: "C2PA Metadata for AI-Generated Images", description: "Images generated or edited with generative AI tools are automatically signed with C2PA metadata for content provenance and transparency compliance.", status: "GA" }
+    ],
+    category_tags: ["Data", "AI", "Integration", "Security"]
+  },
+  {
+    id: 'experience-platform',
+    title: "Adobe Experience Platform September 2026: Updated Audience Builder GA, Growth Credits, 4 New Sources",
+    version: null,
+    date: "September 2026",
+    rawDate: "2026-09-01",
+    summary: "September 22, 2026 graduates the updated Audience Builder to GA with semantic search, AI suggestions, and field favoriting, alongside Experience Platform Growth Credits for capacity monitoring across streaming, edge, and batch segmentation. New advertising sources (Snapchat Ads, Pinterest Ads, Google Ads) and multi-sandbox schema and dataset migration ship alongside India DPDPA privacy support and Microsoft Entra ID authentication for Azure destinations.",
+    features: [
+      { name: "CX Enterprise Coworker: Data Management Agentic Skills", description: "Identify high-storage datasets and assess retention changes through conversational AI within Experience Platform.", status: "GA" },
+      { name: "CX Enterprise Coworker: Data Validation Skills", description: "Run statistical and semantic validations on datasets through natural-language chat within Experience Platform.", status: "GA" },
+      { name: "Adobe Experience Platform Growth Credits", description: "Manage capacity across streaming, edge, and batch segmentation with monitoring dashboards and threshold alerts.", status: "GA" },
+      { name: "Batch Capacity Monitoring", description: "Monitor on-demand runs, scheduled runs, and batch audience counts for infrastructure capacity planning.", status: "GA" },
+      { name: "Edge Throughput Monitor", description: "Reports skipped requests and displays clearer graph details with peak callouts for edge capacity visibility.", status: "GA" },
+      { name: "Updated Label Application Workflows in Data Governance", description: "Apply data governance labels via inline actions in Datasets workspace or Schema Editor for streamlined compliance workflows.", status: "GA" },
+      { name: "Data Type Filter in Destinations Catalog", description: "Filter destinations by data type in the Browse tab for faster discovery of the right destination connector.", status: "GA" },
+      { name: "Microsoft Entra ID Authentication for Azure Destinations", description: "Authenticate to Azure Event Hubs and Azure Blob Storage using service principal credentials for enhanced enterprise security.", status: "GA" },
+      { name: "Salesforce CRM OAuth 2 Client Credentials", description: "New authentication type for Salesforce CRM supporting Client Credentials flow for automated system integrations.", status: "GA" },
+      { name: "Facebook Credentials Auto-Refresh", description: "OAuth tokens for Facebook destination refresh automatically, eliminating periodic manual reauthentication requirements.", status: "GA" },
+      { name: "Amazon Ads Marketing Actions Removal", description: "Amazon Ads connector updated to remove the marketing action requirement, simplifying activation setup.", status: "GA" },
+      { name: "India Digital Personal Data Protection Act Support", description: "Select India when creating privacy requests to comply with India's DPDPA regulation.", status: "GA" },
+      { name: "Accelerated Queries Schema Permission Enforcement", description: "Accelerated queries now enforce existing schema-level read permissions to ensure roles have appropriate data access.", status: "GA" },
+      { name: "Usage Insights General Availability", description: "Visibility into Real-Time CDP and Journey Optimizer usage across profiles, audiences, destinations, and campaigns.", status: "GA" },
+      { name: "Job Schedules: Identity Ingestion Runs", description: "Job Schedules timeline now includes identity ingestion runs for full pipeline visibility.", status: "GA" },
+      { name: "Job Schedules: Campaign Runs", description: "Displays scheduled batch Journey Optimizer campaigns with filtering options in the Job Schedules view.", status: "GA" },
+      { name: "32 New Health Checks", description: "32 new health checks added across multiple categories including Sources and Profile for improved operational monitoring.", status: "GA" },
+      { name: "Multi-Sandbox Management", description: "Migrate schemas and datasets to multiple target sandboxes in a single workflow for streamlined sandbox governance.", status: "GA" },
+      { name: "Updated Audience Builder", description: "Now generally available with Discovery Panel, semantic search, AI suggestions, and field favoriting for improved audience creation workflows.", status: "GA" },
+      { name: "Audience Validation in Audience Builder", description: "Validates field compatibility with the selected evaluation method and flags incompatible fields before audience save.", status: "GA" },
+      { name: "Activated Destinations View", description: "View an audience's activated destinations with type, schedule, and flow-run status directly from the audience details.", status: "Beta" },
+      { name: "Flexible Batch Schedules", description: "Evaluate audiences on demand using user-defined schedules for more flexible batch processing.", status: "Limited Availability" },
+      { name: "Large Scale Audiences", description: "Support for up to 10,000 audiences in a single sandbox to support enterprise-scale audience management.", status: "Limited Availability" },
+      { name: "Snapchat Ads, Pinterest Ads, Google Ads Sources", description: "Ingest advertising performance data from Snapchat, Pinterest, and Google Ads platforms (Customer Journey Analytics SKU required).", status: "GA" },
+      { name: "HubSpot V2 Connector", description: "Updated HubSpot connector for improved data ingestion reliability and feature parity.", status: "GA" },
+      { name: "Server-Side Encryption for Amazon S3", description: "Combine SSE with PGP file encryption for Amazon S3 sources; max file size increases to 10 GB on VA6 region.", status: "GA" },
+      { name: "Self-Serve Sources Streaming SDK on AWS", description: "Build custom streaming source connectors for Experience Platform on AWS infrastructure.", status: "GA" }
+    ],
+    category_tags: ["Data", "AI", "Security", "Integration"]
   },
   {
     id: 'aem',
