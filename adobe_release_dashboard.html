@@ -717,7 +717,7 @@
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const DASHBOARD_DATE = '2026-10-19'; // ISO date this was last generated
+const DASHBOARD_DATE = '2026-10-20'; // ISO date this was last generated
 
 const PRODUCTS = [
   { id: 'analytics',           name: 'Adobe Analytics',           color: '#3b82f6', url: 'https://experienceleague.adobe.com/en/docs/analytics/release-notes/latest' },
@@ -754,6 +754,8 @@ const RELEASE_DATA = [
       { name: "Legacy Report Builder Retirement", description: "Legacy Report Builder reached end-of-life in June 2026; users must migrate workbooks to the new Report Builder available via Microsoft Store.", status: "GA" },
       { name: "WSSE Authentication End-of-Life", description: "WSSE authentication retired August 31, 2026; all Analytics integrations must migrate to OAuth-based authentication.", status: "GA" },
       { name: "Bug Fixes (October 2 release)", description: "56 bug fixes across Activity Map, Analysis Workspace, Classifications (22 fixes), Data Feeds and Data Warehouse, Migration, Exports, Report Builder (8 fixes), Reporting, Report Suites, Scheduled Reports, and other areas.", status: "GA" }
+      { name: "Journey Canvas: Compare Percentages", description: "Shows percentage-point changes for nodes, arrows, and fallout when comparing a journey to a prior period with a different audience size.", status: "GA" },
+      { name: "Classification Data Improvements in Data Warehouse Reports", description: "Makes classification values more accurate: deleted values show as blank and more values appear, so Workspace may occasionally differ from Data Warehouse.", status: "GA" },
     ],
     category_tags: ["AI", "Integration", "Deprecation", "Security"]
   },
@@ -771,6 +773,7 @@ const RELEASE_DATA = [
       { name: "Automatic Component Descriptions", description: "System auto-generates descriptions for dimensions, metrics, segments, and calculated metrics to aid user discovery and guidance in Analysis Workspace.", status: "GA" },
       { name: "Adobe Brand Visibility Integration", description: "Connects Brand Visibility data with CJA to measure AI-driven content discovery impact on website engagement and business outcomes.", status: "GA" },
       { name: "Bug Fixes: Analysis Workspace, Components, Connections, Guided Analysis, Exports, Data Views, Data Ingestion, Report Builder, Reporting, and More", description: "40+ bug fixes resolving Analysis Workspace rendering, component library, data ingestion, export reliability, report builder, and reporting accuracy issues across all major CJA modules.", status: "GA" }
+      { name: "Journey Canvas: Compare Percentages", description: "Shows percentage-point changes for nodes, arrows, and fallout when comparing a journey to a prior period with a different audience size.", status: "GA" },
     ],
     category_tags: ["AI", "Data", "Integration"]
   },
@@ -871,6 +874,8 @@ const RELEASE_DATA = [
       { name: "Deprecation of Grab Images from Web", description: "Feature retired with the October release for security and privacy reasons.", status: "GA" },
       { name: "API Name Restrictions for Custom Activity Attributes", description: "API names may contain only letters, numbers, and underscores and must start with a letter or number.", status: "GA" },
       { name: "Static List Size Limits for Get Lead Activities and Changes", description: "Calls using listId fail with error 1003 when the static list has 10,000 or more leads; in effect since September 30, 2026.", status: "GA" }
+      { name: "Plan Campaigns Skill", description: "CX Enterprise Coworker turns a campaign brief into a program setup document covering folders, smart campaigns, emails, tokens, and a QA checklist.", status: "Limited Availability" },
+      { name: "Callable Agents", description: "Plain-language AI agents run as smart campaign flow steps to update lead fields, such as cleaning data or flagging likely bots.", status: "Limited Availability" },
     ],
     category_tags: ["UI", "Integration", "Security", "Deprecation"]
   },
